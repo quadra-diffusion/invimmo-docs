@@ -1693,6 +1693,26 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 - Include Procurations GET
 - Include FuturesAdresse GET
 
+"referenceInvimmo": 5,
+"dateEdl": "03/10/2016 14:44:36",
+"dateEntrant": null,
+"commentaire": "Logement très propre",
+"commentaireMotifDeDepart": null,
+"referenceInvimmoLogement": 86,
+"referenceExterneLogement": "86",
+"referenceInvimmoBail": 9,
+"referenceExterneBail": "42",
+"referenceInvimmoProprietaire": 23,
+"referenceExterneProprietaire": "23",
+"typeLogement": "T2",
+"typeEdl": "Etat des lieux entrant",
+"etat": null,
+"motifDepart": null,
+"destinationClient": null,
+"lienEditionEdl": "http://localhost:8180/Attachements/Invimmo/TREO/EditionEDL/5/11_edl__EditionEDL.pdf",
+"lienEditionDegradation": "http://localhost:8180/Attachements/Invimmo/TREO/EditionReparation/5/11_edl__EditionEDL.pdf"
+
+
 ## Assurances GET (object)
 
 - ReferenceInvimmoAssurance: `465` (required, number) - Référence interne de l'assurance (Integer 10).
@@ -1727,8 +1747,27 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 
 ## Locataires GET (object)
 
+- ReferenceInvimmoLocataire: `465` (required, number) - Référence interne du locataire (Integer 10).
+- ReferenceExterneLocataire: `RDUPOND` (required, string) - Référence externe du locataire si requete edl (Max 500 caractères).
+- NomLocataire: `DUPOND` (required, string) - Nom du locataire si requete edl (Max 50 caractères).
+- PrenomLocataire: `Robert` (required, string) - Prenom du locataire si requete edl (Max 50 caractères).
+- CiviliteLocataire: `M` (required, string) - Civilité du locataire si requete edl (Max 10 caractères).
+- CodePostal: `77000` (string) - Code Postal (Max 10 caractères).
+- Telephone: `351557010202731` (string) - Numéro de téléphone (Max 17 caractères).
+- Email: `351557010202731` (string) - Email (Max 255 caractères).
+- absent: `true` (boolean) - Absent lors de l'état des lieux true/false.
+- refuseDeSigner: `true` (boolean) - Refuse de signer l'état des lieux true/false.
 
 ## Compteurs GET (object)
+
+- ReferenceExterne: `001.230E` (required, string) - Référence externe du Compteur (Max 500 caractères).
+- CodeConstructeur: `T016701` (required, string) - Code Compteur (Max 200 caractères).
+- CodeTypeCompteur: `ELEC` (required, string) - Code de Type de compteur (Max 500 caractères).
+- TypeCompteur: `Electrique` (required, string) - Type de compteur (Eau, eletricité, etc...) (Max 500 caractères).
+- libelleTypeCompteur: `Compteur Electrique` (required, string) - Libellé du type compteur (Eau, eletricité, etc...) (Max 500 caractères).
+- Emplacement: `Sous l'évier` (string) - Emplacement physique du compteur (Max 100 caractères).
+- InformationComplementaire: `Compteur jour/nuit` (string) - Code Postal (Max 200 caractères).
+- Tarif: `0.52` (number) - Tarif Compteur (e.g. prix kw/h) (Double 10.2).
 
 - Include Index GET
 
@@ -1743,6 +1782,12 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 - DateCreation: `2017-03-21` (string) - Date de de création (YYYY-MM-DD).
 
 ## Travaux GET (object)
+
+- CoutTotalDegradations: `500.45` (number) - Cout total des dégradations (double, 12.2).
+- PourcentageRemise: `500.45` (number) - Pourcentage de la remise (double, 12.2).
+- MontantApresRemise: `500.45` (number) - Cout total des dégradations après remise (double, 12.2).
+- MontantRameneA: `500.45` (number) - Cout total des dégradations ramené au montant de... (double, 12.2).
+- ConstatHuissier: `O` (string) - Y-a-t-il un constat d'huissier? O/N.
 
 - Include Dégradations GET
 
