@@ -5,6 +5,193 @@ HOST: http://localhost:8888/api/v1
 
 A remplir
 
+
+## Affectation Locataires [/affectation locataires]
+
+### Ajouter une liste d'affectation Locataires [POST]
+
+Insère une liste d'affectation locataires dans la base de données d’Invimmo.
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+    + Attributes (array[AffectationLocataire POST])
+
++ Response 201 (application/json)
+    Dans le cas ou les insertions d'affectation locataire se passent bien.
+    + Attributes (array[AffectationLocataire Invimmo POST])
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
+    + Body
+
++ Response 409 (application/json)
+    (Conflict) La demande n'a pas pu être terminée.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
+### Modifier une liste d'affectation Locataires [PUT]
+
+Modifie une liste d'affectation locataires dans la base de données d’Invimmo
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+    + Attributes (array[AffectationLocataire PUT])
+
++ Response 200 (application/json)
+    Dans le cas ou les modifications d'affectation locataire se passent bien.
+    + Attributes (array[AffectationLocataire Invimmo PUT])
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
+    + Body
+
++ Response 409 (application/json)
+    (Conflict) La demande n'a pas pu être terminée.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
+### Désactiver une liste d'affectation Locataires [DELETE]
+
+Désactive une liste d'affectation locataire dans la base de données d’Invimmo
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+    + Attributes (array[AffectationLocataire DELETE])
+
++ Response 200 (application/json)
+    Dans le cas ou les désactivations d'affectation locataire se passent bien.
+    + Attributes (array[AffectationLocataire Invimmo DELETE])
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
+    + Body
+
++ Response 409 (application/json)
+    (Conflict) La demande n'a pas pu être terminée.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
+
+## Affectation Utilisateurs [/affectation utilisateurs]
+
+### Ajouter une liste d'Affectation utilisateurs [POST]
+
+Insère une liste d’Affectation utilisateurs dans la base de données d’Invimmo.
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+    + Attributes (array[AffectationUtilisateurs POST])
+
++ Response 201 (application/json)
+    Dans le cas ou les insertions de liste d'Affectation Utilisateurs se passent bien.
+    + Attributes (array[AffectationUtilisateurs Invimmo POST])
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
+    + Body
+
++ Response 409 (application/json)
+    (Conflict) La demande n'a pas pu être terminée.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
+### Supprimer une liste d'Affectation Utilisateurs [DELETE]
+
+Supprime une liste d'Affectation Utilisateurs dans la base de données d’Invimmo
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+    + Attributes (array[AffectationUtilisateurs DELETE])
+
++ Response 200 (application/json)
+    Dans le cas ou les suppressions de liste d'Affectation Utilisateurs se passent bien.
+    + Attributes (array[AffectationUtilisateurs Invimmo DELETE])
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
+    + Body
+
++ Response 409 (application/json)
+    (Conflict) La demande n'a pas pu être terminée.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
+
 ## Authentification [/authentification]
 
 ### Ajouter une liste de authentification [POST]
@@ -35,11 +222,14 @@ Met à jour une liste d’authentifications
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-## Patrimoine [/patrimoine]
 
-### Ajouter une liste de patrimoine [POST]
+## Barèmes [/Baremes]
 
-Insère une liste de patrimoines dans la base de données d’Invimmo
+Table Optionnel
+
+### Ajouter une liste de Barèmes [POST]
+
+Insère une liste de Barèmes dans la base de données d’Invimmo.
 
 + Request (application/json)
 
@@ -47,12 +237,12 @@ Insère une liste de patrimoines dans la base de données d’Invimmo
 
             Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
 
-    + Attributes (array[Patrimoine POST])
+    + Attributes (array[Baremes POST])
 
 
 + Response 201 (application/json)
-    Dans le cas ou les insertions de patrimoine se passent bien.
-    + Attributes (array[Patrimoine Invimmo POST])
+    Dans le cas ou les insertions des barèmes se passent bien.
+    + Attributes (array[Baremes Invimmo POST])
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -74,9 +264,9 @@ Insère une liste de patrimoines dans la base de données d’Invimmo
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-### Modifier une liste de patrimoine [PUT]
+### Modifier une liste de barèmes [PUT]
 
-Modifie une liste de patrimoines dans la base de données d’Invimmo
+Modifie une liste de barèmes dans la base de données d’Invimmo
 
 + Request (application/json)
 
@@ -84,11 +274,11 @@ Modifie une liste de patrimoines dans la base de données d’Invimmo
 
             Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
 
-    + Attributes (array[Patrimoine PUT])
+    + Attributes (array[Baremes PUT])
 
 + Response 200 (application/json)
-    Dans le cas ou les modifications de patrimoine se passent bien.
-    + Attributes (array[Patrimoine Invimmo PUT])
+    Dans le cas ou les modifications de barèmes se passent bien.
+    + Attributes (array[Baremes Invimmo PUT])
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -110,9 +300,9 @@ Modifie une liste de patrimoines dans la base de données d’Invimmo
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-### Désactiver une liste de patrimoine [DELETE]
+### Désactive une liste de barèmes [DELETE]
 
-Désactive une liste de patrimoines dans la base de données d’Invimmo
+Désactive une liste de barèmes dans la base de données d’Invimmo
 
 + Request (application/json)
 
@@ -120,11 +310,11 @@ Désactive une liste de patrimoines dans la base de données d’Invimmo
 
             Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
 
-    + Attributes (array[Patrimoine DELETE])
+    + Attributes (array[Baremes DELETE])
 
 + Response 200 (application/json)
-    Dans le cas ou les désactivations de patrimoine se passent bien.
-    + Attributes (array[Patrimoine Invimmo DELETE])
+    Dans le cas ou les désactivation de barèmes se passent bien.
+    + Attributes (array[Baremes Invimmo DELETE])
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -238,491 +428,6 @@ Désactive une liste de baux dans la base de données d’Invimmo
 + Response 200 (application/json)
     Dans le cas ou les désactivation de baux se passent bien.
     + Attributes (array[Baux Invimmo DELETE])
-    
-+ Response 400 (application/json)
-    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
-    + Body
-
-+ Response 401 (application/json)
-    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
-    + Body
-
-+ Response 403 (application/json)
-    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
-    + Body
-
-+ Response 409 (application/json)
-    (Conflict) La demande n'a pas pu être terminée.
-    + Body
-
-+ Response 500 (application/json)
-    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
-    + Body
-
-
-## Locataires [/locataires]
-
-### Ajouter une liste de Locataires [POST]
-
-Insère une liste de locataires dans la base de données d’Invimmo.
-
-+ Request (application/json)
-
-    + Headers
-
-            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
-
-    + Attributes (array[Locataire POST])
-
-+ Response 201 (application/json)
-    Dans le cas ou les insertions de Locataires se passent bien.
-    + Attributes (array[Locataire Invimmo POST])
-    
-+ Response 400 (application/json)
-    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
-    + Body
-
-+ Response 401 (application/json)
-    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
-    + Body
-
-+ Response 403 (application/json)
-    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
-    + Body
-
-+ Response 409 (application/json)
-    (Conflict) La demande n'a pas pu être terminée.
-    + Body
-
-+ Response 500 (application/json)
-    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
-    + Body
-
-### Modifier une liste de Locataires [PUT]
-
-Modifie une liste de locataires dans la base de données d’Invimmo
-
-+ Request (application/json)
-
-    + Headers
-
-            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
-
-    + Attributes (array[Locataire PUT])
-
-+ Response 200 (application/json)
-    Dans le cas ou les modifications de Locataires se passent bien.
-    + Attributes (array[Locataire Invimmo PUT])
-    
-+ Response 400 (application/json)
-    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
-    + Body
-
-+ Response 401 (application/json)
-    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
-    + Body
-
-+ Response 403 (application/json)
-    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
-    + Body
-
-+ Response 409 (application/json)
-    (Conflict) La demande n'a pas pu être terminée.
-    + Body
-
-+ Response 500 (application/json)
-    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
-    + Body
-
-### Désactiver une liste de Locataires [DELETE]
-
-Désactive une liste de locataire dans la base de données d’Invimmo
-
-+ Request (application/json)
-
-    + Headers
-
-            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
-
-    + Attributes (array[Locataire DELETE])
-
-+ Response 200 (application/json)
-    Dans le cas ou les désactivations de Locataires se passent bien.
-    + Attributes (array[Locataire Invimmo DELETE])
-    
-+ Response 400 (application/json)
-    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
-    + Body
-
-+ Response 401 (application/json)
-    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
-    + Body
-
-+ Response 403 (application/json)
-    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
-    + Body
-
-+ Response 409 (application/json)
-    (Conflict) La demande n'a pas pu être terminée.
-    + Body
-
-+ Response 500 (application/json)
-    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
-    + Body
-
-
-## Affectation Locataires [/affectation locataires]
-
-### Ajouter une liste d'affectation Locataires [POST]
-
-Insère une liste d'affectation locataires dans la base de données d’Invimmo.
-
-+ Request (application/json)
-
-    + Headers
-
-            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
-
-    + Attributes (array[AffectationLocataire POST])
-
-+ Response 201 (application/json)
-    Dans le cas ou les insertions d'affectation locataire se passent bien.
-    + Attributes (array[AffectationLocataire Invimmo POST])
-    
-+ Response 400 (application/json)
-    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
-    + Body
-
-+ Response 401 (application/json)
-    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
-    + Body
-
-+ Response 403 (application/json)
-    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
-    + Body
-
-+ Response 409 (application/json)
-    (Conflict) La demande n'a pas pu être terminée.
-    + Body
-
-+ Response 500 (application/json)
-    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
-    + Body
-
-### Modifier une liste d'affectation Locataires [PUT]
-
-Modifie une liste d'affectation locataires dans la base de données d’Invimmo
-
-+ Request (application/json)
-
-    + Headers
-
-            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
-
-    + Attributes (array[AffectationLocataire PUT])
-
-+ Response 200 (application/json)
-    Dans le cas ou les modifications d'affectation locataire se passent bien.
-    + Attributes (array[AffectationLocataire Invimmo PUT])
-    
-+ Response 400 (application/json)
-    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
-    + Body
-
-+ Response 401 (application/json)
-    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
-    + Body
-
-+ Response 403 (application/json)
-    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
-    + Body
-
-+ Response 409 (application/json)
-    (Conflict) La demande n'a pas pu être terminée.
-    + Body
-
-+ Response 500 (application/json)
-    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
-    + Body
-
-### Désactiver une liste d'affectation Locataires [DELETE]
-
-Désactive une liste d'affectation locataire dans la base de données d’Invimmo
-
-+ Request (application/json)
-
-    + Headers
-
-            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
-
-    + Attributes (array[AffectationLocataire DELETE])
-
-+ Response 200 (application/json)
-    Dans le cas ou les désactivations d'affectation locataire se passent bien.
-    + Attributes (array[AffectationLocataire Invimmo DELETE])
-    
-+ Response 400 (application/json)
-    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
-    + Body
-
-+ Response 401 (application/json)
-    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
-    + Body
-
-+ Response 403 (application/json)
-    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
-    + Body
-
-+ Response 409 (application/json)
-    (Conflict) La demande n'a pas pu être terminée.
-    + Body
-
-+ Response 500 (application/json)
-    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
-    + Body
-
-
-## Utilisateurs [/utilisateurs]
-
-### Ajouter une liste d'utilisateurs [POST]
-
-Insère une liste d’utilisateurs dans la base de données d’Invimmo.
-
-+ Request (application/json)
-
-    + Headers
-
-            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
-
-    + Attributes (array[Utilisateurs POST])
-
-+ Response 201 (application/json)
-    Dans le cas ou les insertions d'Utilisateurs se passent bien.
-    + Attributes (array[Utilisateurs Invimmo POST])
-    
-+ Response 400 (application/json)
-    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
-    + Body
-
-+ Response 401 (application/json)
-    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
-    + Body
-
-+ Response 403 (application/json)
-    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
-    + Body
-
-+ Response 409 (application/json)
-    (Conflict) La demande n'a pas pu être terminée.
-    + Body
-
-+ Response 500 (application/json)
-    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
-    + Body
-
-### Modifier une liste d'Utilisateurs [PUT]
-
-Modifie une liste d'Utilisateurs dans la base de données d’Invimmo
-
-+ Request (application/json)
-
-    + Headers
-
-            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
-
-    + Attributes (array[Utilisateurs PUT])
-
-+ Response 200 (application/json)
-    Dans le cas ou les modifications d'Utilisateurs se passent bien.
-    + Attributes (array[Utilisateurs Invimmo PUT])
-    
-+ Response 400 (application/json)
-    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
-    + Body
-
-+ Response 401 (application/json)
-    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
-    + Body
-
-+ Response 403 (application/json)
-    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
-    + Body
-
-+ Response 409 (application/json)
-    (Conflict) La demande n'a pas pu être terminée.
-    + Body
-
-+ Response 500 (application/json)
-    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
-    + Body
-
-### Désactiver une liste d'Utilisateurs [DELETE]
-
-Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
-
-+ Request (application/json)
-
-    + Headers
-
-            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
-
-    + Attributes (array[Utilisateurs DELETE])
-
-+ Response 200 (application/json)
-    Dans le cas ou les désactivations d'Utilisateurs se passent bien.
-    + Attributes (array[Utilisateurs Invimmo DELETE])
-    
-+ Response 400 (application/json)
-    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
-    + Body
-
-+ Response 401 (application/json)
-    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
-    + Body
-
-+ Response 403 (application/json)
-    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
-    + Body
-
-+ Response 409 (application/json)
-    (Conflict) La demande n'a pas pu être terminée.
-    + Body
-
-+ Response 500 (application/json)
-    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
-    + Body
-
-
-## AffectationUtilisateurs [/affectation utilisateurs]
-
-### Ajouter une liste d'Affectation utilisateurs [POST]
-
-Insère une liste d’Affectation utilisateurs dans la base de données d’Invimmo.
-
-+ Request (application/json)
-
-    + Headers
-
-            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
-
-    + Attributes (array[AffectationUtilisateurs POST])
-
-+ Response 201 (application/json)
-    Dans le cas ou les insertions de liste d'Affectation Utilisateurs se passent bien.
-    + Attributes (array[AffectationUtilisateurs Invimmo POST])
-    
-+ Response 400 (application/json)
-    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
-    + Body
-
-+ Response 401 (application/json)
-    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
-    + Body
-
-+ Response 403 (application/json)
-    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
-    + Body
-
-+ Response 409 (application/json)
-    (Conflict) La demande n'a pas pu être terminée.
-    + Body
-
-+ Response 500 (application/json)
-    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
-    + Body
-
-### Supprimer une liste d'Affectation Utilisateurs [DELETE]
-
-Supprime une liste d'Affectation Utilisateurs dans la base de données d’Invimmo
-
-+ Request (application/json)
-
-    + Headers
-
-            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
-
-    + Attributes (array[AffectationUtilisateurs DELETE])
-
-+ Response 200 (application/json)
-    Dans le cas ou les suppressions de liste d'Affectation Utilisateurs se passent bien.
-    + Attributes (array[AffectationUtilisateurs Invimmo DELETE])
-    
-+ Response 400 (application/json)
-    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
-    + Body
-
-+ Response 401 (application/json)
-    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
-    + Body
-
-+ Response 403 (application/json)
-    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
-    + Body
-
-+ Response 409 (application/json)
-    (Conflict) La demande n'a pas pu être terminée.
-    + Body
-
-+ Response 500 (application/json)
-    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
-    + Body
-
-
-## Propriétaires [/Proprietaires]
-
-Table Optionnel
-
-### Ajouter une liste de Propriétaires [POST]
-
-Insère une liste de propriétaires dans la base de données d’Invimmo.
-
-+ Request (application/json)
-
-    + Headers
-
-            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
-
-    + Attributes (array[Proprietaires POST])
-
-+ Response 201 (application/json)
-    Dans le cas ou les insertions de Proprietaires se passent bien.
-    + Attributes (array[Proprietaires Invimmo POST])
-    
-+ Response 400 (application/json)
-    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
-    + Body
-
-+ Response 401 (application/json)
-    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
-    + Body
-
-+ Response 403 (application/json)
-    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
-    + Body
-
-+ Response 409 (application/json)
-    (Conflict) La demande n'a pas pu être terminée.
-    + Body
-
-+ Response 500 (application/json)
-    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
-    + Body
-
-### Modifier une liste de Propriétaires [PUT]
-
-Modifie une liste de Propriétaires dans la base de données d’Invimmo
-
-+ Request (application/json)
-
-    + Headers
-
-            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
-
-    + Attributes (array[Proprietaires PUT])
-
-+ Response 200 (application/json)
-    Dans le cas ou les modifications de Proprietaires se passent bien.
-    + Attributes (array[Proprietaires Invimmo PUT])
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -859,6 +564,47 @@ Supprime une liste de compteurs dans la base de données d’Invimmo
     + Body
 
 
+## Etats des lieux [/edls/{date}/]
+
+Liste d’états des lieux pour la date donnée
+
++ Parameters
+    + date: `2017-05-26` (required, string) - date format YYYY-MM-DD.
+
+### Récupère l'état des lieu avec son contenu [GET]
+
+Récupération de l’intégralité d’un état des lieux avec son contenu.
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+    + Attributes (array[edls GET])
+
+
++ Response 200 (application/json)
+    Dans le cas ou la récupération des etats des lieux se passent bien.
+    + Attributes (array[edls Invimmo GET])
+    
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
+    + Body
+
++ Response 404 (application/json)
+    (Not Found) : Le point de terminaison n’existe pas.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
+
 ## Index [/Index]
 
 Table Optionnel
@@ -951,120 +697,6 @@ Supprime une liste d'Index dans la base de données d’Invimmo
 + Response 200 (application/json)
     Dans le cas ou les suppressions d'Index se passent bien.
     + Attributes (array[Index Invimmo DELETE])
-    
-+ Response 400 (application/json)
-    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
-    + Body
-
-+ Response 401 (application/json)
-    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
-    + Body
-
-+ Response 403 (application/json)
-    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
-    + Body
-
-+ Response 409 (application/json)
-    (Conflict) La demande n'a pas pu être terminée.
-    + Body
-
-+ Response 500 (application/json)
-    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
-    + Body
-
-
-## Barèmes [/Baremes]
-
-Table Optionnel
-
-### Ajouter une liste de Barèmes [POST]
-
-Insère une liste de Barèmes dans la base de données d’Invimmo.
-
-+ Request (application/json)
-
-    + Headers
-
-            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
-
-    + Attributes (array[Baremes POST])
-
-
-+ Response 201 (application/json)
-    Dans le cas ou les insertions des barèmes se passent bien.
-    + Attributes (array[Baremes Invimmo POST])
-    
-+ Response 400 (application/json)
-    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
-    + Body
-
-+ Response 401 (application/json)
-    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
-    + Body
-
-+ Response 403 (application/json)
-    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
-    + Body
-
-+ Response 409 (application/json)
-    (Conflict) La demande n'a pas pu être terminée.
-    + Body
-
-+ Response 500 (application/json)
-    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
-    + Body
-
-### Modifier une liste de barèmes [PUT]
-
-Modifie une liste de barèmes dans la base de données d’Invimmo
-
-+ Request (application/json)
-
-    + Headers
-
-            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
-
-    + Attributes (array[Baremes PUT])
-
-+ Response 200 (application/json)
-    Dans le cas ou les modifications de barèmes se passent bien.
-    + Attributes (array[Baremes Invimmo PUT])
-    
-+ Response 400 (application/json)
-    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
-    + Body
-
-+ Response 401 (application/json)
-    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
-    + Body
-
-+ Response 403 (application/json)
-    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
-    + Body
-
-+ Response 409 (application/json)
-    (Conflict) La demande n'a pas pu être terminée.
-    + Body
-
-+ Response 500 (application/json)
-    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
-    + Body
-
-### Désactive une liste de barèmes [DELETE]
-
-Désactive une liste de barèmes dans la base de données d’Invimmo
-
-+ Request (application/json)
-
-    + Headers
-
-            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
-
-    + Attributes (array[Baremes DELETE])
-
-+ Response 200 (application/json)
-    Dans le cas ou les désactivation de barèmes se passent bien.
-    + Attributes (array[Baremes Invimmo DELETE])
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -1204,16 +836,11 @@ Désactive une liste de ligne de barèmes dans la base de données d’Invimmo
     + Body
 
 
-## Etats des lieux [/edls/{date}/]
+## Locataires [/locataires]
 
-Liste d’états des lieux pour la date donnée
+### Ajouter une liste de Locataires [POST]
 
-+ Parameters
-    + date: `2017-05-26` (required, string) - date format YYYY-MM-DD.
-
-### Récupère l'état des lieu avec son contenu [GET]
-
-Récupération de l’intégralité d’un état des lieux avec son contenu.
+Insère une liste de locataires dans la base de données d’Invimmo.
 
 + Request (application/json)
 
@@ -1221,13 +848,16 @@ Récupération de l’intégralité d’un état des lieux avec son contenu.
 
             Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
 
-    + Attributes (array[edls GET])
+    + Attributes (array[Locataire POST])
 
-
-+ Response 200 (application/json)
-    Dans le cas ou la récupération des etats des lieux se passent bien.
-    + Attributes (array[edls Invimmo GET])
++ Response 201 (application/json)
+    Dans le cas ou les insertions de Locataires se passent bien.
+    + Attributes (array[Locataire Invimmo POST])
     
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
 + Response 401 (application/json)
     (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
     + Body
@@ -1236,14 +866,385 @@ Récupération de l’intégralité d’un état des lieux avec son contenu.
     (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
     + Body
 
-+ Response 404 (application/json)
-    (Not Found) : Le point de terminaison n’existe pas.
++ Response 409 (application/json)
+    (Conflict) La demande n'a pas pu être terminée.
     + Body
 
 + Response 500 (application/json)
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
+### Modifier une liste de Locataires [PUT]
+
+Modifie une liste de locataires dans la base de données d’Invimmo
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+    + Attributes (array[Locataire PUT])
+
++ Response 200 (application/json)
+    Dans le cas ou les modifications de Locataires se passent bien.
+    + Attributes (array[Locataire Invimmo PUT])
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
+    + Body
+
++ Response 409 (application/json)
+    (Conflict) La demande n'a pas pu être terminée.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
+### Désactiver une liste de Locataires [DELETE]
+
+Désactive une liste de locataire dans la base de données d’Invimmo
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+    + Attributes (array[Locataire DELETE])
+
++ Response 200 (application/json)
+    Dans le cas ou les désactivations de Locataires se passent bien.
+    + Attributes (array[Locataire Invimmo DELETE])
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
+    + Body
+
++ Response 409 (application/json)
+    (Conflict) La demande n'a pas pu être terminée.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
+
+## Patrimoine [/patrimoine]
+
+### Ajouter une liste de patrimoine [POST]
+
+Insère une liste de patrimoines dans la base de données d’Invimmo
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+    + Attributes (array[Patrimoine POST])
+
+
++ Response 201 (application/json)
+    Dans le cas ou les insertions de patrimoine se passent bien.
+    + Attributes (array[Patrimoine Invimmo POST])
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
+    + Body
+
++ Response 409 (application/json)
+    (Conflict) La demande n'a pas pu être terminée.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
+### Modifier une liste de patrimoine [PUT]
+
+Modifie une liste de patrimoines dans la base de données d’Invimmo
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+    + Attributes (array[Patrimoine PUT])
+
++ Response 200 (application/json)
+    Dans le cas ou les modifications de patrimoine se passent bien.
+    + Attributes (array[Patrimoine Invimmo PUT])
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
+    + Body
+
++ Response 409 (application/json)
+    (Conflict) La demande n'a pas pu être terminée.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
+### Désactiver une liste de patrimoine [DELETE]
+
+Désactive une liste de patrimoines dans la base de données d’Invimmo
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+    + Attributes (array[Patrimoine DELETE])
+
++ Response 200 (application/json)
+    Dans le cas ou les désactivations de patrimoine se passent bien.
+    + Attributes (array[Patrimoine Invimmo DELETE])
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
+    + Body
+
++ Response 409 (application/json)
+    (Conflict) La demande n'a pas pu être terminée.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
+
+## Propriétaires [/Proprietaires]
+
+Table Optionnel
+
+### Ajouter une liste de Propriétaires [POST]
+
+Insère une liste de propriétaires dans la base de données d’Invimmo.
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+    + Attributes (array[Proprietaires POST])
+
++ Response 201 (application/json)
+    Dans le cas ou les insertions de Proprietaires se passent bien.
+    + Attributes (array[Proprietaires Invimmo POST])
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
+    + Body
+
++ Response 409 (application/json)
+    (Conflict) La demande n'a pas pu être terminée.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
+### Modifier une liste de Propriétaires [PUT]
+
+Modifie une liste de Propriétaires dans la base de données d’Invimmo
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+    + Attributes (array[Proprietaires PUT])
+
++ Response 200 (application/json)
+    Dans le cas ou les modifications de Proprietaires se passent bien.
+    + Attributes (array[Proprietaires Invimmo PUT])
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
+    + Body
+
++ Response 409 (application/json)
+    (Conflict) La demande n'a pas pu être terminée.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
+
+## Utilisateurs [/utilisateurs]
+
+### Ajouter une liste d'utilisateurs [POST]
+
+Insère une liste d’utilisateurs dans la base de données d’Invimmo.
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+    + Attributes (array[Utilisateurs POST])
+
++ Response 201 (application/json)
+    Dans le cas ou les insertions d'Utilisateurs se passent bien.
+    + Attributes (array[Utilisateurs Invimmo POST])
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
+    + Body
+
++ Response 409 (application/json)
+    (Conflict) La demande n'a pas pu être terminée.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
+### Modifier une liste d'Utilisateurs [PUT]
+
+Modifie une liste d'Utilisateurs dans la base de données d’Invimmo
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+    + Attributes (array[Utilisateurs PUT])
+
++ Response 200 (application/json)
+    Dans le cas ou les modifications d'Utilisateurs se passent bien.
+    + Attributes (array[Utilisateurs Invimmo PUT])
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
+    + Body
+
++ Response 409 (application/json)
+    (Conflict) La demande n'a pas pu être terminée.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
+### Désactiver une liste d'Utilisateurs [DELETE]
+
+Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+    + Attributes (array[Utilisateurs DELETE])
+
++ Response 200 (application/json)
+    Dans le cas ou les désactivations d'Utilisateurs se passent bien.
+    + Attributes (array[Utilisateurs Invimmo DELETE])
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
+    + Body
+
++ Response 409 (application/json)
+    (Conflict) La demande n'a pas pu être terminée.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
 
 
 # Data Structures
@@ -1683,13 +1684,35 @@ Récupération de l’intégralité d’un état des lieux avec son contenu.
 
 
 ## edls GET (object)
-- Include Equipements GET
-- Include Dégradations GET
-- Include Procurations GET
+
 - Include Assurances GET
 - Include Pieces GET
-- Include Index GET
+- Include Locataires GET
+- Include Compteurs GET
+- Include Travaux GET
+- Include Procurations GET
 - Include FuturesAdresse GET
+
+## Assurances GET (object)
+
+- ReferenceInvimmoAssurance: `465` (required, number) - Référence interne de l'assurance (Integer 10).
+- DateDebut: `2016-01-31` (string) - Date de début (YYYY-MM-DD).
+- DateFin: `2017-01-31` (string) - Date de fin (YYYY-MM-DD).
+- NomCompagnie: `AXA` (required, string) - Nom de la compagnie d'assurance (Max 50 caractères).
+- CodeContrat: `ZS45EMI4442` (required, string) - Code contrat d'assurance (Max 50 caractères).
+- NumAssure: `Robert DUPOND` (required, string) - Nom du locataire si requete edl (Max 50 caractères).
+- ReferenceInvimmoBail: `4589` (number) - ID de l'équipement (Integer 10).
+- ReferenceExterneBail: `80125` (required, string) - Référence externe du bail si requête locataire (Max 500 caractères).
+- DateModif: `2016-01-26` (string) - Date de de modification (YYYY-MM-DD).
+- DateCreation: `2017-03-21` (string) - Date de de création (YYYY-MM-DD).
+
+## Pieces GET (object)
+
+- Include Equipements GET
+- ReferenceInvimmoPiece: `465` (required, number) - Référence interne de la Pièce (Integer 10).
+- LibellePiece: `SALON` (required, string) - Libellé de la pièce (Max 200 caractères).
+- DateModif: `2016-01-26` (string) - Date de de modification (YYYY-MM-DD).
+- DateCreation: `2017-03-21` (string) - Date de de création (YYYY-MM-DD).
 
 ## Equipements GET (object)
 
@@ -1701,6 +1724,27 @@ Récupération de l’intégralité d’un état des lieux avec son contenu.
 - LibellePiece: `Bon` (required, string) - Libellé de la pièce si requête patrimoine ou edl (Max 200 caractères).
 - DateModif: `2016-01-26` (string) - Date de de modification (YYYY-MM-DD).
 - DateCreation: `2017-03-21` (string) - Date de de création (YYYY-MM-DD).
+
+## Locataires GET (object)
+
+
+## Compteurs GET (object)
+
+- Include Index GET
+
+## Index GET (object)
+
+- ReferenceInvimmoIndex: `465` (required, number) - Référence interne de l'index (Integer 10).
+- DateReleve: `2017-02-14` (string) - Date de relevé de l'index (YYYY-MM-DD).
+- Incident: `true` (boolean) - Relevé suite à incident (changement de compteur / fuite / etc.) true/false.
+- NatureReleve: `0` (number) - Nature du relevé (Integer 1).
+- ReferenceInvimmoCompteur: `44589` (number) - ID du compteur si requête edl (Integer 10).
+- DateModif: `2016-01-26` (string) - Date de de modification (YYYY-MM-DD).
+- DateCreation: `2017-03-21` (string) - Date de de création (YYYY-MM-DD).
+
+## Travaux GET (object)
+
+- Include Dégradations GET
 
 ## Dégradations GET (object)
 
@@ -1724,36 +1768,6 @@ Récupération de l’intégralité d’un état des lieux avec son contenu.
 - NomLocataire: `DUPOND` (required, string) - Nom du locataire si requete edl (Max 50 caractères).
 - PrenomLocataire: `Robert` (required, string) - Prenom du locataire si requete edl (Max 50 caractères).
 - CiviliteLocataire: `M` (required, string) - Civilité du locataire si requete edl (Max 10 caractères).
-- DateModif: `2016-01-26` (string) - Date de de modification (YYYY-MM-DD).
-- DateCreation: `2017-03-21` (string) - Date de de création (YYYY-MM-DD).
-
-## Assurances GET (object)
-
-- ReferenceInvimmoAssurance: `465` (required, number) - Référence interne de l'assurance (Integer 10).
-- DateDebut: `2016-01-31` (string) - Date de début (YYYY-MM-DD).
-- DateFin: `2017-01-31` (string) - Date de fin (YYYY-MM-DD).
-- NomCompagnie: `AXA` (required, string) - Nom de la compagnie d'assurance (Max 50 caractères).
-- CodeContrat: `ZS45EMI4442` (required, string) - Code contrat d'assurance (Max 50 caractères).
-- NumAssure: `Robert DUPOND` (required, string) - Nom du locataire si requete edl (Max 50 caractères).
-- ReferenceInvimmoBail: `4589` (number) - ID de l'équipement (Integer 10).
-- ReferenceExterneBail: `80125` (required, string) - Référence externe du bail si requête locataire (Max 500 caractères).
-- DateModif: `2016-01-26` (string) - Date de de modification (YYYY-MM-DD).
-- DateCreation: `2017-03-21` (string) - Date de de création (YYYY-MM-DD).
-
-## Pieces GET (object)
-
-- ReferenceInvimmoPiece: `465` (required, number) - Référence interne de la Pièce (Integer 10).
-- LibellePiece: `SALON` (required, string) - Libellé de la pièce (Max 200 caractères).
-- DateModif: `2016-01-26` (string) - Date de de modification (YYYY-MM-DD).
-- DateCreation: `2017-03-21` (string) - Date de de création (YYYY-MM-DD).
-
-## Index GET (object)
-
-- ReferenceInvimmoIndex: `465` (required, number) - Référence interne de l'index (Integer 10).
-- DateReleve: `2017-02-14` (string) - Date de relevé de l'index (YYYY-MM-DD).
-- Incident: `true` (boolean) - Relevé suite à incident (changement de compteur / fuite / etc.) true/false.
-- NatureReleve: `0` (number) - Nature du relevé (Integer 1).
-- ReferenceInvimmoCompteur: `44589` (number) - ID du compteur si requête edl (Integer 10).
 - DateModif: `2016-01-26` (string) - Date de de modification (YYYY-MM-DD).
 - DateCreation: `2017-03-21` (string) - Date de de création (YYYY-MM-DD).
 
