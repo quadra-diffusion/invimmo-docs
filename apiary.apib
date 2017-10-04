@@ -1204,6 +1204,48 @@ Désactive une liste de ligne de barèmes dans la base de données d’Invimmo
     + Body
 
 
+## Etats des lieux [/edls/{date}/]
+
+Liste d’états des lieux pour la date donnée
+
++ Parameters
+    + date: `2017-05-26` (required, string) - date format YYYY-MM-DD.
+
+### Récupère l'état des lieu avec son contenu [GET]
+
+Récupération de l’intégralité d’un état des lieux avec son contenu.
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+    + Attributes (array[edls GET])
+
+
++ Response 200 (application/json)
+    Dans le cas ou la récupération des etats des lieux se passent bien.
+    + Attributes (array[edls Invimmo GET])
+    
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
+    + Body
+
++ Response 404 (application/json)
+    (Not Found) : Le point de terminaison n’existe pas.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
+
+
 # Data Structures
 
 ## Authentification POST (object)
@@ -1638,3 +1680,43 @@ Désactive une liste de ligne de barèmes dans la base de données d’Invimmo
 
 - ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
 - Include LigneBaremes DELETE
+
+
+## edls GET (object)
+
+
+## Equipements GET (object)
+
+- ReferenceInvimmoEquipement: `45` (required, number) - Référence interne de l'équipement (Integer 10).
+- IntituleEquipement: `Evier Inox` (required, string) - Désignation de la ligne de barème (Max 200 caractères).
+- DateReparationEquipement: `2017-02-14` (string) - Date de réparation de l'équipement (YYYY-MM-DD).
+- EtatEquipement: `Bon` (required, string) - Etat de l'équipement (Max 100 caractères).
+- ReferenceInvimmoPiece: `45` (required, number) - si requête patrimoine ou edl (Integer 10).
+- LibellePiece: `Bon` (required, string) - Libellé de la pièce si requête patrimoine ou edl (Max 200 caractères).
+- DateModif: `2016-01-26` (string) - Date de de modification (YYYY-MM-DD).
+- DateCreation: `2017-03-21` (string) - Date de de création (YYYY-MM-DD).
+
+## Dégradations GET (object)
+
+- ReferenceInvimmoDegradation: `45` (required, number) - Référence interne de la dégradation (Integer 10).
+- Designation: `Evier Inox` (required, string) - Désignation de la dégradation (Max 255 caractères).
+- AChargeDuBailleur: `true` (boolean) - Réparation à la charge du bailleur true/false.
+- ReferenceInvimmoEquipement: `45` (required, number) - Référence interne de l'équipement (Integer 10).
+- DateModif: `2016-01-26` (string) - Date de de modification (YYYY-MM-DD).
+- DateCreation: `2017-03-21` (string) - Date de de création (YYYY-MM-DD).
+
+## Procurations GET (object)
+
+- ReferenceInvimmoProcuration: `465` (required, number) - Référence interne de la Procuration (Integer 10).
+- NomMandataire: `Evier Inox` (required, string) - Nom du mandataire (Max 50 caractères).
+- PrenomMandataire: `Evier Inox` (required, string) - Prenom du mandataire (Max 50 caractères).
+- VilleMandataire: `MELUN` (required, string) - Ville du mandataire (Max 100 caractères).
+- CodePostalMandataire: `77000` (required, string) - Code postal du mandataire (Max 10 caractères).
+- PaysMandataire: `77000` (required, string) - Pays du mandataire (Max 50 caractères).
+- ReferenceInvimmoLocataire: `465` (required, number) - Référence interne du locataire (Integer 10).
+- ReferenceExterneLocataire: `Evier Inox` (required, string) - Référence externe du locataire si requete edl (Max 500 caractères).
+- NomLocataire: `Evier Inox` (required, string) - Nom du locataire si requete edl (Max 50 caractères).
+- PrenomLocataire: `Evier Inox` (required, string) - Prenom du locataire si requete edl (Max 50 caractères).
+- CiviliteLocataire: `Evier Inox` (required, string) - Civilité du locataire si requete edl (Max 10 caractères).
+- DateModif: `2016-01-26` (string) - Date de de modification (YYYY-MM-DD).
+- DateCreation: `2017-03-21` (string) - Date de de création (YYYY-MM-DD).
