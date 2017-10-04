@@ -670,7 +670,7 @@ Supprime une liste d'Affectation Utilisateurs dans la base de données d’Invim
 
 ## Propriétaires [/Proprietaires]
 
-Optionnel
+Table Optionnel
 
 ### Ajouter une liste de Propriétaires [POST]
 
@@ -747,7 +747,7 @@ Modifie une liste de Propriétaires dans la base de données d’Invimmo
 
 ## Compteurs [/compteurs]
 
-Optionnel
+Table Optionnel
 
 ### Ajouter une liste de compteurs [POST]
 
@@ -861,7 +861,7 @@ Supprime une liste de compteurs dans la base de données d’Invimmo
 
 ## Index [/Index]
 
-Optionnel
+Table Optionnel
 
 ### Ajouter une liste d'Index [POST]
 
@@ -975,7 +975,7 @@ Supprime une liste d'Index dans la base de données d’Invimmo
 
 ## Barèmes [/Baremes]
 
-Optionnel
+Table Optionnel
 
 ### Ajouter une liste de Barèmes [POST]
 
@@ -1087,9 +1087,12 @@ Désactive une liste de barèmes dans la base de données d’Invimmo
     + Body
 
 
-## Ligne de Barèmes [/LigneBaremes/{baremeRefClient}]
+## Ligne de Barèmes [/baremes/{baremeRefClient}/LigneBaremes]
 
-Optionnel
+Table Optionnel
+
++ Parameters
+    + baremeRefClient: `PLOMB1` (required, string) - Passage en paramètre du code barème.
 
 ### Ajouter une liste de ligne de Barèmes [POST]
 
