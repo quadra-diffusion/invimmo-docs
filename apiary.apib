@@ -1683,7 +1683,13 @@ Récupération de l’intégralité d’un état des lieux avec son contenu.
 
 
 ## edls GET (object)
-
+- Include Equipements GET
+- Include Dégradations GET
+- Include Procurations GET
+- Include Assurances GET
+- Include Pieces GET
+- Include Index GET
+- Include FuturesAdresse GET
 
 ## Equipements GET (object)
 
@@ -1708,15 +1714,58 @@ Récupération de l’intégralité d’un état des lieux avec son contenu.
 ## Procurations GET (object)
 
 - ReferenceInvimmoProcuration: `465` (required, number) - Référence interne de la Procuration (Integer 10).
-- NomMandataire: `Evier Inox` (required, string) - Nom du mandataire (Max 50 caractères).
-- PrenomMandataire: `Evier Inox` (required, string) - Prenom du mandataire (Max 50 caractères).
+- NomMandataire: `DURAND` (required, string) - Nom du mandataire (Max 50 caractères).
+- PrenomMandataire: `Emile` (required, string) - Prenom du mandataire (Max 50 caractères).
 - VilleMandataire: `MELUN` (required, string) - Ville du mandataire (Max 100 caractères).
 - CodePostalMandataire: `77000` (required, string) - Code postal du mandataire (Max 10 caractères).
-- PaysMandataire: `77000` (required, string) - Pays du mandataire (Max 50 caractères).
+- PaysMandataire: `FRANCE` (required, string) - Pays du mandataire (Max 50 caractères).
 - ReferenceInvimmoLocataire: `465` (required, number) - Référence interne du locataire (Integer 10).
-- ReferenceExterneLocataire: `Evier Inox` (required, string) - Référence externe du locataire si requete edl (Max 500 caractères).
-- NomLocataire: `Evier Inox` (required, string) - Nom du locataire si requete edl (Max 50 caractères).
-- PrenomLocataire: `Evier Inox` (required, string) - Prenom du locataire si requete edl (Max 50 caractères).
-- CiviliteLocataire: `Evier Inox` (required, string) - Civilité du locataire si requete edl (Max 10 caractères).
+- ReferenceExterneLocataire: `RDUPOND` (required, string) - Référence externe du locataire si requete edl (Max 500 caractères).
+- NomLocataire: `DUPOND` (required, string) - Nom du locataire si requete edl (Max 50 caractères).
+- PrenomLocataire: `Robert` (required, string) - Prenom du locataire si requete edl (Max 50 caractères).
+- CiviliteLocataire: `M` (required, string) - Civilité du locataire si requete edl (Max 10 caractères).
+- DateModif: `2016-01-26` (string) - Date de de modification (YYYY-MM-DD).
+- DateCreation: `2017-03-21` (string) - Date de de création (YYYY-MM-DD).
+
+## Assurances GET (object)
+
+- ReferenceInvimmoAssurance: `465` (required, number) - Référence interne de l'assurance (Integer 10).
+- DateDebut: `2016-01-31` (string) - Date de début (YYYY-MM-DD).
+- DateFin: `2017-01-31` (string) - Date de fin (YYYY-MM-DD).
+- NomCompagnie: `AXA` (required, string) - Nom de la compagnie d'assurance (Max 50 caractères).
+- CodeContrat: `ZS45EMI4442` (required, string) - Code contrat d'assurance (Max 50 caractères).
+- NumAssure: `Robert DUPOND` (required, string) - Nom du locataire si requete edl (Max 50 caractères).
+- ReferenceInvimmoBail: `4589` (number) - ID de l'équipement (Integer 10).
+- ReferenceExterneBail: `80125` (required, string) - Référence externe du bail si requête locataire (Max 500 caractères).
+- DateModif: `2016-01-26` (string) - Date de de modification (YYYY-MM-DD).
+- DateCreation: `2017-03-21` (string) - Date de de création (YYYY-MM-DD).
+
+## Pieces GET (object)
+
+- ReferenceInvimmoPiece: `465` (required, number) - Référence interne de la Pièce (Integer 10).
+- LibellePiece: `SALON` (required, string) - Libellé de la pièce (Max 200 caractères).
+- DateModif: `2016-01-26` (string) - Date de de modification (YYYY-MM-DD).
+- DateCreation: `2017-03-21` (string) - Date de de création (YYYY-MM-DD).
+
+## Index GET (object)
+
+- ReferenceInvimmoIndex: `465` (required, number) - Référence interne de l'index (Integer 10).
+- DateReleve: `2017-02-14` (string) - Date de relevé de l'index (YYYY-MM-DD).
+- Incident: `true` (boolean) - Relevé suite à incident (changement de compteur / fuite / etc.) true/false.
+- NatureReleve: `0` (number) - Nature du relevé (Integer 1).
+- ReferenceInvimmoCompteur: `44589` (number) - ID du compteur si requête edl (Integer 10).
+- DateModif: `2016-01-26` (string) - Date de de modification (YYYY-MM-DD).
+- DateCreation: `2017-03-21` (string) - Date de de création (YYYY-MM-DD).
+
+## FuturesAdresse GET (object)
+
+- ReferenceInvimmoFutureAdr: `465` (required, number) - Référence interne de la Procuration (Integer 10).
+- VilleFutureAdr: `MELUN` (required, string) - Ville de la future adresse (Max 100 caractères).
+- CodePostalFutureAdr: `77000` (required, string) - Code postal de la future adresse (Max 10 caractères).
+- PaysFutureAdr: `77000` (required, string) - Pays de la future adresse (Max 50 caractères).
+- ReferenceInvimmoLocataire: `465` (required, number) - Référence interne du locataire si requête edl ou bail (Integer 10).
+- ReferenceExterneLocataire: `Evier Inox` (required, string) - Référence externe du locataire si requête edl ou bail(Max 500 caractères).
+- NomLocataire: `Evier Inox` (required, string) - Nom du locataire si requete edl si requête edl ou bail (Max 50 caractères).
+- PrenomLocataire: `Evier Inox` (required, string) - Prenom du locataire si requete edl si requête edl ou bail (Max 50 caractères).
 - DateModif: `2016-01-26` (string) - Date de de modification (YYYY-MM-DD).
 - DateCreation: `2017-03-21` (string) - Date de de création (YYYY-MM-DD).
