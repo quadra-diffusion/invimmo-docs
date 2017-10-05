@@ -1693,24 +1693,24 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 - Include Procurations GET
 - Include FuturesAdresse GET
 
-- ReferenceInvimmo": 5,
-- DateEdl": "03/10/2016 14:44:36",
-- DateEntrant": null,
-- Dommentaire": "Logement très propre",
-- DommentaireMotifDeDepart": null,
-- DeferenceInvimmoLogement": 86,
-- DeferenceExterneLogement": "86",
-- referenceInvimmoBail": 9,
-- referenceExterneBail": "42",
-- referenceInvimmoProprietaire": 23,
-- referenceExterneProprietaire": "23",
-- typeLogement": "T2",
-- typeEdl": "Etat des lieux entrant",
-- etat": null,
-- motifDepart": null,
-- destinationClient": null,
-- lienEditionEdl": "http://localhost:8180/Attachements/Invimmo/TREO/EditionEDL/5/11_edl__EditionEDL.pdf",
-- lienEditionDegradation": "http://localhost:8180/Attachements/Invimmo/TREO/EditionReparation/5/11_edl__EditionEDL.pdf"
+- ReferenceInvimmo: `149` (required, number) - Référence unique Invimmo.
+- DateEdl: `2016-10-03 14:44:36` (required, string) - Date de l'état des lieux (YYYY-MM-DD HH:MM:SS).
+- DateEntrant: `2016-10-03` (required, string) - Date d'entré du locataire (YYYY-MM-DD).
+- Commentaire: `Logement très propre` (required, string) - Commentaire de l'état des lieux.
+- CommentaireMotifDeDepart: `Cherche un logement centre ville`  (required, string) - Commentaire du motif de départ.
+- ReferenceInvimmoLogement: `16548` (required, number) - Référence unique Invimmo.
+- ReferenceExterneLogement: `001.001.001A` (required, string) - Référence externe du patrimoine (Max 500 caractères).
+- referenceExterneBail: `80125` (required, string) - Référence externe du bail (Max 500 caractères).
+- referenceInvimmoBail: `16548` (required, number) - Référence unique Invimmo.
+- ReferenceInvimmoProprietaire: `16548` (required, number) - Référence unique Invimmo.
+- ReferenceExterneProprietaire: `RDurand` (required, string) - Référence externe du Propriétaire (Max 500 caractères).
+- TypeLogement: `T2` (required, string) - Type du logement.
+- TypeEdl: `Etat des lieux entrant` (required, string) - Type de l'état des lieux.
+- Etat: `Clos` (required, string) - Etat de l'état des lieux.
+- MotifDepart: `Logement centre ville` (required, string) - Motif de départ du locataire.
+- DestinationClient: `Centre ville de MELIN` (required, string) - Destination du locataire partant.
+- LienEditionEdl: `http://localhost:8180/Attachements/Invimmo/TREO/EditionEDL/5/11_edl__EditionEDL.pdf`
+- LienEditionDegradation: `http://localhost:8180/Attachements/Invimmo/TREO/EditionReparation/5/11_edl__EditionEDL.pdf`
 
 ## Edls Invimmo GET (object)
 
