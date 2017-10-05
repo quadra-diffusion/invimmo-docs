@@ -229,9 +229,12 @@ Met à jour une liste d’authentifications
     + Body
 
 
-## Barèmes [/Baremes]
+## Barèmes [/client/{groupeugRefClient}/baremes]
 
 Table Optionnel
+
++ Parameters
+    + groupeugRefClient: `?` (string) - Référence groupe client.
 
 ### Ajouter une liste de Barèmes [POST]
 
@@ -456,9 +459,12 @@ Désactive une liste de baux dans la base de données d’Invimmo
     + Body
 
 
-## Compteurs [/compteurs]
+## Compteurs [/patrimoines/{RefExternePatrimoine}/compteurs]
 
 Table Optionnel
+
++ Parameters
+    + RefExternePatrimoine: `001.001.001A` (string) - Référence externe du patrimoine.
 
 ### Ajouter une liste de compteurs [POST]
 
@@ -611,9 +617,12 @@ Récupération de l’intégralité d’un état des lieux avec son contenu.
     + Body
 
 
-## Index [/Index]
+## Index [/client baux/{RefExterneBail}/index]
 
 Table Optionnel
+
++ Parameters
+    + RefExterneBail: `80125` (required, string) - Référence externe du bail.
 
 ### Ajouter une liste d Index [POST]
 
