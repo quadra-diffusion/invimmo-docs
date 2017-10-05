@@ -6,7 +6,7 @@ HOST: http://localhost:8888/api/v1
 A remplir
 
 
-## Affectation Locataires [/locataire/{ref_locataire}/affectationlocataires]
+## Affectation Locataires [/locataires/{ref_locataire}/affectationlocataires]
 
 + Parameters
     + ref_locataire: `15689` (required, string) - Référence externe du locataire.
@@ -120,7 +120,7 @@ Désactive une liste d'affectation locataire dans la base de données d’Invimm
     + Body
 
 
-## Affectation Utilisateurs [/invimmo/{utilisateur}/affectationutilisateurs]
+## Affectation Utilisateurs [/utilisateurs/{utilisateur}/affectationutilisateurs]
 
 + Parameters
     + utilisateur: `16548` (required, number) - Référence unique Invimmo utilisateur.
@@ -229,7 +229,7 @@ Met à jour une liste d’authentifications
     + Body
 
 
-## Barèmes [/client/{groupeugRefClient}/baremes]
+## Barèmes [/groupeug/{groupeugRefClient}/baremes]
 
 Table Optionnel
 
@@ -617,7 +617,7 @@ Récupération de l’intégralité d’un état des lieux avec son contenu.
     + Body
 
 
-## Index [/client baux/{RefExterneBail}/index]
+## Index [/baux/{RefExterneBail}/index]
 
 Table Optionnel
 
@@ -962,7 +962,7 @@ Désactive une liste de locataire dans la base de données d’Invimmo
     + Body
 
 
-## Patrimoine [/patrimoine]
+## Patrimoine [/patrimoines]
 
 ### Ajouter une liste de patrimoine [POST]
 
@@ -1074,7 +1074,7 @@ Désactive une liste de patrimoines dans la base de données d’Invimmo
     + Body
 
 
-## Propriétaires [/Proprietaires]
+## Propriétaires [/proprietaires]
 
 Table Optionnel
 
