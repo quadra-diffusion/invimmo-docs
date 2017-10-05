@@ -6,7 +6,10 @@ HOST: http://localhost:8888/api/v1
 A remplir
 
 
-## Affectation Locataires [/affectationlocataires]
+## Affectation Locataires [/locataire/{ref_locataire}/affectationlocataires]
+
++ Parameters
+    + ref_locataire: `15689` (required, string) - Référence externe du locataire.
 
 ### Ajouter une liste d affectation Locataires [POST]
 
@@ -117,8 +120,11 @@ Désactive une liste d'affectation locataire dans la base de données d’Invimm
     + Body
 
 
-## Affectation Utilisateurs [/affectationutilisateurs]
+## Affectation Utilisateurs [/invimmo/{utilisateur}/affectationutilisateurs]
 
++ Parameters
+    + utilisateur: `16548` (required, number) - Référence unique Invimmo utilisateur.
+    
 ### Ajouter une liste d Affectation utilisateurs [POST]
 
 Insère une liste d’Affectation utilisateurs dans la base de données d’Invimmo.
@@ -1685,13 +1691,13 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 
 ## Edls GET (object)
 
-- Include Assurances GET
-- Include Pieces GET
-- Include Locataires GET
-- Include Compteurs GET
-- Include Travaux GET
-- Include Procurations GET
-- Include FuturesAdresse GET
+- assurance (Assurances GET)
+- pieces (array[Pieces GET])
+- locataire (array[Locataires GET])
+- compteur (array[Compteurs GET])
+- travaux (Travaux GET)
+- procuration (Procurations GET)
+- futuresadresse (FuturesAdresse GET)
 
 - ReferenceInvimmo: `149` (required, number) - Référence unique Invimmo.
 - DateEdl: `2016-10-03 14:44:36` (required, string) - Date de l'état des lieux (YYYY-MM-DD HH:MM:SS).
@@ -1730,7 +1736,8 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 
 ## Pieces GET (object)
 
-- Include Equipements GET
+- equipements (array[Equipements GET])
+
 - ReferenceInvimmoPiece: `465` (required, number) - Référence interne de la Pièce (Integer 10).
 - LibellePiece: `SALON` (required, string) - Libellé de la pièce (Max 200 caractères).
 - DateModif: `2016-01-26` (string) - Date de de modification (YYYY-MM-DD).
@@ -1771,7 +1778,7 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 - InformationComplementaire: `Compteur jour/nuit` (string) - Code Postal (Max 200 caractères).
 - Tarif: `0.52` (number) - Tarif Compteur (e.g. prix kw/h) (Double 10.2).
 
-- Include Index GET
+- index (array[Index GET])
 
 ## Index GET (object)
 
@@ -1791,9 +1798,9 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 - MontantRameneA: `500.45` (number) - Cout total des dégradations ramené au montant de... (double, 12.2).
 - ConstatHuissier: `O` (string) - Y-a-t-il un constat d'huissier? O/N.
 
-- Include Dégradations GET
+- degradations (array[Degradations GET])
 
-## Dégradations GET (object)
+## Degradations GET (object)
 
 - ReferenceInvimmoDegradation: `45` (required, number) - Référence interne de la dégradation (Integer 10).
 - Designation: `Evier Inox` (required, string) - Désignation de la dégradation (Max 255 caractères).
