@@ -1,0 +1,30 @@
+{
+	"ReferenceExterne" : "ReferenceExternePatrimoine",
+	"CodePatrimoine": "1.002.001.331",
+	"LibelleAdresse": "rue du General",
+	"Ville": "Lille",
+	"CodePostal" : "59000",
+	"Baux" : [
+		{
+			"ReferenceExterne" : "ReferenceExterneBail",
+			"LibelleAdresse" : "rue Abelard",
+			"Ville" : "Paris",
+			"DateDebutBail" : "2010-01-02",
+			"DateFinBail": "2016-12-20",
+			"CodePostal" : "75000",
+			"Locataires" : [
+				{
+					"ReferenceExterne" : "ReferenceExterneLocataire",
+					"Nom" : "Dupont"
+				}
+			],
+			"Compteurs" : [
+				{
+					"ReferenceExterne" : "ReferenceExterneCompteur",
+					"IndexDebut" : 1000,
+					"TypeCompteur": "EC"	
+				}
+			]
+		}
+	] 
+}
