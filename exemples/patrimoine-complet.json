@@ -33,10 +33,8 @@
 			"DateDepotPreavis" : "2016-10-20",
 			"DepotGarantie" : 200.5,
 			"SoldeBail" : 0,
-			"EstBailPrincipal" : true,
 			"DateRetourLD" : "2016-11-20",
 			"EtatBail" : "Clos",
-			"BailAssocie" : 12,
 			"Locataires" : [
 				{
 					"ReferenceExterne" : "ReferenceExterneLocataire",
