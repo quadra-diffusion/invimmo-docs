@@ -1,4 +1,4 @@
 language: node_js
 
 script:
-  - find exemples/ -type f -maxdepth 1 -exec ajv test -s patrimoine.schema.json -d {} --valid \;
+  - find exemples/ -type f -maxdepth 1 -print0 | xargs -0 -I {} ajv test -s patrimoine.schema.json -d {} --valid
