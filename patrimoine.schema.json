@@ -110,18 +110,20 @@
                   "description": "An explanation about the purpose of this instance.", 
                   "id": "/properties/Baux/items/properties/Compteurs/items/properties/CodeConstructeur", 
                   "title": "The codeconstructeur schema", 
-                  "type": "string"
+                  "type": "string",
+                  "maxLength": 200
                 }, 
                 "EmplacementCompteur": {
-                  "default": "Entr\u00e9e", 
-                  "description": "An explanation about the purpose of this instance.", 
+                  "default": "Sous evier", 
+                  "description": "Emplacement physique du compteur.", 
                   "id": "/properties/Baux/items/properties/Compteurs/items/properties/EmplacementCompteur", 
                   "title": "The emplacementcompteur schema", 
-                  "type": "string"
+                  "type": "string",
+                  "maxLength": 100
                 }, 
                 "IndexDebut": {
                   "default": 1000, 
-                  "description": "An explanation about the purpose of this instance.", 
+                  "description": "Index du compteur.", 
                   "id": "/properties/Baux/items/properties/Compteurs/items/properties/IndexDebut", 
                   "title": "The indexdebut schema", 
                   "type": "integer"
@@ -135,31 +137,35 @@
                 }, 
                 "ReferenceExterne": {
                   "default": "ReferenceExterneCompteur", 
-                  "description": "An explanation about the purpose of this instance.", 
+                  "description": "Référence externe du Compteur.", 
                   "id": "/properties/Baux/items/properties/Compteurs/items/properties/ReferenceExterne", 
                   "title": "The referenceexterne schema", 
-                  "type": "string"
+                  "type": "string",
+                  "maxLength": 500
                 }, 
                 "Tarif": {
-                  "default": 10.199999999999999, 
-                  "description": "An explanation about the purpose of this instance.", 
+                  "default": 10.2, 
+                  "description": "Tarif Compteur (e.g. prix kw/h, prix m3).", 
                   "id": "/properties/Baux/items/properties/Compteurs/items/properties/Tarif", 
                   "title": "The tarif schema", 
                   "type": "number"
                 }, 
                 "TypeCompteur": {
                   "default": "EC", 
-                  "description": "An explanation about the purpose of this instance.", 
+                  "description": "Type de compteur (Eau, eletricité, etc...).", 
                   "id": "/properties/Baux/items/properties/Compteurs/items/properties/TypeCompteur", 
                   "title": "The typecompteur schema", 
-                  "type": "string"
+                  "type": "string",
+                  "maxLength": 500
                 }
               }, 
-              "type": "object"
+              "type": "object",
+              "required": ["TypeCompteur", "IndexDebut", "ReferenceExterne"],
+              "additionalProperties": false
             }, 
             "type": "array"
           },
-		  "Locataires": {
+          "Locataires": {
             "id": "/properties/Baux/items/properties/Locataires", 
             "items": {
               "id": "/properties/Baux/items/properties/Locataires/items", 
@@ -215,7 +221,7 @@
                 }
               }, 
               "type": "object",
-			  "required": ["Nom", "ReferenceExterne"],
+              "required": ["Nom", "ReferenceExterne"],
               "additionalProperties": false
             }, 
             "type": "array",
