@@ -1,0 +1,28 @@
+{
+  "name": "invimmo-docs",
+  "version": "1.0.0",
+  "description": "Documentation des interfaces du produit Invimmo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quadra-diffusion/invimmo-docs.git"
+  },
+  "keywords": [
+    "invimmo",
+    "api",
+    "json",
+    "schema"
+  ],
+  "author": "Quadra-Diffusion",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/quadra-diffusion/invimmo-docs/issues"
+  },
+  "homepage": "https://github.com/quadra-diffusion/invimmo-docs#readme",
+  "devDependencies": {
+    "ajv-cli": "^2.1.0"
+  }
+}
