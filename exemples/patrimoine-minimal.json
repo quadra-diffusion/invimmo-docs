@@ -6,7 +6,7 @@
 	"CodePostal" : "59000",
 	"Baux" : [
 		{
-			
+			"ReferenceExterne" : "ReferenceExterneBail",
 			"LibelleAdresse" : "rue Abelard",
 			"Ville" : "Paris",
 			"DateDebutBail" : "2010-01-02",
