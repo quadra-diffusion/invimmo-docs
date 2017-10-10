@@ -1,0 +1,4 @@
+language: node_js
+
+script:
+  - ajv validate -s patrimoine.schema.json -d exemples/patrimoine.json --errors=json --verbose
