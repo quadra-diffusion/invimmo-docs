@@ -225,13 +225,6 @@
             "type": "array",
             "minItems": 1
           },
-          "BailAssocie": {
-            "default": 12, 
-            "description": "An explanation about the purpose of this instance.", 
-            "id": "/properties/Baux/items/properties/BailAssocie", 
-            "title": "The bailassocie schema", 
-            "type": "integer"
-          }, 
           "CodePostal": {
             "default": "75000", 
             "description": "An explanation about the purpose of this instance.", 
@@ -282,13 +275,6 @@
             "id": "/properties/Baux/items/properties/DepotGarantie", 
             "title": "The depotgarantie schema", 
             "type": "number"
-          }, 
-          "EstBailPrincipal": {
-            "default": true, 
-            "description": "An explanation about the purpose of this instance.", 
-            "id": "/properties/Baux/items/properties/EstBailPrincipal", 
-            "title": "The estbailprincipal schema", 
-            "type": "boolean"
           }, 
           "EtatBail": {
             "default": "Clos", 
