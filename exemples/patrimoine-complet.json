@@ -1,0 +1,83 @@
+{
+	"ReferenceExterne" : "ReferenceExternePatrimoine",
+	"CodePatrimoine": "1.002.001.331",
+	"LibelleAdresse": "rue du General",
+	"Ville": "Lille",
+	"CodePostal" : "59000",
+	"DateMiseEnService" : "1999-01-29" ,
+	"DateLocation" : "2010-12-01",
+	"NumEtage": "2",
+	"NumImmeuble": "11",
+	"NomResidence": "Flandres",
+	"Agence": "Tulipes",
+	"Proprietaire": {
+		"ReferenceExterne" : "ReferenceExternePropritaire",
+		"Nom" : "dupond",
+		"Prenom" : "duront",
+		"Adresse" : "rue des tulipes",
+		"Civilite" : "M",
+		"CodePostal" : "59000",
+		"Ville": "Lille",
+		"Email" : "dupond.duront@gmail.com",
+		"Telephone" : "0645127896",
+		"Pays" : "France"   
+	},
+	"Baux" : [
+		{
+			"ReferenceExterne" : "ReferenceExterneBail",
+			"LibelleAdresse" : "rue Abelard",
+			"Ville" : "Paris",
+			"DateDebutBail" : "2010-01-02",
+			"DateFinBail": "2016-12-20",
+			"CodePostal" : "75000",
+			"DateDepotPreavis" : "2016-10-20",
+			"DepotGarantie" : 200.5,
+			"SoldeBail" : 0,
+			"EstBailPrincipal" : true,
+			"DateRetourLD" : "2016-11-20",
+			"EtatBail" : "Clos",
+			"BailAssocie" : 12,
+			"Locataires" : [
+				{
+					"ReferenceExterne" : "ReferenceExterneLocataire",
+					"Nom" : "Nom",
+					"Prenom" : "Prenom",
+					"Civilite" : "M",
+					"Telephone" : "0645789612",
+					"Email": "nom.Prenom@gmail.com",
+					"EstLocatairePrincipal" : true
+				},
+				{
+					"ReferenceExterne" : "ReferenceExterneLocataire",
+					"Nom" : "Nom",
+					"Prenom" : "Prenom",
+					"Civilite" : "MMe",
+					"Telephone" : "0345789612",
+					"Email": "test@gmail.com",
+					"EstLocatairePrincipal" : false
+				}
+			],
+			"Compteurs" : [
+				{
+					"ReferenceExterne" : "ReferenceExterneCompteur",
+					"CodeConstructeur" : "AB24886",
+					"EmplacementCompteur" : "Entrée",
+					"IndexDebut" : 1000,
+					"Tarif": 10.2,
+					"LibelleInfo" : "1",
+					"TypeCompteur": "EC"	
+				}, 
+				{
+					"ReferenceExterne" : "ReferenceExterneCompteur",
+					"CodeConstructeur" : "AB24887",
+					"EmplacementCompteur" : "Entrée",
+					"IndexDebut" : 1500,
+					"Tarif": 10.2,
+					"LibelleInfo" : "2",
+					"TypeCompteur": "EC"	
+				}
+			]
+		}
+	] 
+
+}
