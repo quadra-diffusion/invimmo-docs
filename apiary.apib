@@ -1,15 +1,16 @@
 FORMAT: 1A
-HOST: http://localhost:8888/api/v1
+HOST: http://localhost:8888/api/v1/[ReferenceClient]
 
 # API Invimmo
 
 A remplir
 
 
-## Affectation Locataires [/locataires/{ref_locataire}/affectationlocataires]
+## Affectation Locataires [/locataires/{ref_locataire}/affectationlocataires{?type_reference}]
 
 + Parameters
     + ref_locataire: `15689` (required, string) - Référence externe du locataire.
+    + type_reference: `interne` (string) - Type de référence (externe ou interne). Par default externe.
 
 ### Ajouter une liste d affectation Locataires [POST]
 
