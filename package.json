@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/quadra-diffusion/invimmo-docs#readme",
   "dependencies": {
-    "ajv-cli": "^2.1.0"
+    "ajv-cli": "^2.1.0",
+    "jsonschema-markdown": "git+https://github.com/quadra-diffusion/jsonschema-markdown.git"
   }
 }
