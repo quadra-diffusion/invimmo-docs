@@ -9,6 +9,7 @@ addons:
       - texlive-xetex
       - texlive-fonts-recommended
       - pandoc
+      - lmodern
 
 before_deploy:
   - node scripts/generateMd.js
