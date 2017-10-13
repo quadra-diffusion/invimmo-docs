@@ -10,6 +10,7 @@ addons:
       - texlive-fonts-recommended
       - pandoc
       - lmodern
+      - etoolbox
 
 before_deploy:
   - node scripts/generateMd.js
