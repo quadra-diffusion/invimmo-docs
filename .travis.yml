@@ -1,9 +1,11 @@
 language: node_js
 script:
-- find exemples/ -type f -maxdepth 1 -print0 | xargs -0 -I {} ajv test -s patrimoine.schema.json
-  -d {} --valid
-- "./createBadExamples.sh"
-- node scripts/generateMd.js
+  - find exemples/ -type f -maxdepth 1 -print0 | xargs -0 -I {} ajv test -s patrimoine.schema.json -d {} --valid
+  - ./createBadExamples.sh
+
+before_deploy:
+  - node scripts/generateMd.js
+
 deploy:
   provider: releases
   api_key:
@@ -11,3 +13,4 @@ deploy:
   file: connecteur_patrimoine.md
   on:
     repo: quadra-diffusion/invimmo-docs
+    tags: true
