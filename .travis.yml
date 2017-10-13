@@ -1,6 +1,13 @@
 language: node_js
-
 script:
-  - find exemples/ -type f -maxdepth 1 -print0 | xargs -0 -I {} ajv test -s patrimoine.schema.json -d {} --valid
-  - ./createBadExamples.sh
-  - node scripts/generateMd.js
+- find exemples/ -type f -maxdepth 1 -print0 | xargs -0 -I {} ajv test -s patrimoine.schema.json
+  -d {} --valid
+- "./createBadExamples.sh"
+- node scripts/generateMd.js
+deploy:
+  provider: releases
+  api_key:
+    secure: LhGs1pvIrEzH4nBlOvOwlvOMJ51UTOmZcB/VZBZfIUmE1iePafq/JxbooBs0S1+bsP8r+0jabIpliNG7R7f1VbcKQQnen01v4ptnud9Hv40SV0jbE8b9l37by37kHgkf6xej58HCQ/VA15t2Vu+ztpGYhsY49CyEXgMSyuSWHtNBUDhhvT1fE4XV6y0ifc28s8kbkMei8TIJ8ZwOgV+yFL3Ocl19P2h80rVN40f46cqDLRPqPd8yXyJ50y+t+GfOtPeOHcPq11lpgdehke4zGA/lzUeZ3P/8w3pocweW43CCCWxISVmTkNZAT82ZkV9CMjtLiQKT0DutEJVv7v9jdm5jK7D4QabgL5KWApZNNXTcor+2vq+XoZD7vt4uAIoZ9R/IVib0gu9U1PS6H6C8Fj2bUEBNT95xC07ABvBIN/+gxBvKOjp7VOM8rAUXavFkLGvgoVvhBxvAcWUtZNeQ2vwFxg+WCzJxYGn759fs6gsnJHSgKMBe+u2RvL15rR8flp9Xnp9UpIRH9d+D7muItjohPThXCuYCJ6kl9MZTuDny3QzSzbLBu+badABqr6iOyFuMcxhXyaWukMA1hEsp76uFCmHJ4ZH//rg7qASG/jWX83xEQviyu5fjL+qswlovsA3L0X243Sf7hqUKrx+TeU43YYjQF4q6Uiy14Tm25nI=
+  file: connecteur_patrimoine.md
+  on:
+    repo: quadra-diffusion/invimmo-docs
