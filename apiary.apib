@@ -230,12 +230,9 @@ Met à jour une liste d’authentifications
     + Body
 
 
-## Barèmes [/groupeug/{groupeugRefClient}/baremes]
+## Barèmes [/baremes]
 
 Table Optionnel
-
-+ Parameters
-    + groupeugRefClient: `?` (string) - Référence groupe client.
 
 ### Ajouter une liste de Barèmes [POST]
 
@@ -460,12 +457,13 @@ Désactive une liste de baux dans la base de données d’Invimmo
     + Body
 
 
-## Compteurs [/patrimoines/{RefExternePatrimoine}/compteurs]
+## Compteurs [/patrimoines/{RefPatrimoineInterneOuExterne}/compteurs]
 
 Table Optionnel
 
 + Parameters
-    + RefExternePatrimoine: `001.001.001A` (string) - Référence externe du patrimoine.
+    + RefPatrimoineInterneOuExterne: `001.001.001A` (string) - Référence interne ou externe du patrimoine. 
+    
 
 ### Ajouter une liste de compteurs [POST]
 
@@ -477,12 +475,12 @@ Insère une liste de compteurs dans la base de données d’Invimmo
 
             Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
 
-    + Attributes (array[compteurs POST])
+    + Attributes (array[Compteurs POST])
 
 
 + Response 201 (application/json)
     Dans le cas ou les insertions de compteurs se passent bien.
-    + Attributes (array[compteurs Invimmo POST])
+    + Attributes (array[Compteurs Invimmo POST])
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -618,12 +616,12 @@ Récupération de l’intégralité d’un état des lieux avec son contenu.
     + Body
 
 
-## Index [/baux/{RefExterneBail}/index]
+## Index [/baux/{RefBailInterneOuExterne}/index]
 
 Table Optionnel
 
 + Parameters
-    + RefExterneBail: `80125` (required, string) - Référence externe du bail.
+    + RefBailInterneOuExterne: `80125` (required, string) - Référence interne ou externe du bail.
 
 ### Ajouter une liste d Index [POST]
 
@@ -735,12 +733,12 @@ Supprime une liste d'Index dans la base de données d’Invimmo
     + Body
 
 
-## Ligne de Barèmes [/baremes/{baremeRefClient}/LigneBaremes]
+## Ligne de Barèmes [/baremes/{RefBaremeInterneOuExterne}/LigneBaremes]
 
 Table Optionnel
 
 + Parameters
-    + baremeRefClient: `PLOMB1` (required, string) - Passage en paramètre du code barème.
+    + RefBaremeInterneOuExterne: `PLOMB1` (required, string) - Référence interne ou externe du barème.
 
 ### Ajouter une liste de ligne de Barèmes [POST]
 
@@ -1696,7 +1694,7 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 - CodePostal: `77000` (string) - Code Postal (Max 10 caractères).
 - Ville: `MELUN` (string) - Ville (Max 100 caractères).
 - Email: `351557010202731` (string) - Email (Max 255 caractères).
-- Telephone: `351557010202731` (string) - Numéro de téléphone (Max 17 caractères).
+- Telephone: `351557010202731` (string) - Numéro de téléphone (Max 20 caractères).
 - Pays: `FRANCE` (string) - Pays (Max 50 caractères).
 
 ## Proprietaires Invimmo POST (object)
@@ -1714,7 +1712,7 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 - CodePostal: `77000` (string) - Code Postal (Max 10 caractères).
 - Ville: `MELUN` (string) - Ville (Max 100 caractères).
 - Email: `351557010202731` (string) - Email (Max 255 caractères).
-- Telephone: `351557010202731` (string) - Numéro de téléphone (Max 17 caractères).
+- Telephone: `351557010202731` (string) - Numéro de téléphone (Max 20 caractères).
 - Pays: `FRANCE` (string) - Pays (Max 50 caractères).
 
 ## Proprietaires Invimmo PUT (object)
