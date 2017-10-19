@@ -6,15 +6,15 @@ HOST: http://localhost:8888/api/v1/[ReferenceClient]
 A remplir
 
 
-## Affectation Locataires [/locataires/{ref_locataire}/affectationlocataires{?type_reference}]
+## Affectation Locataires au bail [/bail/{refBailInterneOuExterne}/locataires{?type_reference}]
 
 + Parameters
-    + ref_locataire: `15689` (required, string) - Référence externe du locataire.
-    + type_reference: `interne` (string) - Type de référence (externe ou interne). Par default externe.
+    + refBailInterneOuExterne: `15689` (required, string) - Référence bail interne ou externe du locataire.
+    + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
 
-### Ajouter une liste d affectation Locataires [POST]
+### Ajouter une liste d affectation Locataires au bail [POST]
 
-Insère une liste d'affectation locataires dans la base de données d’Invimmo.
+Insère une liste d'affectation locataires au bail dans la base de données d’Invimmo.
 
 + Request (application/json)
 
@@ -48,9 +48,9 @@ Insère une liste d'affectation locataires dans la base de données d’Invimmo.
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-### Modifier une liste d affectation Locataires [PUT]
+### Modifier une liste d affectation Locataires au bail [PUT]
 
-Modifie une liste d'affectation locataires dans la base de données d’Invimmo
+Modifie une liste d'affectation locataires au bail dans la base de données d’Invimmo
 
 + Request (application/json)
 
@@ -84,9 +84,9 @@ Modifie une liste d'affectation locataires dans la base de données d’Invimmo
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-### Désactiver une liste d affectation Locataires [DELETE]
+### Désactiver une liste d affectation Locataires au bail [DELETE]
 
-Désactive une liste d'affectation locataire dans la base de données d’Invimmo
+Désactive une liste d'affectation locataire au bail dans la base de données d’Invimmo
 
 + Request (application/json)
 
@@ -121,12 +121,12 @@ Désactive une liste d'affectation locataire dans la base de données d’Invimm
     + Body
 
 
-## Affectation Utilisateurs [/utilisateurs/{utilisateur}/affectationutilisateurs]
+## Affectation Utilisateurs au patrimoine [/utilisateurs/{refUtilisateurInterneOuExterne}/patrimoines]
 
 + Parameters
-    + utilisateur: `16548` (required, number) - Référence unique Invimmo utilisateur.
+    + refUtilisateurInterneOuExterne: `16548` (required, number) - Référence interne ou externe utilisateur.
     
-### Ajouter une liste d Affectation utilisateurs [POST]
+### Ajouter une liste d Affectation utilisateurs au patrimoine [POST]
 
 Insère une liste d’Affectation utilisateurs dans la base de données d’Invimmo.
 
@@ -162,7 +162,7 @@ Insère une liste d’Affectation utilisateurs dans la base de données d’Invi
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-### Supprimer une liste d Affectation Utilisateurs [DELETE]
+### Supprimer une liste d Affectation Utilisateurs au patrimoine [DELETE]
 
 Supprime une liste d'Affectation Utilisateurs dans la base de données d’Invimmo
 
@@ -199,7 +199,7 @@ Supprime une liste d'Affectation Utilisateurs dans la base de données d’Invim
     + Body
 
 
-## Authentification [/authentification]
+## Authentification [/auth]
 
 ### Ajouter une liste d authentification [POST]
 
@@ -733,7 +733,7 @@ Supprime une liste d'Index dans la base de données d’Invimmo
     + Body
 
 
-## Ligne de Barèmes [/baremes/{RefBaremeInterneOuExterne}/LigneBaremes]
+## Ligne ntrole URLde Barèmes [/baremes/{RefBaremeInterneOuExterne}/LigneBaremes]
 
 Table Optionnel
 
