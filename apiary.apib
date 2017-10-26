@@ -1600,7 +1600,7 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 ## GroupePatrimoine POST (object)
 
 - ReferenceExterne: `80125` (required, string) - Référence externe de l'affectation locataire (Max 255 caractères).
-- ReferenceExterneBareme: `80125` (required, string) - Référence externe du baréme (Max 255 caractères).
+- ReferenceExterneBareme: `grp1` (string) - Référence externe du baréme (Max 255 caractères).
 - Libelle: `groupe 1` (string) - Libelle du groupe patrimoine  (Max 200 caractères).
 
 ## GroupePatrimoine Invimmo POST (object)
@@ -1610,7 +1610,7 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 
 ## GroupePatrimoine PUT (object)
 
-- ReferenceExterne: `80125` (required, string) - Référence externe de l'affectation locataire (Max 255 caractères).
+- ReferenceExterne: `grp1` (required, string) - Référence externe de l'affectation locataire (Max 255 caractères).
 - Libelle: `groupe 1` (string) - Libelle du groupe patrimoine  (Max 200 caractères).
 
 ## GroupePatrimoine Invimmo PUT (object)
@@ -1620,7 +1620,7 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 
 ## GroupePatrimoine DELETE (object)
 
-- ReferenceExterne: `80125` (required, string) - Référence externe de l'affectation locataire (Max 255 caractères).
+- ReferenceExterne: `grp1` (required, string) - Référence externe de l'affectation locataire (Max 255 caractères).
 
 ## GroupePatrimoine Invimmo DELETE (object)
 
@@ -1843,7 +1843,7 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 ## LigneBaremes POST (object)
 
 - ReferenceExterne: `7895` (required, string) - Référence externe de la ligne de Barème (Max 255 caractères).
-- IdTypeEquipement: `45` (required, number) - ID de l'équipement (Integer 10).
+- IdTypeEquipement: `45` (required, number) - L'identifiant du type d'équipement venant du paramètrage d'invimmo (Integer 10).
 - Forfait: `450` (required, number) - Montant forfaitaire 0 = Non, 1 = Oui (Integer 1).
 - Designation: `Evier Inox` (required, string) - Désignation de la ligne de barème (Max 255 caractères).
 - CodeLigneBareme: `Evier Inox` (string) - Code de le ligne de Barème (Max 500 caractères).
@@ -1862,7 +1862,7 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 ## LigneBaremes PUT (object)
 
 - ReferenceExterne: `7895` (required, string) - Référence externe de la ligne de Barème (Max 255 caractères).
-- IdTypeEquipement: `45` (number) - ID de l'équipement (Integer 10).
+- IdTypeEquipement: `45` (number) - L'identifiant du type d'équipement venant du paramètrage d'invimmo (Integer 10).
 - Forfait: `450` (number) - Montant forfaitaire 0 = Non, 1 = Oui (Integer 1).
 - Designation: `Evier Inox` (string) - Désignation de la ligne de barème (Max 255 caractères).
 - CodeLigneBareme: `Evier Inox` (string) - Code de le ligne de Barème (Max 500 caractères).
