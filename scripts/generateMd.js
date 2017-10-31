@@ -3,10 +3,11 @@ var fs = require('fs');
 var schema = require('../patrimoine.schema.json');
 
 var generator = new Parser(schema, { });
-generator.addSchema(schema.properties.Baux.items);
-generator.addSchema(schema.properties.Baux.items.properties.Compteurs.items);
-generator.addSchema(schema.properties.Baux.items.properties.Locataires.items);
-generator.addSchema(schema.properties.Proprietaire);
+generator.addSchema(schema.items);
+generator.addSchema(schema.items.properties.Baux.items);
+generator.addSchema(schema.items.properties.Baux.items.properties.Compteurs.items);
+generator.addSchema(schema.items.properties.Baux.items.properties.Locataires.items);
+generator.addSchema(schema.items.properties.Proprietaire);
 
 var markdown = generator.generateMarkdown();
 

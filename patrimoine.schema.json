@@ -1,7 +1,11 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#", 
   "definitions": {}, 
-  "id": "http://example.com/example.json", 
+  "id": "http://example.com/example.json",
+  "type": "array",
+  "items": {
+  "id": "properties/Patrimoine/items",
+  "title": "Patrimoine",
   "properties": {
     "Agence": {
       "default": "Tulipes", 
@@ -96,12 +100,14 @@
     "Baux": {
       "id": "/properties/Baux", 
       "items": {
-        "id": "/properties/Baux/items", 
+        "id": "/properties/Baux/items",
+        "title": "Baux", 
         "properties": { 
           "Compteurs": {
             "id": "/properties/Baux/items/properties/Compteurs", 
             "items": {
               "id": "/properties/Baux/items/properties/Compteurs/items", 
+              "title": "Compteurs",
               "properties": {
                 "CodeConstructeur": {
                   "default": "AB24886", 
@@ -167,6 +173,7 @@
             "id": "/properties/Baux/items/properties/Locataires", 
             "items": {
               "id": "/properties/Baux/items/properties/Locataires/items", 
+              "title": "Locataires",
               "properties": {
                 "Civilite": {
                   "default": "M", 
@@ -324,6 +331,7 @@
     },
     "Proprietaire": {
       "id": "/properties/Proprietaire", 
+      "title": "Proprietaire",
       "properties": {
         "Adresse": {
           "default": "rue des tulipes", 
@@ -415,4 +423,5 @@
   "type": "object",
   "required": ["CodePatrimoine", "LibelleAdresse", "Ville", "CodePostal", "ReferenceExterne"],
   "additionalProperties": false
+  }
 }

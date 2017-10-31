@@ -1,4 +1,4 @@
-{
+[{
 	"ReferenceExterne" : "ReferenceExternePatrimoine",
 	"CodePatrimoine": "1.002.001.331",
 	"LibelleAdresse": "rue du General",
@@ -78,4 +78,4 @@
 		}
 	] 
 
-}
+}]
