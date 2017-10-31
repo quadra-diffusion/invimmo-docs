@@ -28,7 +28,7 @@
       "maxLength": 10
     }, 
     "DateLocation": {
-      "default": "01/12/2010", 
+      "default": "2010-12-01", 
       "description": "Première date de location.", 
       "id": "/properties/DateLocation", 
       "title": "The datelocation schema", 
@@ -37,7 +37,7 @@
       "pattern": "(^\\d{4}-\\d{2}-\\d{2}$)"
     }, 
     "DateMiseEnService": {
-      "default": "29/01/1999", 
+      "default": "1999-01-29", 
       "description": "La date de mise en service du logement.", 
       "id": "/properties/DateMiseEnService", 
       "title": "The datemiseenservice schema", 
@@ -234,7 +234,7 @@
             "maxLength": 10
           },		  
           "DateDebutBail": {
-            "default": "02/01/2010", 
+            "default": "2010-01-02", 
             "description": "An explanation about the purpose of this instance.", 
             "id": "/properties/Baux/items/properties/DateDebutBail", 
             "title": "The datedebutbail schema", 
@@ -243,31 +243,31 @@
             "pattern": "(^\\d{4}-\\d{2}-\\d{2}$)"
           }, 
           "DateDepotPreavis": {
-            "default": "20/10/2016", 
+            "default": "2010-10-20", 
             "description": "An explanation about the purpose of this instance.", 
             "id": "/properties/Baux/items/properties/DateDepotPreavis", 
             "title": "The datedepotpreavis schema", 
             "type": "string",
             "maxLength": 10,
-            "pattern": "(^\\d{4}-\\d{2}-\\d{2}$)"
+            "pattern": "(^(\\d{4}-\\d{2}-\\d{2}|)$)"
           }, 
           "DateFinBail": {
-            "default": "20/12/2016", 
+            "default": "2016-10-30", 
             "description": "An explanation about the purpose of this instance.", 
             "id": "/properties/Baux/items/properties/DateFinBail", 
             "title": "The datefinbail schema", 
             "type": "string",
             "maxLength": 10,
-            "pattern": "(^\\d{4}-\\d{2}-\\d{2}$)"
+            "pattern": "(^(\\d{4}-\\d{2}-\\d{2}|)$)"
           }, 
           "DateRetourLD": {
-            "default": "20/11/2016", 
+            "default": "2016-10-26", 
             "description": "An explanation about the purpose of this instance.", 
             "id": "/properties/Baux/items/properties/DateRetourLD", 
             "title": "The dateretourld schema", 
             "type": "string",
             "maxLength": 10,
-            "pattern": "(^\\d{4}-\\d{2}-\\d{2}$)"
+            "pattern": "(^(\\d{4}-\\d{2}-\\d{2}|)$)"
           }, 
           "DepotGarantie": {
             "default": 200.5, 
