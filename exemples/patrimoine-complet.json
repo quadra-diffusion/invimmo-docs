@@ -28,7 +28,7 @@
 			"LibelleAdresse" : "rue Abelard",
 			"Ville" : "Paris",
 			"DateDebutBail" : "2010-01-02",
-			"DateFinBail": "2016-12-20",
+			"DateFinBail": "",
 			"CodePostal" : "75000",
 			"DateDepotPreavis" : "2016-10-20",
 			"DepotGarantie" : 200.5,
