@@ -1,427 +1,450 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#", 
-  "definitions": {}, 
-  "id": "http://example.com/example.json",
-  "type": "array",
-  "items": {
-  "id": "properties/Patrimoine/items",
-  "title": "Patrimoine",
-  "properties": {
-    "Agence": {
-      "default": "Tulipes", 
-      "description": "An explanation about the purpose of this instance.", 
-      "id": "/properties/Agence", 
-      "title": "The agence schema", 
-      "type": "string",
-      "maxLength": 500
-    },  
-    "CodePatrimoine": {
-      "default": "1.002.001.331", 
-      "description": "Référence du patrimoine.", 
-      "id": "/properties/CodePatrimoine", 
-      "title": "The codepatrimoine schema", 
-      "type": "string",
-      "maxLength": 40
-    }, 
-    "CodePostal": {
-      "default": "59000", 
-      "description": "Code postal.", 
-      "id": "/properties/CodePostal", 
-      "title": "The codepostal schema", 
-      "type": "string",
-      "maxLength": 10
-    }, 
-    "DateLocation": {
-      "default": "2010-12-01", 
-      "description": "Première date de location.", 
-      "id": "/properties/DateLocation", 
-      "title": "The datelocation schema", 
-      "type": "string",
-      "maxLength": 10,
-      "pattern": "(^\\d{4}-\\d{2}-\\d{2}$)"
-    }, 
-    "DateMiseEnService": {
-      "default": "1999-01-29", 
-      "description": "La date de mise en service du logement.", 
-      "id": "/properties/DateMiseEnService", 
-      "title": "The datemiseenservice schema", 
-      "type": "string",
-      "maxLength": 10,
-      "pattern": "(^\\d{4}-\\d{2}-\\d{2}$)"
-    }, 
-    "LibelleAdresse": {
-      "default": "rue du General", 
-      "description": "Libellé d'adresse.", 
-      "id": "/properties/LibelleAdresse", 
-      "title": "The libelleadresse schema", 
-      "type": "string",
-      "maxLength": 100
-    }, 
-    "NomResidence": {
-      "default": "Flandres", 
-      "description": "Information complementaire sur l'adresse de l'UG, le nom de la résidence.", 
-      "id": "/properties/NomResidence", 
-      "title": "The nomresidence schema", 
-      "type": "string",
-      "maxLength": 40
-    }, 
-    "NumEtage": {
-      "default": "2", 
-      "description": "L'étage si l'unité de gestion se trouve dans un immeuble (RDC, 1 , 2, etc).", 
-      "id": "/properties/NumEtage", 
-      "title": "The numetage schema", 
-      "type": "string",
-      "maxLength": 3
-    }, 
-    "NumImmeuble": {
-      "default": "11", 
-      "description": "An explanation about the purpose of this instance.", 
-      "id": "/properties/NumImmeuble", 
-      "title": "The numimmeuble schema", 
-      "type": "string",
-      "maxLength": 10
-    },     
-    "ReferenceExterne": {
-      "default": "ReferenceExternePatrimoine", 
-      "description": "Référence unique de ce patrimoine.", 
-      "id": "/properties/ReferenceExterne", 
-      "title": "The referenceexterne schema", 
-      "type": "string",
-      "maxLength": 500
-    }, 
-    "Ville": {
-      "default": "Lille", 
-      "description": "Ville.", 
-      "id": "/properties/Ville", 
-      "title": "The ville schema", 
-      "type": "string",
-      "maxLength": 100
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {},
+    "id": "http://example.com/example.json",
+    "items": {
+        "additionalProperties": false,
+        "id": "properties/Patrimoine/items",
+        "properties": {
+            "Agence": {
+                "default": "Tulipes",
+                "description": "An explanation about the purpose of this instance.",
+                "id": "/properties/Agence",
+                "maxLength": 500,
+                "title": "The agence schema",
+                "type": "string"
+            },
+            "Baux": {
+                "id": "/properties/Baux",
+                "items": {
+                    "additionalProperties": false,
+                    "id": "/properties/Baux/items",
+                    "properties": {
+                        "CodePostal": {
+                            "default": "75000",
+                            "description": "An explanation about the purpose of this instance.",
+                            "id": "/properties/Baux/items/properties/CodePostal",
+                            "maxLength": 10,
+                            "title": "The codepostal schema",
+                            "type": "string"
+                        },
+                        "Compteurs": {
+                            "id": "/properties/Baux/items/properties/Compteurs",
+                            "items": {
+                                "additionalProperties": false,
+                                "id": "/properties/Baux/items/properties/Compteurs/items",
+                                "properties": {
+                                    "CodeConstructeur": {
+                                        "default": "AB24886",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "id": "/properties/Baux/items/properties/Compteurs/items/properties/CodeConstructeur",
+                                        "maxLength": 200,
+                                        "title": "The codeconstructeur schema",
+                                        "type": "string"
+                                    },
+                                    "EmplacementCompteur": {
+                                        "default": "Sous evier",
+                                        "description": "Emplacement physique du compteur.",
+                                        "id": "/properties/Baux/items/properties/Compteurs/items/properties/EmplacementCompteur",
+                                        "maxLength": 100,
+                                        "title": "The emplacementcompteur schema",
+                                        "type": "string"
+                                    },
+                                    "IndexDebut": {
+                                        "default": 1000,
+                                        "description": "Index du compteur.",
+                                        "id": "/properties/Baux/items/properties/Compteurs/items/properties/IndexDebut",
+                                        "title": "The indexdebut schema",
+                                        "type": "integer"
+                                    },
+                                    "LibelleInfo": {
+                                        "default": "1",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "id": "/properties/Baux/items/properties/Compteurs/items/properties/LibelleInfo",
+                                        "title": "The libelleinfo schema",
+                                        "type": "string"
+                                    },
+                                    "ReferenceExterne": {
+                                        "default": "ReferenceExterneCompteur",
+                                        "description": "R\u00e9f\u00e9rence externe du Compteur.",
+                                        "id": "/properties/Baux/items/properties/Compteurs/items/properties/ReferenceExterne",
+                                        "maxLength": 500,
+                                        "title": "The referenceexterne schema",
+                                        "type": "string"
+                                    },
+                                    "Tarif": {
+                                        "default": 10.2,
+                                        "description": "Tarif Compteur (e.g. prix kw/h, prix m3).",
+                                        "id": "/properties/Baux/items/properties/Compteurs/items/properties/Tarif",
+                                        "title": "The tarif schema",
+                                        "type": "number"
+                                    },
+                                    "TypeCompteur": {
+                                        "default": "EC",
+                                        "description": "Type de compteur (Eau, eletricit\u00e9, etc...).",
+                                        "id": "/properties/Baux/items/properties/Compteurs/items/properties/TypeCompteur",
+                                        "maxLength": 500,
+                                        "title": "The typecompteur schema",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "TypeCompteur",
+                                    "IndexDebut",
+                                    "ReferenceExterne"
+                                ],
+                                "title": "Compteurs",
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "DateDebutBail": {
+                            "default": "2010-01-02",
+                            "description": "An explanation about the purpose of this instance.",
+                            "id": "/properties/Baux/items/properties/DateDebutBail",
+                            "maxLength": 10,
+                            "pattern": "(^\\d{4}-\\d{2}-\\d{2}$)",
+                            "title": "The datedebutbail schema",
+                            "type": "string"
+                        },
+                        "DateDepotPreavis": {
+                            "default": "2010-10-20",
+                            "description": "An explanation about the purpose of this instance.",
+                            "id": "/properties/Baux/items/properties/DateDepotPreavis",
+                            "maxLength": 10,
+                            "pattern": "(^(\\d{4}-\\d{2}-\\d{2}|)$)",
+                            "title": "The datedepotpreavis schema",
+                            "type": "string"
+                        },
+                        "DateFinBail": {
+                            "default": "2016-10-30",
+                            "description": "An explanation about the purpose of this instance.",
+                            "id": "/properties/Baux/items/properties/DateFinBail",
+                            "maxLength": 10,
+                            "pattern": "(^(\\d{4}-\\d{2}-\\d{2}|)$)",
+                            "title": "The datefinbail schema",
+                            "type": "string"
+                        },
+                        "DateRetourLD": {
+                            "default": "2016-10-26",
+                            "description": "An explanation about the purpose of this instance.",
+                            "id": "/properties/Baux/items/properties/DateRetourLD",
+                            "maxLength": 10,
+                            "pattern": "(^(\\d{4}-\\d{2}-\\d{2}|)$)",
+                            "title": "The dateretourld schema",
+                            "type": "string"
+                        },
+                        "DepotGarantie": {
+                            "default": 200.5,
+                            "description": "An explanation about the purpose of this instance.",
+                            "id": "/properties/Baux/items/properties/DepotGarantie",
+                            "title": "The depotgarantie schema",
+                            "type": "number"
+                        },
+                        "EtatBail": {
+                            "default": "Clos",
+                            "description": "An explanation about the purpose of this instance.",
+                            "id": "/properties/Baux/items/properties/EtatBail",
+                            "maxLength": 50,
+                            "title": "The etatbail schema",
+                            "type": "string"
+                        },
+                        "LibelleAdresse": {
+                            "default": "rue Abelard",
+                            "description": "An explanation about the purpose of this instance.",
+                            "id": "/properties/Baux/items/properties/LibelleAdresse",
+                            "maxLength": 100,
+                            "title": "The libelleadresse schema",
+                            "type": "string"
+                        },
+                        "Locataires": {
+                            "id": "/properties/Baux/items/properties/Locataires",
+                            "items": {
+                                "additionalProperties": false,
+                                "id": "/properties/Baux/items/properties/Locataires/items",
+                                "properties": {
+                                    "Civilite": {
+                                        "default": "M",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "id": "/properties/Baux/items/properties/Locataires/items/properties/Civilite",
+                                        "title": "The civilite schema",
+                                        "type": "string"
+                                    },
+                                    "Email": {
+                                        "default": "nom.Prenom@gmail.com",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "id": "/properties/Baux/items/properties/Locataires/items/properties/Email",
+                                        "title": "The email schema",
+                                        "type": "string"
+                                    },
+                                    "EstLocatairePrincipal": {
+                                        "default": true,
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "id": "/properties/Baux/items/properties/Locataires/items/properties/EstLocatairePrincipal",
+                                        "title": "The estlocataireprincipal schema",
+                                        "type": "boolean"
+                                    },
+                                    "Nom": {
+                                        "default": "Nom",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "id": "/properties/Baux/items/properties/Locataires/items/properties/Nom",
+                                        "title": "The nom schema",
+                                        "type": "string"
+                                    },
+                                    "Prenom": {
+                                        "default": "Prenom",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "id": "/properties/Baux/items/properties/Locataires/items/properties/Prenom",
+                                        "title": "The prenom schema",
+                                        "type": "string"
+                                    },
+                                    "ReferenceExterne": {
+                                        "default": "ReferenceExterneLocataire",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "id": "/properties/Baux/items/properties/Locataires/items/properties/ReferenceExterne",
+                                        "title": "The referenceexterne schema",
+                                        "type": "string"
+                                    },
+                                    "Telephone": {
+                                        "default": "0645789612",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "id": "/properties/Baux/items/properties/Locataires/items/properties/Telephone",
+                                        "title": "The telephone schema",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "Nom",
+                                    "ReferenceExterne"
+                                ],
+                                "title": "Locataires",
+                                "type": "object"
+                            },
+                            "minItems": 1,
+                            "type": "array"
+                        },
+                        "ReferenceExterne": {
+                            "default": "ReferenceExterneBail",
+                            "description": "An explanation about the purpose of this instance.",
+                            "id": "/properties/Baux/items/properties/ReferenceExterne",
+                            "maxLength": 500,
+                            "title": "The referenceexterne schema",
+                            "type": "string"
+                        },
+                        "SoldeBail": {
+                            "default": 0,
+                            "description": "An explanation about the purpose of this instance.",
+                            "id": "/properties/Baux/items/properties/SoldeBail",
+                            "title": "The soldebail schema",
+                            "type": "number"
+                        },
+                        "Ville": {
+                            "default": "Paris",
+                            "description": "An explanation about the purpose of this instance.",
+                            "id": "/properties/Baux/items/properties/Ville",
+                            "maxLength": 50,
+                            "title": "The ville schema",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "LibelleAdresse",
+                        "Ville",
+                        "DateDebutBail",
+                        "DateFinBail",
+                        "CodePostal",
+                        "ReferenceExterne"
+                    ],
+                    "title": "Baux",
+                    "type": "object"
+                },
+                "type": "array"
+            },
+            "CodePatrimoine": {
+                "default": "1.002.001.331",
+                "description": "R\u00e9f\u00e9rence du patrimoine.",
+                "id": "/properties/CodePatrimoine",
+                "maxLength": 40,
+                "title": "The codepatrimoine schema",
+                "type": "string"
+            },
+            "CodePostal": {
+                "default": "59000",
+                "description": "Code postal.",
+                "id": "/properties/CodePostal",
+                "maxLength": 10,
+                "title": "The codepostal schema",
+                "type": "string"
+            },
+            "DateLocation": {
+                "default": "2010-12-01",
+                "description": "Premi\u00e8re date de location.",
+                "id": "/properties/DateLocation",
+                "maxLength": 10,
+                "pattern": "(^\\d{4}-\\d{2}-\\d{2}$)",
+                "title": "The datelocation schema",
+                "type": "string"
+            },
+            "DateMiseEnService": {
+                "default": "1999-01-29",
+                "description": "La date de mise en service du logement.",
+                "id": "/properties/DateMiseEnService",
+                "maxLength": 10,
+                "pattern": "(^\\d{4}-\\d{2}-\\d{2}$)",
+                "title": "The datemiseenservice schema",
+                "type": "string"
+            },
+            "LibelleAdresse": {
+                "default": "rue du General",
+                "description": "Libell\u00e9 d'adresse.",
+                "id": "/properties/LibelleAdresse",
+                "maxLength": 100,
+                "title": "The libelleadresse schema",
+                "type": "string"
+            },
+            "NomResidence": {
+                "default": "Flandres",
+                "description": "Information complementaire sur l'adresse de l'UG, le nom de la r\u00e9sidence.",
+                "id": "/properties/NomResidence",
+                "maxLength": 40,
+                "title": "The nomresidence schema",
+                "type": "string"
+            },
+            "NumEtage": {
+                "default": "2",
+                "description": "L'\u00e9tage si l'unit\u00e9 de gestion se trouve dans un immeuble (RDC, 1 , 2, etc).",
+                "id": "/properties/NumEtage",
+                "maxLength": 3,
+                "title": "The numetage schema",
+                "type": "string"
+            },
+            "NumImmeuble": {
+                "default": "11",
+                "description": "An explanation about the purpose of this instance.",
+                "id": "/properties/NumImmeuble",
+                "maxLength": 10,
+                "title": "The numimmeuble schema",
+                "type": "string"
+            },
+            "Proprietaire": {
+                "additionalProperties": false,
+                "id": "/properties/Proprietaire",
+                "properties": {
+                    "Adresse": {
+                        "default": "rue des tulipes",
+                        "description": "An explanation about the purpose of this instance.",
+                        "id": "/properties/Proprietaire/properties/Adresse",
+                        "maxLength": 100,
+                        "title": "The adresse schema",
+                        "type": "string"
+                    },
+                    "Civilite": {
+                        "default": "M",
+                        "description": "An explanation about the purpose of this instance.",
+                        "id": "/properties/Proprietaire/properties/Civilite",
+                        "maxLength": 10,
+                        "title": "The civilite schema",
+                        "type": "string"
+                    },
+                    "CodePostal": {
+                        "default": "59000",
+                        "description": "An explanation about the purpose of this instance.",
+                        "id": "/properties/Proprietaire/properties/CodePostal",
+                        "maxLength": 10,
+                        "title": "The codepostal schema",
+                        "type": "string"
+                    },
+                    "Email": {
+                        "default": "dupond.duront@gmail.com",
+                        "description": "An explanation about the purpose of this instance.",
+                        "id": "/properties/Proprietaire/properties/Email",
+                        "maxLength": 255,
+                        "pattern": "(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$)",
+                        "title": "The email schema",
+                        "type": "string"
+                    },
+                    "Nom": {
+                        "default": "dupond",
+                        "description": "An explanation about the purpose of this instance.",
+                        "id": "/properties/Proprietaire/properties/Nom",
+                        "maxLength": 50,
+                        "title": "The nom schema",
+                        "type": "string"
+                    },
+                    "Pays": {
+                        "default": "France",
+                        "description": "An explanation about the purpose of this instance.",
+                        "id": "/properties/Proprietaire/properties/Pays",
+                        "maxLength": 50,
+                        "title": "The pays schema",
+                        "type": "string"
+                    },
+                    "Prenom": {
+                        "default": "duront",
+                        "description": "An explanation about the purpose of this instance.",
+                        "id": "/properties/Proprietaire/properties/Prenom",
+                        "maxLength": 50,
+                        "title": "The prenom schema",
+                        "type": "string"
+                    },
+                    "ReferenceExterne": {
+                        "default": "ReferenceExternePropritaire",
+                        "description": "An explanation about the purpose of this instance.",
+                        "id": "/properties/Proprietaire/properties/ReferenceExterne",
+                        "maxLength": 500,
+                        "title": "The referenceexterne schema",
+                        "type": "string"
+                    },
+                    "Telephone": {
+                        "default": "0645127896",
+                        "description": "An explanation about the purpose of this instance.",
+                        "id": "/properties/Proprietaire/properties/Telephone",
+                        "maxLength": 20,
+                        "title": "The telephone schema",
+                        "type": "string"
+                    },
+                    "Ville": {
+                        "default": "Lille",
+                        "description": "An explanation about the purpose of this instance.",
+                        "id": "/properties/Proprietaire/properties/Ville",
+                        "maxLength": 100,
+                        "title": "The ville schema",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Nom",
+                    "ReferenceExterne"
+                ],
+                "title": "Proprietaire",
+                "type": "object"
+            },
+            "ReferenceExterne": {
+                "default": "ReferenceExternePatrimoine",
+                "description": "R\u00e9f\u00e9rence unique de ce patrimoine.",
+                "id": "/properties/ReferenceExterne",
+                "maxLength": 500,
+                "title": "The referenceexterne schema",
+                "type": "string"
+            },
+            "Ville": {
+                "default": "Lille",
+                "description": "Ville.",
+                "id": "/properties/Ville",
+                "maxLength": 100,
+                "title": "The ville schema",
+                "type": "string"
+            }
+        },
+        "required": [
+            "CodePatrimoine",
+            "LibelleAdresse",
+            "Ville",
+            "CodePostal",
+            "ReferenceExterne"
+        ],
+        "title": "Patrimoine",
+        "type": "object"
     },
-    "Baux": {
-      "id": "/properties/Baux", 
-      "items": {
-        "id": "/properties/Baux/items",
-        "title": "Baux", 
-        "properties": { 
-          "Compteurs": {
-            "id": "/properties/Baux/items/properties/Compteurs", 
-            "items": {
-              "id": "/properties/Baux/items/properties/Compteurs/items", 
-              "title": "Compteurs",
-              "properties": {
-                "CodeConstructeur": {
-                  "default": "AB24886", 
-                  "description": "An explanation about the purpose of this instance.", 
-                  "id": "/properties/Baux/items/properties/Compteurs/items/properties/CodeConstructeur", 
-                  "title": "The codeconstructeur schema", 
-                  "type": "string",
-                  "maxLength": 200
-                }, 
-                "EmplacementCompteur": {
-                  "default": "Sous evier", 
-                  "description": "Emplacement physique du compteur.", 
-                  "id": "/properties/Baux/items/properties/Compteurs/items/properties/EmplacementCompteur", 
-                  "title": "The emplacementcompteur schema", 
-                  "type": "string",
-                  "maxLength": 100
-                }, 
-                "IndexDebut": {
-                  "default": 1000, 
-                  "description": "Index du compteur.", 
-                  "id": "/properties/Baux/items/properties/Compteurs/items/properties/IndexDebut", 
-                  "title": "The indexdebut schema", 
-                  "type": "integer"
-                }, 
-                "LibelleInfo": {
-                  "default": "1", 
-                  "description": "An explanation about the purpose of this instance.", 
-                  "id": "/properties/Baux/items/properties/Compteurs/items/properties/LibelleInfo", 
-                  "title": "The libelleinfo schema", 
-                  "type": "string"
-                }, 
-                "ReferenceExterne": {
-                  "default": "ReferenceExterneCompteur", 
-                  "description": "Référence externe du Compteur.", 
-                  "id": "/properties/Baux/items/properties/Compteurs/items/properties/ReferenceExterne", 
-                  "title": "The referenceexterne schema", 
-                  "type": "string",
-                  "maxLength": 500
-                }, 
-                "Tarif": {
-                  "default": 10.2, 
-                  "description": "Tarif Compteur (e.g. prix kw/h, prix m3).", 
-                  "id": "/properties/Baux/items/properties/Compteurs/items/properties/Tarif", 
-                  "title": "The tarif schema", 
-                  "type": "number"
-                }, 
-                "TypeCompteur": {
-                  "default": "EC", 
-                  "description": "Type de compteur (Eau, eletricité, etc...).", 
-                  "id": "/properties/Baux/items/properties/Compteurs/items/properties/TypeCompteur", 
-                  "title": "The typecompteur schema", 
-                  "type": "string",
-                  "maxLength": 500
-                }
-              }, 
-              "type": "object",
-              "required": ["TypeCompteur", "IndexDebut", "ReferenceExterne"],
-              "additionalProperties": false
-            }, 
-            "type": "array"
-          },
-          "Locataires": {
-            "id": "/properties/Baux/items/properties/Locataires", 
-            "items": {
-              "id": "/properties/Baux/items/properties/Locataires/items", 
-              "title": "Locataires",
-              "properties": {
-                "Civilite": {
-                  "default": "M", 
-                  "description": "An explanation about the purpose of this instance.", 
-                  "id": "/properties/Baux/items/properties/Locataires/items/properties/Civilite", 
-                  "title": "The civilite schema", 
-                  "type": "string"
-                }, 
-                "Email": {
-                  "default": "nom.Prenom@gmail.com", 
-                  "description": "An explanation about the purpose of this instance.", 
-                  "id": "/properties/Baux/items/properties/Locataires/items/properties/Email", 
-                  "title": "The email schema", 
-                  "type": "string"
-                }, 
-                "EstLocatairePrincipal": {
-                  "default": true, 
-                  "description": "An explanation about the purpose of this instance.", 
-                  "id": "/properties/Baux/items/properties/Locataires/items/properties/EstLocatairePrincipal", 
-                  "title": "The estlocataireprincipal schema", 
-                  "type": "boolean"
-                }, 
-                "Nom": {
-                  "default": "Nom", 
-                  "description": "An explanation about the purpose of this instance.", 
-                  "id": "/properties/Baux/items/properties/Locataires/items/properties/Nom", 
-                  "title": "The nom schema", 
-                  "type": "string"
-                }, 
-                "Prenom": {
-                  "default": "Prenom", 
-                  "description": "An explanation about the purpose of this instance.", 
-                  "id": "/properties/Baux/items/properties/Locataires/items/properties/Prenom", 
-                  "title": "The prenom schema", 
-                  "type": "string"
-                }, 
-                "ReferenceExterne": {
-                  "default": "ReferenceExterneLocataire", 
-                  "description": "An explanation about the purpose of this instance.", 
-                  "id": "/properties/Baux/items/properties/Locataires/items/properties/ReferenceExterne", 
-                  "title": "The referenceexterne schema", 
-                  "type": "string"
-                }, 
-                "Telephone": {
-                  "default": "0645789612", 
-                  "description": "An explanation about the purpose of this instance.", 
-                  "id": "/properties/Baux/items/properties/Locataires/items/properties/Telephone", 
-                  "title": "The telephone schema", 
-                  "type": "string"
-                }
-              }, 
-              "type": "object",
-              "required": ["Nom", "ReferenceExterne"],
-              "additionalProperties": false
-            }, 
-            "type": "array",
-            "minItems": 1
-          },
-          "CodePostal": {
-            "default": "75000", 
-            "description": "An explanation about the purpose of this instance.", 
-            "id": "/properties/Baux/items/properties/CodePostal", 
-            "title": "The codepostal schema", 
-            "type": "string",
-            "maxLength": 10
-          },		  
-          "DateDebutBail": {
-            "default": "2010-01-02", 
-            "description": "An explanation about the purpose of this instance.", 
-            "id": "/properties/Baux/items/properties/DateDebutBail", 
-            "title": "The datedebutbail schema", 
-            "type": "string",
-            "maxLength": 10,
-            "pattern": "(^\\d{4}-\\d{2}-\\d{2}$)"
-          }, 
-          "DateDepotPreavis": {
-            "default": "2010-10-20", 
-            "description": "An explanation about the purpose of this instance.", 
-            "id": "/properties/Baux/items/properties/DateDepotPreavis", 
-            "title": "The datedepotpreavis schema", 
-            "type": "string",
-            "maxLength": 10,
-            "pattern": "(^(\\d{4}-\\d{2}-\\d{2}|)$)"
-          }, 
-          "DateFinBail": {
-            "default": "2016-10-30", 
-            "description": "An explanation about the purpose of this instance.", 
-            "id": "/properties/Baux/items/properties/DateFinBail", 
-            "title": "The datefinbail schema", 
-            "type": "string",
-            "maxLength": 10,
-            "pattern": "(^(\\d{4}-\\d{2}-\\d{2}|)$)"
-          }, 
-          "DateRetourLD": {
-            "default": "2016-10-26", 
-            "description": "An explanation about the purpose of this instance.", 
-            "id": "/properties/Baux/items/properties/DateRetourLD", 
-            "title": "The dateretourld schema", 
-            "type": "string",
-            "maxLength": 10,
-            "pattern": "(^(\\d{4}-\\d{2}-\\d{2}|)$)"
-          }, 
-          "DepotGarantie": {
-            "default": 200.5, 
-            "description": "An explanation about the purpose of this instance.", 
-            "id": "/properties/Baux/items/properties/DepotGarantie", 
-            "title": "The depotgarantie schema", 
-            "type": "number"
-          }, 
-          "EtatBail": {
-            "default": "Clos", 
-            "description": "An explanation about the purpose of this instance.", 
-            "id": "/properties/Baux/items/properties/EtatBail", 
-            "title": "The etatbail schema", 
-            "type": "string",
-            "maxLength": 50
-          }, 
-          "LibelleAdresse": {
-            "default": "rue Abelard", 
-            "description": "An explanation about the purpose of this instance.", 
-            "id": "/properties/Baux/items/properties/LibelleAdresse", 
-            "title": "The libelleadresse schema", 
-            "type": "string",
-            "maxLength": 100
-          },  
-          "ReferenceExterne": {
-            "default": "ReferenceExterneBail", 
-            "description": "An explanation about the purpose of this instance.", 
-            "id": "/properties/Baux/items/properties/ReferenceExterne", 
-            "title": "The referenceexterne schema", 
-            "type": "string",
-            "maxLength": 500
-          }, 
-          "SoldeBail": {
-            "default": 0, 
-            "description": "An explanation about the purpose of this instance.", 
-            "id": "/properties/Baux/items/properties/SoldeBail", 
-            "title": "The soldebail schema", 
-            "type": "number"
-          }, 
-          "Ville": {
-            "default": "Paris", 
-            "description": "An explanation about the purpose of this instance.", 
-            "id": "/properties/Baux/items/properties/Ville", 
-            "title": "The ville schema", 
-            "type": "string",
-            "maxLength": 50
-          }
-        }, 
-        "type": "object",
-        "required": ["LibelleAdresse", "Ville", "DateDebutBail", "DateFinBail", "CodePostal", "ReferenceExterne"],
-        "additionalProperties": false
-      }, 
-      "type": "array"
-    },
-    "Proprietaire": {
-      "id": "/properties/Proprietaire", 
-      "title": "Proprietaire",
-      "properties": {
-        "Adresse": {
-          "default": "rue des tulipes", 
-          "description": "An explanation about the purpose of this instance.", 
-          "id": "/properties/Proprietaire/properties/Adresse", 
-          "title": "The adresse schema", 
-          "type": "string",
-          "maxLength": 100
-        }, 
-        "Civilite": {
-          "default": "M", 
-          "description": "An explanation about the purpose of this instance.", 
-          "id": "/properties/Proprietaire/properties/Civilite", 
-          "title": "The civilite schema", 
-          "type": "string",
-          "maxLength": 10
-        }, 
-        "CodePostal": {
-          "default": "59000", 
-          "description": "An explanation about the purpose of this instance.", 
-          "id": "/properties/Proprietaire/properties/CodePostal", 
-          "title": "The codepostal schema", 
-          "type": "string",
-          "maxLength": 10
-        }, 
-        "Email": {
-          "default": "dupond.duront@gmail.com", 
-          "description": "An explanation about the purpose of this instance.", 
-          "id": "/properties/Proprietaire/properties/Email", 
-          "title": "The email schema", 
-          "type": "string",
-          "maxLength": 255,
-          "pattern": "(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$)"
-        }, 
-        "Nom": {
-          "default": "dupond", 
-          "description": "An explanation about the purpose of this instance.", 
-          "id": "/properties/Proprietaire/properties/Nom", 
-          "title": "The nom schema", 
-          "type": "string",
-          "maxLength": 50
-        }, 
-        "Pays": {
-          "default": "France", 
-          "description": "An explanation about the purpose of this instance.", 
-          "id": "/properties/Proprietaire/properties/Pays", 
-          "title": "The pays schema", 
-          "type": "string",
-          "maxLength": 50
-        }, 
-        "Prenom": {
-          "default": "duront", 
-          "description": "An explanation about the purpose of this instance.", 
-          "id": "/properties/Proprietaire/properties/Prenom", 
-          "title": "The prenom schema", 
-          "type": "string",
-          "maxLength": 50
-        }, 
-        "ReferenceExterne": {
-          "default": "ReferenceExternePropritaire", 
-          "description": "An explanation about the purpose of this instance.", 
-          "id": "/properties/Proprietaire/properties/ReferenceExterne", 
-          "title": "The referenceexterne schema", 
-          "type": "string",
-          "maxLength": 500
-        }, 
-        "Telephone": {
-          "default": "0645127896", 
-          "description": "An explanation about the purpose of this instance.", 
-          "id": "/properties/Proprietaire/properties/Telephone", 
-          "title": "The telephone schema", 
-          "type": "string",
-          "maxLength": 20
-        }, 
-        "Ville": {
-          "default": "Lille", 
-          "description": "An explanation about the purpose of this instance.", 
-          "id": "/properties/Proprietaire/properties/Ville", 
-          "title": "The ville schema", 
-          "type": "string",
-          "maxLength": 100
-        }
-      }, 
-      "type": "object",
-      "required": ["Nom", "ReferenceExterne"],
-      "additionalProperties": false
-    }
-  }, 
-  "type": "object",
-  "required": ["CodePatrimoine", "LibelleAdresse", "Ville", "CodePostal", "ReferenceExterne"],
-  "additionalProperties": false
-  }
+    "type": "array"
 }
