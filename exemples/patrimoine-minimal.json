@@ -15,7 +15,8 @@
 			"Locataires" : [
 				{
 					"ReferenceExterne" : "ReferenceExterneLocataire",
-					"Nom" : "Dupont"
+					"Nom" : "Dupont",
+					"Prenom" : "duront"
 				}
 			],
 			"Compteurs" : [
