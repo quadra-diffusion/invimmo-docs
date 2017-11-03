@@ -35,15 +35,15 @@
                                 "id": "/properties/Baux/items/properties/Compteurs/items",
                                 "properties": {
                                     "CodeConstructeur": {
-                                        "default": "AB24886",
-                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "T016701",
+                                        "description": "Code Compteur.",
                                         "id": "/properties/Baux/items/properties/Compteurs/items/properties/CodeConstructeur",
                                         "maxLength": 200,
                                         "title": "The codeconstructeur schema",
                                         "type": "string"
                                     },
                                     "EmplacementCompteur": {
-                                        "default": "Sous evier",
+                                        "default": "Sous \u00e9vier",
                                         "description": "Emplacement physique du compteur.",
                                         "id": "/properties/Baux/items/properties/Compteurs/items/properties/EmplacementCompteur",
                                         "maxLength": 100,
@@ -58,17 +58,18 @@
                                         "type": "integer"
                                     },
                                     "LibelleInfo": {
-                                        "default": "1",
-                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "Compteur jour/nuit",
+                                        "description": "Informations complémentaires.",
                                         "id": "/properties/Baux/items/properties/Compteurs/items/properties/LibelleInfo",
+                                        "maxLength": 200,
                                         "title": "The libelleinfo schema",
                                         "type": "string"
                                     },
                                     "ReferenceExterne": {
-                                        "default": "ReferenceExterneCompteur",
+                                        "default": "001.230E",
                                         "description": "R\u00e9f\u00e9rence externe du Compteur.",
                                         "id": "/properties/Baux/items/properties/Compteurs/items/properties/ReferenceExterne",
-                                        "maxLength": 500,
+                                        "maxLength": 255,
                                         "title": "The referenceexterne schema",
                                         "type": "string"
                                     },
@@ -80,7 +81,7 @@
                                         "type": "number"
                                     },
                                     "TypeCompteur": {
-                                        "default": "EC",
+                                        "default": "Electrique",
                                         "description": "Type de compteur (Eau, eletricit\u00e9, etc...).",
                                         "id": "/properties/Baux/items/properties/Compteurs/items/properties/TypeCompteur",
                                         "maxLength": 500,
@@ -91,6 +92,7 @@
                                 "required": [
                                     "TypeCompteur",
                                     "IndexDebut",
+                                    "CodeConstructeur",
                                     "ReferenceExterne"
                                 ],
                                 "title": "Compteurs",
@@ -181,7 +183,7 @@
                                     },
                                     "EstLocatairePrincipal": {
                                         "default": true,
-                                        "description": "An explanation about the purpose of this instance.",
+                                        "description": "Est le locataire principal du bail.",
                                         "id": "/properties/Baux/items/properties/Locataires/items/properties/EstLocatairePrincipal",
                                         "title": "The estlocataireprincipal schema",
                                         "type": "boolean"
@@ -206,6 +208,7 @@
                                         "default": "ReferenceExterneLocataire",
                                         "description": "An explanation about the purpose of this instance.",
                                         "id": "/properties/Baux/items/properties/Locataires/items/properties/ReferenceExterne",
+                                        "maxLength": 255,
                                         "title": "The referenceexterne schema",
                                         "type": "string"
                                     },
