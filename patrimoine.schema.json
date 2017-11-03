@@ -7,8 +7,8 @@
         "id": "properties/Patrimoine/items",
         "properties": {
             "Agence": {
-                "default": "Tulipes",
-                "description": "An explanation about the purpose of this instance.",
+                "default": "MELUN",
+                "description": "Nom de l'agence à laquelle est attaché le patrimoine.",
                 "id": "/properties/Agence",
                 "maxLength": 500,
                 "title": "The agence schema",
@@ -21,8 +21,8 @@
                     "id": "/properties/Baux/items",
                     "properties": {
                         "CodePostal": {
-                            "default": "75000",
-                            "description": "An explanation about the purpose of this instance.",
+                            "default": "77000",
+                            "description": "Code Postal.",
                             "id": "/properties/Baux/items/properties/CodePostal",
                             "maxLength": 10,
                             "title": "The codepostal schema",
@@ -99,8 +99,8 @@
                             "type": "array"
                         },
                         "DateDebutBail": {
-                            "default": "2010-01-02",
-                            "description": "An explanation about the purpose of this instance.",
+                            "default": "2010-12-28",
+                            "description": "Date de début de bail (YYYY-MM-DD).",
                             "id": "/properties/Baux/items/properties/DateDebutBail",
                             "maxLength": 10,
                             "pattern": "(^\\d{4}-\\d{2}-\\d{2}$)",
@@ -108,8 +108,8 @@
                             "type": "string"
                         },
                         "DateDepotPreavis": {
-                            "default": "2010-10-20",
-                            "description": "An explanation about the purpose of this instance.",
+                            "default": "2017-02-14",
+                            "description": "Date de dépot de garantie de bail (YYYY-MM-DD).",
                             "id": "/properties/Baux/items/properties/DateDepotPreavis",
                             "maxLength": 10,
                             "pattern": "(^(\\d{4}-\\d{2}-\\d{2}|)$)",
@@ -117,8 +117,8 @@
                             "type": "string"
                         },
                         "DateFinBail": {
-                            "default": "2016-10-30",
-                            "description": "An explanation about the purpose of this instance.",
+                            "default": "2017-02-14",
+                            "description": "Date de fin de bail (YYYY-MM-DD).",
                             "id": "/properties/Baux/items/properties/DateFinBail",
                             "maxLength": 10,
                             "pattern": "(^(\\d{4}-\\d{2}-\\d{2}|)$)",
@@ -126,8 +126,8 @@
                             "type": "string"
                         },
                         "DateRetourLD": {
-                            "default": "2016-10-26",
-                            "description": "An explanation about the purpose of this instance.",
+                            "default": "2017-02-14",
+                            "description": "Date de retour Lettre D (YYYY-MM-DD).",
                             "id": "/properties/Baux/items/properties/DateRetourLD",
                             "maxLength": 10,
                             "pattern": "(^(\\d{4}-\\d{2}-\\d{2}|)$)",
@@ -135,23 +135,23 @@
                             "type": "string"
                         },
                         "DepotGarantie": {
-                            "default": 200.5,
-                            "description": "An explanation about the purpose of this instance.",
+                            "default": 345.2,
+                            "description": "Montant de dépot de garantie.",
                             "id": "/properties/Baux/items/properties/DepotGarantie",
                             "title": "The depotgarantie schema",
                             "type": "number"
                         },
                         "EtatBail": {
-                            "default": "Clos",
-                            "description": "An explanation about the purpose of this instance.",
+                            "default": "O",
+                            "description": "Etat du Bail (O)ccupé, (V)acant.",
                             "id": "/properties/Baux/items/properties/EtatBail",
                             "maxLength": 50,
                             "title": "The etatbail schema",
                             "type": "string"
                         },
                         "LibelleAdresse": {
-                            "default": "rue Abelard",
-                            "description": "An explanation about the purpose of this instance.",
+                            "default": "12 Rue des Bleuets, Appartement 1",
+                            "description": "Adresse.",
                             "id": "/properties/Baux/items/properties/LibelleAdresse",
                             "maxLength": 100,
                             "title": "The libelleadresse schema",
@@ -164,16 +164,18 @@
                                 "id": "/properties/Baux/items/properties/Locataires/items",
                                 "properties": {
                                     "Civilite": {
-                                        "default": "M",
-                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "Monsieur",
+                                        "description": "Civilité du locataire.",
                                         "id": "/properties/Baux/items/properties/Locataires/items/properties/Civilite",
+                                        "maxLength": 10,
                                         "title": "The civilite schema",
                                         "type": "string"
                                     },
                                     "Email": {
-                                        "default": "nom.Prenom@gmail.com",
-                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "gerard.dupond@mondomaine.fr",
+                                        "description": "Email.",
                                         "id": "/properties/Baux/items/properties/Locataires/items/properties/Email",
+                                        "maxLength": 255,
                                         "title": "The email schema",
                                         "type": "string"
                                     },
@@ -185,16 +187,18 @@
                                         "type": "boolean"
                                     },
                                     "Nom": {
-                                        "default": "Nom",
-                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "DUPOND",
+                                        "description": "Nom du locataire.",
                                         "id": "/properties/Baux/items/properties/Locataires/items/properties/Nom",
+                                        "maxLength": 50,
                                         "title": "The nom schema",
                                         "type": "string"
                                     },
                                     "Prenom": {
-                                        "default": "Prenom",
-                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "Gérard",
+                                        "description": "Prénom du locataire.",
                                         "id": "/properties/Baux/items/properties/Locataires/items/properties/Prenom",
+                                        "maxLength": 50,
                                         "title": "The prenom schema",
                                         "type": "string"
                                     },
@@ -206,15 +210,17 @@
                                         "type": "string"
                                     },
                                     "Telephone": {
-                                        "default": "0645789612",
-                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "03.20.44.44.44",
+                                        "description": "Numéro de téléphone.",
                                         "id": "/properties/Baux/items/properties/Locataires/items/properties/Telephone",
+                                        "maxLength": 17,
                                         "title": "The telephone schema",
                                         "type": "string"
                                     }
                                 },
                                 "required": [
                                     "Nom",
+                                    "Prenom",
                                     "ReferenceExterne"
                                 ],
                                 "title": "Locataires",
@@ -224,25 +230,25 @@
                             "type": "array"
                         },
                         "ReferenceExterne": {
-                            "default": "ReferenceExterneBail",
-                            "description": "An explanation about the purpose of this instance.",
+                            "default": "80125",
+                            "description": "Référence externe du bail.",
                             "id": "/properties/Baux/items/properties/ReferenceExterne",
-                            "maxLength": 500,
+                            "maxLength": 255,
                             "title": "The referenceexterne schema",
                             "type": "string"
                         },
                         "SoldeBail": {
-                            "default": 0,
-                            "description": "An explanation about the purpose of this instance.",
+                            "default": -10.54,
+                            "description": "Solde du bail.",
                             "id": "/properties/Baux/items/properties/SoldeBail",
                             "title": "The soldebail schema",
                             "type": "number"
                         },
                         "Ville": {
-                            "default": "Paris",
-                            "description": "An explanation about the purpose of this instance.",
+                            "default": "MELUN",
+                            "description": "Ville.",
                             "id": "/properties/Baux/items/properties/Ville",
-                            "maxLength": 50,
+                            "maxLength": 100,
                             "title": "The ville schema",
                             "type": "string"
                         }
