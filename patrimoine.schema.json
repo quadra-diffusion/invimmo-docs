@@ -270,7 +270,7 @@
                 "type": "array"
             },
             "CodePatrimoine": {
-                "default": "1.002.001.331",
+                "default": "001.001.001A",
                 "description": "R\u00e9f\u00e9rence du patrimoine.",
                 "id": "/properties/CodePatrimoine",
                 "maxLength": 40,
@@ -278,7 +278,7 @@
                 "type": "string"
             },
             "CodePostal": {
-                "default": "59000",
+                "default": "77000",
                 "description": "Code postal.",
                 "id": "/properties/CodePostal",
                 "maxLength": 10,
@@ -296,7 +296,7 @@
             },
             "DateMiseEnService": {
                 "default": "1999-01-29",
-                "description": "La date de mise en service du logement.",
+                "description": "Date de mise en service du patrimoine.",
                 "id": "/properties/DateMiseEnService",
                 "maxLength": 10,
                 "pattern": "(^\\d{4}-\\d{2}-\\d{2}$)",
@@ -304,7 +304,7 @@
                 "type": "string"
             },
             "LibelleAdresse": {
-                "default": "rue du General",
+                "default": "12 Rue des Bleuets, Appartement 1",
                 "description": "Libell\u00e9 d'adresse.",
                 "id": "/properties/LibelleAdresse",
                 "maxLength": 100,
@@ -340,24 +340,24 @@
                 "id": "/properties/Proprietaire",
                 "properties": {
                     "Adresse": {
-                        "default": "rue des tulipes",
-                        "description": "An explanation about the purpose of this instance.",
+                        "default": "12 Rue des Bleuets, Appartement 1",
+                        "description": "Adresse.",
                         "id": "/properties/Proprietaire/properties/Adresse",
                         "maxLength": 100,
                         "title": "The adresse schema",
                         "type": "string"
                     },
                     "Civilite": {
-                        "default": "M",
-                        "description": "An explanation about the purpose of this instance.",
+                        "default": "Monsieur",
+                        "description": "Civilité du Propriétaire.",
                         "id": "/properties/Proprietaire/properties/Civilite",
                         "maxLength": 10,
                         "title": "The civilite schema",
                         "type": "string"
                     },
                     "CodePostal": {
-                        "default": "59000",
-                        "description": "An explanation about the purpose of this instance.",
+                        "default": "77000",
+                        "description": "Code Postal.",
                         "id": "/properties/Proprietaire/properties/CodePostal",
                         "maxLength": 10,
                         "title": "The codepostal schema",
@@ -365,7 +365,7 @@
                     },
                     "Email": {
                         "default": "dupond.duront@gmail.com",
-                        "description": "An explanation about the purpose of this instance.",
+                        "description": "Email.",
                         "id": "/properties/Proprietaire/properties/Email",
                         "maxLength": 255,
                         "pattern": "(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$)",
@@ -373,8 +373,8 @@
                         "type": "string"
                     },
                     "Nom": {
-                        "default": "dupond",
-                        "description": "An explanation about the purpose of this instance.",
+                        "default": "Durand",
+                        "description": "Nom du Propriétaire.",
                         "id": "/properties/Proprietaire/properties/Nom",
                         "maxLength": 50,
                         "title": "The nom schema",
@@ -382,31 +382,31 @@
                     },
                     "Pays": {
                         "default": "France",
-                        "description": "An explanation about the purpose of this instance.",
+                        "description": "Pays du Propriétaire.",
                         "id": "/properties/Proprietaire/properties/Pays",
                         "maxLength": 50,
                         "title": "The pays schema",
                         "type": "string"
                     },
                     "Prenom": {
-                        "default": "duront",
-                        "description": "An explanation about the purpose of this instance.",
+                        "default": "Robert",
+                        "description": "Prenom du Propriétaire.",
                         "id": "/properties/Proprietaire/properties/Prenom",
                         "maxLength": 50,
                         "title": "The prenom schema",
                         "type": "string"
                     },
                     "ReferenceExterne": {
-                        "default": "ReferenceExternePropritaire",
-                        "description": "An explanation about the purpose of this instance.",
+                        "default": "RDurand",
+                        "description": "Référence externe du Propriétaire.",
                         "id": "/properties/Proprietaire/properties/ReferenceExterne",
-                        "maxLength": 500,
+                        "maxLength": 255,
                         "title": "The referenceexterne schema",
                         "type": "string"
                     },
                     "Telephone": {
                         "default": "0645127896",
-                        "description": "An explanation about the purpose of this instance.",
+                        "description": "Numéro de téléphone.",
                         "id": "/properties/Proprietaire/properties/Telephone",
                         "maxLength": 20,
                         "title": "The telephone schema",
@@ -414,7 +414,7 @@
                     },
                     "Ville": {
                         "default": "Lille",
-                        "description": "An explanation about the purpose of this instance.",
+                        "description": "Ville.",
                         "id": "/properties/Proprietaire/properties/Ville",
                         "maxLength": 100,
                         "title": "The ville schema",
@@ -432,7 +432,7 @@
                 "default": "ReferenceExternePatrimoine",
                 "description": "R\u00e9f\u00e9rence unique de ce patrimoine.",
                 "id": "/properties/ReferenceExterne",
-                "maxLength": 500,
+                "maxLength": 255,
                 "title": "The referenceexterne schema",
                 "type": "string"
             },
