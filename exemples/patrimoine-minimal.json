@@ -23,7 +23,9 @@
 				{
 					"ReferenceExterne" : "ReferenceExterneCompteur",
 					"IndexDebut" : 1000,
-					"TypeCompteur": "EC"	
+					"TypeCompteur": "EC",
+					"CodeConstructeur" : "AB24886"
+
 				}
 			]
 		}
