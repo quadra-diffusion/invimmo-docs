@@ -201,21 +201,17 @@ Supprime une liste d'Affectation Utilisateurs dans la base de données d’Invim
 
 ## Authentification [/auth]
 
-### Ajouter une liste d authentification [POST]
+### Récupérer un token d'authentification [POST]
 
-Met à jour une liste d’authentifications
+S"authentifier à l'application
 
 + Request (application/json)
 
-    + Headers
-
-            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
-
-    + Attributes (array[authentifications PUT])
+    + Attributes (Authentification POST)
 
 + Response 200 (application/json)
-    Dans le cas ou les insertions de authentifications se passent bien.
-    + Attributes (array[authentifications Invimmo PUT])
+    Dans le cas ou l'authentification se passe bien.
+    + Attributes (Authentification Invimmo POST)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -1421,8 +1417,7 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 
 ## Authentification Invimmo POST (object)
 
-- ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
-- Include Authentification POST
+- AccessToken: `0a86a11f-d06e-46b7-a133-5240cb27d1e5` (required, string) - Token d'accès à Invimmo
 
 
 ## Patrimoine POST (object)
