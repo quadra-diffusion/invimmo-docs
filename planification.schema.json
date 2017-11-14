@@ -1,0 +1,59 @@
+{
+  "definitions": {}, 
+  "$schema": "http://json-schema.org/draft-04/schema#", 
+  "id": "Planification", 
+  "type": "array", 
+  "items": {
+    "id": "Planification/items", 
+    "type": "object", 
+    "properties": {
+      "ReferenceExterne": {
+        "id": "Planification/items/properties/ReferenceExterne", 
+        "type": "string", 
+        "title": "The Referenceexterne Schema.", 
+        "description": "Référence externe de l'objet de planification.",
+        "maxLength": 255,
+        "default": "7022-0644-0101"
+      }, 
+      "ReferenceExternePatrimoine": {
+        "id": "Planification/items/properties/ReferenceExternePatrimoine", 
+        "type": "string", 
+        "title": "The Referenceexternepatrimoine Schema.", 
+        "description": "Référence externe du patrimoine lié à la planification.", 
+        "maxLength": 255,
+        "default": "7022"
+      }, 
+      "ReferenceExterneBail": {
+        "id": "Planification/items/properties/ReferenceExterneBail", 
+        "type": "string", 
+        "title": "The Referenceexternebail Schema.", 
+        "description": "Référence externe du bail lié à la planification.", 
+        "maxLength": 255,
+        "default": "0644"
+      }, 
+      "Date": {
+        "id": "Planification/items/properties/Date", 
+        "type": "string", 
+        "title": "The Date Schema.", 
+        "description": "Date et heure du rendez vous au format ISO 8601.", 
+        "pattern": "(^\\d{4}-\\d{2}-\\d{2}$)",
+        "default": "2017-11-14T10:44:14+01:00"
+      }, 
+      "Agence": {
+        "id": "Planification/items/properties/Agence", 
+        "type": "string", 
+        "title": "The Agence Schema.", 
+        "description": "Agence du patrimoine.", 
+        "maxLength": 500,
+        "default": "Tulipe"
+      }, 
+      "TypeEdl": {
+        "id": "Planification/items/properties/TypeEdl", 
+        "type": "string", 
+        "title": "The Typeedl Schema.", 
+        "description": "les valeurs possibles seront 1 (entrant), 2(sortant) ou 3(visite).", 
+        "default": "1"
+      }
+    }
+  }
+}
