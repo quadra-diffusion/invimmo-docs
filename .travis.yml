@@ -17,6 +17,7 @@ addons:
 before_deploy:
   - node scripts/generateMd.js
   - pandoc connecteur_patrimoine.md --latex-engine=xelatex -o connecteur_patrimoine.pdf 
+  - pandoc connecteur_planification.md --latex-engine=xelatex -o connecteur_planification.pdf
 
 deploy:
   provider: releases
@@ -26,6 +27,8 @@ deploy:
   file: 
     - connecteur_patrimoine.md
     - connecteur_patrimoine.pdf
+    - connecteur_planification.md
+    - connecteur_planification.pdf
   on:
     repo: quadra-diffusion/invimmo-docs
     tags: true
