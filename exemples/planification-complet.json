@@ -1,7 +1,7 @@
 [
   {
     "ReferenceExterne": "ReferenceExternePlanification",
-    "ReferenceExternePatrimoine": "ReferenceExternePatrimoine",
+    "ReferenceExterneUtilisateur": "ReferenceExterneUtilisateur",
     "ReferenceExterneBail": "ReferenceExterneBail",
     "Date": "2017-11-14T10:44:14+01:00",
     "Agence": "Agence",
