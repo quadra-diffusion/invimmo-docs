@@ -4,8 +4,17 @@
   "id": "Planification", 
   "type": "array", 
   "items": {
+    "additionalProperties": false,
     "id": "Planification/items", 
     "type": "object", 
+    "required": [
+        "ReferenceExterne",
+        "ReferenceExterneUtilisateur",
+        "ReferenceExterneBail",
+        "Date",
+        "Agence",
+        "TypeEdl"
+    ],
     "properties": {
       "ReferenceExterne": {
         "id": "Planification/items/properties/ReferenceExterne", 
