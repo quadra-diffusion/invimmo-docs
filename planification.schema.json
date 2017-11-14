@@ -15,11 +15,11 @@
         "maxLength": 255,
         "default": "7022-0644-0101"
       }, 
-      "ReferenceExternePatrimoine": {
-        "id": "Planification/items/properties/ReferenceExternePatrimoine", 
+      "ReferenceExterneUtilisateur": {
+        "id": "Planification/items/properties/ReferenceExterneUtilisateur", 
         "type": "string", 
-        "title": "The Referenceexternepatrimoine Schema.", 
-        "description": "Référence externe du patrimoine lié à la planification.", 
+        "title": "The Referenceexterneutilisateur Schema.", 
+        "description": "Référence externe de l'utilisateur lié à la planification.", 
         "maxLength": 255,
         "default": "7022"
       }, 
@@ -36,7 +36,7 @@
         "type": "string", 
         "title": "The Date Schema.", 
         "description": "Date et heure du rendez vous au format ISO 8601.", 
-        "pattern": "(^\\d{4}-\\d{2}-\\d{2}$)",
+        "pattern": "(^\\d{4}-\\d{2}-\\d{2}T\\d{2}\:\\d{2}\:\\d{2}[+-]\\d{2}\:\\d{2}$)",
         "default": "2017-11-14T10:44:14+01:00"
       }, 
       "Agence": {
