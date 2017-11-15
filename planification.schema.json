@@ -58,10 +58,10 @@
       }, 
       "TypeEdl": {
         "id": "Planification/items/properties/TypeEdl", 
-        "type": "string", 
+        "type": "number", 
         "title": "The Typeedl Schema.", 
         "description": "les valeurs possibles seront 1 (entrant), 2(sortant) ou 3(visite).", 
-        "default": "1"
+        "default": 1
       }
     }
   }
