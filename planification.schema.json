@@ -40,10 +40,10 @@
         "maxLength": 255,
         "default": "0644"
       }, 
-      "Date": {
-        "id": "Planification/items/properties/Date", 
+      "DateHeure": {
+        "id": "Planification/items/properties/DateHeure", 
         "type": "string", 
-        "title": "The Date Schema.", 
+        "title": "The DateHeure Schema.", 
         "description": "Date et heure du rendez vous au format ISO 8601.", 
         "pattern": "(^\\d{4}-\\d{2}-\\d{2}T\\d{2}\\:\\d{2}\\:\\d{2}[+-]\\d{2}\\:\\d{2}$)",
         "default": "2017-11-14T10:44:14+01:00"
