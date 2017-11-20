@@ -1302,6 +1302,85 @@ Désactive une liste de groupes patrimoines dans la base de données d’Invimmo
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
+## Planifications [/planifications]
+
+Table Optionnel
+
+### Ajouter une liste de planifications [POST]
+
+Insère une liste de Planifications dans la base de données d’Invimmo.
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+    + Attributes (array[Planification POST])
+
+
++ Response 201 (application/json)
+    Dans le cas ou les insertions des Planifications se passent bien.
+    + Attributes (array[Planification Invimmo POST])
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer une planification.
+    + Body
+
++ Response 409 (application/json)
+    (Conflict) La demande n'a pas pu être terminée.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
+### Modifier une liste de planifications [PUT]
+
+Modifie une liste de Planifications dans la base de données d’Invimmo
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+    + Attributes (array[Planification PUT])
+
++ Response 200 (application/json)
+    Dans le cas ou les modifications de Planifications se passent bien.
+    + Attributes (array[Planification Invimmo PUT])
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer une planification.
+    + Body
+
++ Response 409 (application/json)
+    (Conflict) La demande n'a pas pu être terminée.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
+
+
 ## Propriétaires [/proprietaires]
 
 Table Optionnel
@@ -1589,6 +1668,31 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 - ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
 - Include Patrimoine DELETE
 
+## Planification POST (object)
+
+- ReferenceExterne: `001.001.001A` (required, string) - Référence externe de la planification (Max 255 caractères).
+- ReferenceExterneBail: `002.002.002A` (string) - Référence externe du bail (Max 255 caractères).
+- ReferenceExterneUtilisateur: `003.003.003A` (string) - Référence externe de l'utilisateur (Max 255 caractères).
+- Agence: `Paris` (string) - l'agence concernée par la planification (Max 200 caractères).
+- DateHeure: `2000-10-14 10:10:10` (string) - Date et heure de la planification ((YYYY-MM-DD) HH:MM:SS).
+- TypeEdl: `1` (number) - le type de l'EDL (1, 2..).
+
+## Planification Invimmo POST (object)
+
+- Include Planification POST
+
+## Planification PUT (object)
+
+- ReferenceExterne: `001.001.001A` (required, string) - Référence externe de la planification (Max 255 caractères).
+- ReferenceExterneBail: `002.002.002A` (required, string) - Référence externe du bail (Max 255 caractères).
+- ReferenceExterneUtilisateur: `003.003.003A` (required, string) - Référence externe de l'utilisateur (Max 255 caractères).
+- Agence: `Paris` (required, string) - l'agence concernée par la planification (Max 200 caractères).
+- DateHeure: `2000-10-14 10:10:10` (required, string) - Date et heure de la planification ((YYYY-MM-DD) HH:MM:SS).
+- TypeEdl: `1` (required, number) - le type de l'EDL (1, 2..).
+
+## Planification Invimmo PUT (object)
+
+- Include Planification PUT
 ## Baux POST (object)
 
 - ReferenceExterne: `80125` (required, string) - Référence externe du bail (Max 255 caractères).
