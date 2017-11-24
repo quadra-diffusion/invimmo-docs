@@ -2157,6 +2157,7 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 - travaux (Travaux GET)
 - procuration (Procurations GET)
 - futuresadresse (FuturesAdresse GET)
+- réponses (array[Reponses GET])
 
 - ReferenceInvimmo: `149` (required, number) - Référence unique Invimmo.
 - DateEdl: `2016-10-03 14:44:36` (required, string) - Date de l'état des lieux (YYYY-MM-DD HH:MM:SS).
@@ -2179,6 +2180,11 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 
 ## Edls Invimmo GET (object)
 
+## Reponses GET (object)
+
+- Question: `EDL est terminé?` (string) - Libelle de la question (Max 2000 caractères).
+- ReferenceInvimmoQuestion: `16548` (required, number) - Référence unique Invimmo.
+- Reponse: `true` (boolean) - Réponse à la question (oui -> true, non > false).
 
 ## Assurances GET (object)
 
@@ -2196,11 +2202,20 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 ## Pieces GET (object)
 
 - equipements (array[Equipements GET])
+- Surface (Surface GET)
 
 - ReferenceInvimmoPiece: `465` (required, number) - Référence interne de la Pièce (Integer 10).
 - LibellePiece: `SALON` (required, string) - Libellé de la pièce (Max 200 caractères).
 - DateModif: `2016-01-26` (string) - Date de de modification (YYYY-MM-DD).
 - DateCreation: `2017-03-21` (string) - Date de de création (YYYY-MM-DD).
+
+## Surface GET (object)
+
+- Surface: `110.67` (number) - surface de la pièce (Double 10.2).
+- Hauteur: `2.5` (number) - hauteur de la pièce (Double 10.2).
+- Largeur: `10.52` (number) - largeur de la pièce (Double 10.2).
+- Longueur: `10.52` (number) - longueur de la pièce (Double 10.2).
+- ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo.
 
 ## Equipements GET (object)
 
@@ -2261,12 +2276,17 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 
 ## Degradations GET (object)
 
-- ReferenceInvimmoDegradation: `45` (required, number) - Référence interne de la dégradation (Integer 10).
 - Designation: `Evier Inox` (required, string) - Désignation de la dégradation (Max 255 caractères).
+- PrixUnitaire: `10.40` (number) - Prix unitaire (Double 10.2).
+- Quantite: `2` (number) - Quantité (Double 10.2).
+- CoutTotal: `18.30` (number) - Cout total (Double 10.2).
+- Vetuste: `2.10` (number) - Vétusté (Double 10.2).
+- Forfait: `true` (boolean) - Est au forfait true/false.
 - AChargeDuBailleur: `true` (boolean) - Réparation à la charge du bailleur true/false.
 - ReferenceInvimmoEquipement: `45` (required, number) - Référence interne de l'équipement (Integer 10).
-- DateModif: `2016-01-26` (string) - Date de de modification (YYYY-MM-DD).
-- DateCreation: `2017-03-21` (string) - Date de de création (YYYY-MM-DD).
+- ReferenceExterneEquipement: `CON125` (string) - Référence externe du type d'équipement (Max 255 caractères).
+- RubriqueAssocie: `Contremarche` (string) - Rubrique associée (type équipement) (Max 200 caractères).
+- CodeBordereau: `Evier Inox` (string) - Code bordereau (Max 500 caractères).
 
 ## Procurations GET (object)
 
