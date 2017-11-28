@@ -11,7 +11,7 @@
         "ReferenceExterne",
         "ReferenceExterneUtilisateur",
         "ReferenceExterneBail",
-        "Date",
+        "DateHeure",
         "Agence",
         "TypeEdl"
     ],
@@ -21,6 +21,7 @@
         "type": "string", 
         "title": "The Referenceexterne Schema.", 
         "description": "Référence externe de l'objet de planification.",
+        "minLength": 1,
         "maxLength": 255,
         "default": "7022-0644-0101"
       }, 
@@ -29,6 +30,7 @@
         "type": "string", 
         "title": "The Referenceexterneutilisateur Schema.", 
         "description": "Référence externe de l'utilisateur lié à la planification.", 
+        "minLength": 1,
         "maxLength": 255,
         "default": "7022"
       }, 
@@ -37,6 +39,7 @@
         "type": "string", 
         "title": "The Referenceexternebail Schema.", 
         "description": "Référence externe du bail lié à la planification.", 
+        "minLength": 1,
         "maxLength": 255,
         "default": "0644"
       }, 
@@ -53,6 +56,7 @@
         "type": "string", 
         "title": "The Agence Schema.", 
         "description": "Agence du patrimoine.", 
+        "minLength": 1,
         "maxLength": 500,
         "default": "Tulipe"
       }, 
