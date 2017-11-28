@@ -25,6 +25,7 @@
                             "description": "Code Postal.",
                             "id": "/properties/Baux/items/properties/CodePostal",
                             "maxLength": 10,
+                            "minLength": 1,
                             "title": "The codepostal schema",
                             "type": "string"
                         },
@@ -39,6 +40,7 @@
                                         "description": "Code Compteur.",
                                         "id": "/properties/Baux/items/properties/Compteurs/items/properties/CodeConstructeur",
                                         "maxLength": 200,
+                                        "minLength": 1,
                                         "title": "The codeconstructeur schema",
                                         "type": "string"
                                     },
@@ -70,6 +72,7 @@
                                         "description": "R\u00e9f\u00e9rence externe du Compteur.",
                                         "id": "/properties/Baux/items/properties/Compteurs/items/properties/ReferenceExterne",
                                         "maxLength": 255,
+                                        "minLength": 1,
                                         "title": "The referenceexterne schema",
                                         "type": "string"
                                     },
@@ -85,6 +88,7 @@
                                         "description": "Type de compteur (Eau, eletricit\u00e9, etc...).",
                                         "id": "/properties/Baux/items/properties/Compteurs/items/properties/TypeCompteur",
                                         "maxLength": 500,
+                                        "minLength": 1,
                                         "title": "The typecompteur schema",
                                         "type": "string"
                                     }
@@ -156,6 +160,7 @@
                             "description": "Adresse.",
                             "id": "/properties/Baux/items/properties/LibelleAdresse",
                             "maxLength": 100,
+                            "minLength": 1,
                             "title": "The libelleadresse schema",
                             "type": "string"
                         },
@@ -193,6 +198,7 @@
                                         "description": "Nom du locataire.",
                                         "id": "/properties/Baux/items/properties/Locataires/items/properties/Nom",
                                         "maxLength": 50,
+                                        "minLength": 1,
                                         "title": "The nom schema",
                                         "type": "string"
                                     },
@@ -201,6 +207,7 @@
                                         "description": "Prénom du locataire.",
                                         "id": "/properties/Baux/items/properties/Locataires/items/properties/Prenom",
                                         "maxLength": 50,
+                                        "minLength": 1,
                                         "title": "The prenom schema",
                                         "type": "string"
                                     },
@@ -209,6 +216,7 @@
                                         "description": "An explanation about the purpose of this instance.",
                                         "id": "/properties/Baux/items/properties/Locataires/items/properties/ReferenceExterne",
                                         "maxLength": 255,
+                                        "minLength": 1,
                                         "title": "The referenceexterne schema",
                                         "type": "string"
                                     },
@@ -237,6 +245,7 @@
                             "description": "Référence externe du bail.",
                             "id": "/properties/Baux/items/properties/ReferenceExterne",
                             "maxLength": 255,
+                            "minLength": 1,
                             "title": "The referenceexterne schema",
                             "type": "string"
                         },
@@ -252,6 +261,7 @@
                             "description": "Ville.",
                             "id": "/properties/Baux/items/properties/Ville",
                             "maxLength": 100,
+                            "minLength": 1,
                             "title": "The ville schema",
                             "type": "string"
                         }
@@ -274,6 +284,7 @@
                 "description": "R\u00e9f\u00e9rence du patrimoine.",
                 "id": "/properties/CodePatrimoine",
                 "maxLength": 40,
+                "minLength": 1,
                 "title": "The codepatrimoine schema",
                 "type": "string"
             },
@@ -282,6 +293,7 @@
                 "description": "Code postal.",
                 "id": "/properties/CodePostal",
                 "maxLength": 10,
+                "minLength": 1,
                 "title": "The codepostal schema",
                 "type": "string"
             },
@@ -308,6 +320,7 @@
                 "description": "Libell\u00e9 d'adresse.",
                 "id": "/properties/LibelleAdresse",
                 "maxLength": 100,
+                "minLength": 1,
                 "title": "The libelleadresse schema",
                 "type": "string"
             },
@@ -377,6 +390,7 @@
                         "description": "Nom du Propriétaire.",
                         "id": "/properties/Proprietaire/properties/Nom",
                         "maxLength": 50,
+                        "minLength": 1,
                         "title": "The nom schema",
                         "type": "string"
                     },
@@ -401,6 +415,7 @@
                         "description": "Référence externe du Propriétaire.",
                         "id": "/properties/Proprietaire/properties/ReferenceExterne",
                         "maxLength": 255,
+                        "minLength": 1,
                         "title": "The referenceexterne schema",
                         "type": "string"
                     },
@@ -433,6 +448,7 @@
                 "description": "R\u00e9f\u00e9rence unique de ce patrimoine.",
                 "id": "/properties/ReferenceExterne",
                 "maxLength": 255,
+                "minLength": 1,
                 "title": "The referenceexterne schema",
                 "type": "string"
             },
@@ -441,6 +457,7 @@
                 "description": "Ville.",
                 "id": "/properties/Ville",
                 "maxLength": 100,
+                "minLength": 1,
                 "title": "The ville schema",
                 "type": "string"
             }
