@@ -1,0 +1,20 @@
+[
+{
+"nomUtilisateur": "Banderas",
+"referenceExterne": "ALE",
+"prenom": "Antonio",
+"imeiMobile": null,
+"motDePasse": "totonio",
+"telephone": "01020304056",
+"email": "antonio.banderas@free.fr"
+},
+{
+"nomUtilisateur": "DESS",
+"referenceExterne": "SDE",
+"prenom": "Steeve",
+"imeiMobile": null,
+"motDePasse": "Sdepass",
+"telephone": "0908070605",
+"email": "steeve.dess@google.fr"
+}
+]
