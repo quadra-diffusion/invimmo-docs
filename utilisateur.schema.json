@@ -1,0 +1,68 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "utilisateur",
+  "type": "array",
+  "title": "Utilisateur",
+  "items": {
+    "id": "utilisateur/items",
+    "type": "object",
+    "properties": {
+      "nomUtilisateur": {
+        "id": "utilisateur/items/properties/nomUtilisateur",
+        "type": "string",
+        "title": "The Nomutilisateur Schema.",
+        "description": "Nom de la personne",
+        "default": "",
+		"maxLength": 50,
+		"minLength": 1
+      },
+      "referenceExterne": {
+        "id": "utilisateur/items/properties/referenceExterne",
+        "type": "string",
+        "title": "The Referenceexterne Schema.",
+        "description": "Référence unique du système externe",
+        "default": "",
+		"maxLength": 255,
+		"minLength": 1
+      },
+      "prenom": {
+        "id": "utilisateur/items/properties/prenom",
+        "type": "string",
+        "title": "The Prenom Schema.",
+        "description": "Prénom de la personne",
+        "default": "",
+		"maxLength": 50
+      },
+      "imeiMobile": {
+        "id": "utilisateur/items/properties/imeiMobile",
+        "type": "null",
+        "title": "The Imeimobile Schema.",
+        "description": "Référence unique IMEI de l'appareil mobile qui exécute l'application INVIMMO",
+        "default": null,
+		"maxLength": 100
+      },
+      "telephone": {
+        "id": "utilisateur/items/properties/telephone",
+        "type": "string",
+        "title": "The Telephone Schema.",
+        "description": "Numéro de téléphone de la personne",
+        "default": "",
+		"maxLength": 17
+      },
+      "email": {
+        "id": "utilisateur/items/properties/email",
+        "type": "string",
+        "title": "The Email Schema.",
+        "description": "Adresse email de la personne.",
+        "default": "",
+		"maxLength": 255
+      }
+    },
+        "required": [
+            "nomUtilisateur",
+            "referenceExterne"
+        ]
+  }
+}
+
