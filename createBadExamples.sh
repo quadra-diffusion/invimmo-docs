@@ -13,5 +13,5 @@ sed -e 's/"ReferenceExterneCompteur",/"ReferenceExterneCompteur","xx" : "yy",/' 
 find bad/patrimoine* -maxdepth 1 -type f -print0 | xargs -0 -I {} ajv test -s patrimoine.schema.json -d {} --invalid
 
 sed -e 's/"ReferenceExterneBail": "ReferenceExterneBail",//' exemples/planification-complet.json > bad/planification-manque-reference-bail.json
-sed -e 's/"Date": "2017-11-14T10:44:14+01:00",/"Date": "2017-11-14",/' exemples/planification-complet.json > bad/planification-date-et-heure-obligatoire.json
+sed -e 's/"DateHeure": "2017-11-14T10:44:14+01:00",/"Date": "2017-11-14",/' exemples/planification-complet.json > bad/planification-date-et-heure-obligatoire.json
 find bad/planification* -maxdepth 1 -type f -print0 | xargs -0 -I {} ajv test -s planification.schema.json -d {} --invalid
