@@ -8,6 +8,15 @@
     "id": "utilisateur/items",
     "type": "object",
     "properties": {
+	  "login": {
+        "id": "utilisateur/items/properties/login",
+        "type": "string",
+        "title": "The Login Schema.",
+        "description": "Login utilisé pour la connexion dans l'application Invimmo",
+        "default": "",
+		"maxLength": 50,
+		"minLength": 1
+      },
       "nomUtilisateur": {
         "id": "utilisateur/items/properties/nomUtilisateur",
         "type": "string",
@@ -60,6 +69,7 @@
       }
     },
         "required": [
+			"login",
             "nomUtilisateur",
             "referenceExterne"
         ]
