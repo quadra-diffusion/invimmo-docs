@@ -183,6 +183,7 @@
                                         "description": "Email.",
                                         "id": "/properties/Baux/items/properties/Locataires/items/properties/Email",
                                         "maxLength": 255,
+                                        "pattern": "(^([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+|)$)",
                                         "title": "The email schema",
                                         "type": "string"
                                     },
@@ -381,7 +382,7 @@
                         "description": "Email.",
                         "id": "/properties/Proprietaire/properties/Email",
                         "maxLength": 255,
-                        "pattern": "(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$)",
+                        "pattern": "(^([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+|)$)",
                         "title": "The email schema",
                         "type": "string"
                     },
