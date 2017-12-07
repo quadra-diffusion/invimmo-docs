@@ -272,7 +272,7 @@
                         "DateFinBail",
                         "CodePostal",
                         "ReferenceExterne",
-						"Locataires"
+			"Locataires"
                     ],
                     "title": "Baux",
                     "type": "object"
@@ -406,6 +406,7 @@
                         "description": "Prenom du Propriétaire.",
                         "id": "/properties/Proprietaire/properties/Prenom",
                         "maxLength": 50,
+                        "minLength": 1,
                         "title": "The prenom schema",
                         "type": "string"
                     },
@@ -437,7 +438,8 @@
                 },
                 "required": [
                     "Nom",
-                    "ReferenceExterne"
+                    "ReferenceExterne",
+		    "Prenom"
                 ],
                 "title": "Proprietaire",
                 "type": "object"
