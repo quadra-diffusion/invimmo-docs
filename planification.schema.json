@@ -57,7 +57,7 @@
         "title": "The Agence Schema.", 
         "description": "Agence du patrimoine.", 
         "minLength": 1,
-        "maxLength": 500,
+        "maxLength": 200,
         "default": "Tulipe"
       }, 
       "TypeEdl": {
