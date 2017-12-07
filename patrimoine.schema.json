@@ -2,8 +2,7 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "definitions": {},
     "id": "http://example.com/example.json",
-    "items": {
-        "additionalProperties": false,
+    "additionalProperties": false,
         "id": "properties/Patrimoine/items",
         "properties": {
             "Agence": {
@@ -183,7 +182,6 @@
                                         "description": "Email.",
                                         "id": "/properties/Baux/items/properties/Locataires/items/properties/Email",
                                         "maxLength": 255,
-                                        "pattern": "(^([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+|)$)",
                                         "title": "The email schema",
                                         "type": "string"
                                     },
@@ -273,7 +271,8 @@
                         "DateDebutBail",
                         "DateFinBail",
                         "CodePostal",
-                        "ReferenceExterne"
+                        "ReferenceExterne",
+						"Locataires"
                     ],
                     "title": "Baux",
                     "type": "object"
@@ -382,7 +381,6 @@
                         "description": "Email.",
                         "id": "/properties/Proprietaire/properties/Email",
                         "maxLength": 255,
-                        "pattern": "(^([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+|)$)",
                         "title": "The email schema",
                         "type": "string"
                     },
