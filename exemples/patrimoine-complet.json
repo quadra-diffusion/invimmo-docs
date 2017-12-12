@@ -10,6 +10,7 @@
 	"NumImmeuble": "11",
 	"NomResidence": "Flandres",
 	"Agence": "Tulipes",
+	"GroupeUgLibelle":"Groupe 1",
 	"Proprietaire": {
 		"ReferenceExterne" : "ReferenceExternePropritaire",
 		"Nom" : "dupond",
