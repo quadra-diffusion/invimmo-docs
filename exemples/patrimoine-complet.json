@@ -11,6 +11,7 @@
 	"NomResidence": "Flandres",
 	"Agence": "Tulipes",
 	"GroupeUgLibelle":"Groupe 1",
+	"TypeLibelle":"Type 1",
 	"Proprietaire": {
 		"ReferenceExterne" : "ReferenceExternePropritaire",
 		"Nom" : "dupond",
