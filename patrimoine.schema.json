@@ -470,6 +470,14 @@
                 "maxLength": 200,
                 "title": "The UG Group schema",
                 "type": "string"
+            },
+            "TypeLibelle": {
+                "default": "Type",
+                "description": "Type de patrimoine.",
+                "id": "/properties/TypeLibelle",
+                "maxLength": 50,
+                "title": "The type schema",
+                "type": "string"
             }
         },
         "required": [
