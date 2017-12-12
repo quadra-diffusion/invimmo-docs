@@ -462,6 +462,14 @@
                 "minLength": 1,
                 "title": "The ville schema",
                 "type": "string"
+            },
+            "GroupeUgLibelle": {
+                "default": "Groupe",
+                "description": "Groupe Ug.",
+                "id": "/properties/GroupeUgLibelle",
+                "maxLength": 200,
+                "title": "The UG Group schema",
+                "type": "string"
             }
         },
         "required": [
