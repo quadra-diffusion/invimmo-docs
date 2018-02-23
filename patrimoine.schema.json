@@ -147,6 +147,13 @@
                             "title": "The depotgarantie schema",
                             "type": "number"
                         },
+			"Cautions": {
+                            "default": 345.2,
+                            "description": "Montant des cautions",
+                            "id": "/properties/Baux/items/properties/Cautions",
+                            "title": "The cautions schema",
+                            "type": "number"
+                        },
                         "EtatBail": {
                             "default": "O",
                             "description": "Etat du Bail (O)ccupé, (V)acant.",
