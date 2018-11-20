@@ -23,7 +23,7 @@
             "$id": "#/items/properties/Assurance/properties/ReferenceExterne",
             "type": "string",
             "title": "La reference unique de l'assurance (hors Invimmo)",
-            "default": 0,
+            "default": "",
             "examples": [
               "465"
             ]
@@ -197,7 +197,7 @@
                   "$id": "#/items/properties/Pieces/items/properties/Surface/properties/Surface",
                   "type": "number",
                   "title": "valeur de la surface",
-                  "default": 0,
+                  "default": 0.0,
                   "examples": [
                     110.67
                   ]
@@ -206,7 +206,7 @@
                   "$id": "#/items/properties/Pieces/items/properties/Surface/properties/Hauteur",
                   "type": "number",
                   "title": "Hauteur",
-                  "default": 0,
+                  "default": 0.0,
                   "examples": [
                     2.5
                   ]
@@ -215,7 +215,7 @@
                   "$id": "#/items/properties/Pieces/items/properties/Surface/properties/Largeur",
                   "type": "number",
                   "title": "Largeur",
-                  "default": 0,
+                  "default": 0.0,
                   "examples": [
                     10.52
                   ]
@@ -224,16 +224,16 @@
                   "$id": "#/items/properties/Pieces/items/properties/Surface/properties/Longueur",
                   "type": "number",
                   "title": "Longueur",
-                  "default": 0,
+                  "default": 0.0,
                   "examples": [
                     10.52
                   ]
                 },
                 "ReferenceExterne": {
                   "$id": "#/items/properties/Pieces/items/properties/Surface/properties/ReferenceExterne",
-                  "type": "integer",
+                  "type": "string",
                   "title": "La reference externe de la surface (Hors Invimmo)",
-                  "default": 0,
+                  "default": "",
                   "examples": [
                     "16548"
                   ]
