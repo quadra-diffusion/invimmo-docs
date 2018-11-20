@@ -1,0 +1,105 @@
+[
+  {
+    "Assurance": {
+      "ReferenceExterne": "465",
+      "DateDebut": "2016-01-31",
+      "DateFin": "2017-01-31",
+      "NomCompagnie": "AXA",
+      "CodeContrat": "ZS45EMI4442",
+      "NumeroAssure": "Robert DUPOND",
+      "TelCompagnie": "351557010202731",
+      "MailCompagnie": "toto@compagnie.fr"
+    },
+    "Pieces": [
+      {
+        "equipements": [
+          {
+            "ReferenceExterne": "EDH123",
+            "Nom": "Evier Inox",
+            "DatePose": "2017-02-14",
+            "Etat": "Bon",
+            "Commentaire": "Evier Inox double",
+            "Ordre": 10
+          }
+        ],
+        "Surface": {
+          "Surface": 110.67,
+          "Hauteur": 2.5,
+          "Largeur": 10.52,
+          "Longueur": 10.52,
+          "ReferenceExterne": "16548"
+        },
+        "ReferenceExterne": "CUI123",
+        "Nom": "SALON",
+        "Etat": "HS",
+        "Ordre": 10
+      }
+    ],
+    "Locataires": [
+      {
+        "ReferenceExterne": "RDUPOND",
+        "Nom": "DUPOND",
+        "Prenom": "Robert",
+        "Civilite": "M",
+        "Telephone": "351557010202731",
+        "Email": "toto@gmail.com",
+        "absent": true,
+        "refuseDeSigner": true,
+        "Procuration": {
+          "Nom": "Dupont",
+          "Prenom": "Dupont",
+          "Adresse": "rue de lille",
+          "ComplementAdresse": "Appt 2",
+          "CodePostal": "59000",
+          "Ville": "Lille",
+          "Pays": "France",
+          "Telephone": "351557010202731",
+          "Email": "toto@gmail.com"
+        },
+        "FutureAdresse": {
+          "Adresse": "rue de lille",
+          "ComplementAdresse": "Appt 2",
+          "CodePostal": "59000",
+          "Ville": "Lille",
+          "Pays": "France",
+          "TelephonePortable": "351557010202731",
+          "TelephoneFixe": "351557010202731",
+          "Email": "toto@gmail.com",
+          "ReferenceExterneLocataire": "RDUPOND"
+        }
+      }
+    ],
+  "Reponses": [
+    {
+      "Question": "L'état du logement nécessite l'intervention d'une société de nettoyage?",
+      "ReferenceExterne": "16548",
+      "Reponse": true
+    }
+  ],
+   "Cles" : [
+    {
+	  "ReferenceExterne": "EDH123",
+      "Nom": "Badge",
+      "QuantiteDonnee": 1,
+      "QuantiteRecue": 2,
+      "CoutTotal": 18.3,
+      "Commentaire": "Badge temporaire car changement du sytème en cours",
+      "Tarif":  24.90,
+      "CodeTarif": "BA001"
+    }
+   ],
+    "ReferenceExterne": "8000",
+    "DateEdl": "2016-10-03 14:44:36",
+    "DateEntrant": "2016-10-03",
+    "Commentaire": "Logement très propre",
+    "CommentaireMotifDeDepart": "Cherche un logement centre ville",
+    "ReferenceExterneLogement": "001.001.001A",
+    "referenceExterneBail": "80125",
+    "ReferenceExterneProprietaire": "RDurand",
+    "TypeLogement": "T2",
+    "TypeEdl": "Etat des lieux entrant",
+    "Etat": "Clos",
+    "MotifDepart": "Logement centre ville",
+    "DestinationClient": "Centre ville de MELIN"
+  }
+]
