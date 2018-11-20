@@ -1,0 +1,1017 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "array",
+  "title": "Scheme EDL Invimmo",
+  "items": {
+    "$id": "#/items",
+    "type": "object",
+    "title": "EDL",
+    "properties": {
+      "Assurance": {
+        "$id": "#/items/properties/Assurance",
+        "type": "object",
+        "title": "Assurance",
+        "required": [
+          "ReferenceExterne",
+          "DateDebut",
+          "DateFin"
+        ],
+        "properties": {
+          "ReferenceExterne": {
+            "$id": "#/items/properties/Assurance/properties/ReferenceExterne",
+            "type": "string",
+            "title": "La reference unique de l'assurance (hors Invimmo)",
+            "default": 0,
+            "examples": [
+              "465"
+            ]
+          },
+          "DateDebut": {
+            "$id": "#/items/properties/Assurance/properties/DateDebut",
+            "type": "string",
+            "title": "Date debut",
+            "default": "",
+            "examples": [
+              "2016-01-31"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "DateFin": {
+            "$id": "#/items/properties/Assurance/properties/DateFin",
+            "type": "string",
+            "title": "Date fin",
+            "default": "",
+            "examples": [
+              "2017-01-31"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "NomCompagnie": {
+            "$id": "#/items/properties/Assurance/properties/NomCompagnie",
+            "type": "string",
+            "title": "Nom compagnie assurance",
+            "default": "",
+            "examples": [
+              "AXA"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "CodeContrat": {
+            "$id": "#/items/properties/Assurance/properties/CodeContrat",
+            "type": "string",
+            "title": "Code contrat",
+            "default": "",
+            "examples": [
+              "ZS45EMI4442"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "NumeroAssure": {
+            "$id": "#/items/properties/Assurance/properties/NumeroAssure",
+            "type": "string",
+            "title": "Numero assure",
+            "default": "",
+            "examples": [
+              "Robert DUPOND"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "TelCompagnie": {
+            "$id": "#/items/properties/Assurance/properties/TelCompagnie",
+            "type": "string",
+            "title": "Telephone compagnie assurance",
+            "default": "",
+            "examples": [
+              "351557010202731"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "MailCompagnie": {
+            "$id": "#/items/properties/Assurance/properties/MailCompagnie",
+            "type": "string",
+            "title": "Mail compagnie assurance",
+            "default": "",
+            "examples": [
+              "toto@compagnie.fr"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      },
+      "Pieces": {
+        "$id": "#/items/properties/Pieces",
+        "type": "array",
+        "title": "Pieces",
+        "items": {
+          "$id": "#/items/properties/Pieces/items",
+          "type": "object",
+          "title": "The Items Schema",
+          "properties": {
+            "equipements": {
+              "$id": "#/items/properties/Pieces/items/properties/equipements",
+              "type": "array",
+              "title": "Equipements",
+              "items": {
+                "$id": "#/items/properties/Pieces/items/properties/equipements/items",
+                "type": "object",
+                "title": "The Items Schema",
+                "required": [
+                  "ReferenceExterne",
+                  "Nom"
+                ],
+                "properties": {
+                  "ReferenceExterne": {
+                    "$id": "#/items/properties/Pieces/items/properties/equipements/items/properties/ReferenceExterne",
+                    "type": "string",
+                    "title": "The Referenceexterne Schema",
+                    "default": "",
+                    "examples": [
+                      "EDH123"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "Nom": {
+                    "$id": "#/items/properties/Pieces/items/properties/equipements/items/properties/Nom",
+                    "type": "string",
+                    "title": "Le type equipement (parametrage)",
+                    "default": "",
+                    "examples": [
+                      "Evier Inox"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "DatePose": {
+                    "$id": "#/items/properties/Pieces/items/properties/equipements/items/properties/DatePose",
+                    "type": "string",
+                    "title": "Date pose",
+                    "default": "",
+                    "examples": [
+                      "2017-02-14"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "Etat": {
+                    "$id": "#/items/properties/Pieces/items/properties/equipements/items/properties/Etat",
+                    "type": "string",
+                    "title": "Le type etat (parametrage)",
+                    "default": "",
+                    "examples": [
+                      "Bon"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "Commentaire": {
+                    "$id": "#/items/properties/Pieces/items/properties/equipements/items/properties/Commentaire",
+                    "type": "string",
+                    "title": "The Commentaire Schema",
+                    "default": "",
+                    "examples": [
+                      "Evier Inox double"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "Ordre": {
+                    "$id": "#/items/properties/Pieces/items/properties/equipements/items/properties/Ordre",
+                    "type": "integer",
+                    "title": "Ordre",
+                    "default": 0,
+                    "examples": [
+                      10
+                    ]
+                  }
+                }
+              }
+            },
+            "Surface": {
+              "$id": "#/items/properties/Pieces/items/properties/Surface",
+              "type": "object",
+              "title": "The Surface Schema",
+              "required": [
+                "Surface",
+                "ReferenceExterne"
+              ],
+              "properties": {
+                "Surface": {
+                  "$id": "#/items/properties/Pieces/items/properties/Surface/properties/Surface",
+                  "type": "number",
+                  "title": "valeur de la surface",
+                  "default": 0,
+                  "examples": [
+                    110.67
+                  ]
+                },
+                "Hauteur": {
+                  "$id": "#/items/properties/Pieces/items/properties/Surface/properties/Hauteur",
+                  "type": "number",
+                  "title": "Hauteur",
+                  "default": 0,
+                  "examples": [
+                    2.5
+                  ]
+                },
+                "Largeur": {
+                  "$id": "#/items/properties/Pieces/items/properties/Surface/properties/Largeur",
+                  "type": "number",
+                  "title": "Largeur",
+                  "default": 0,
+                  "examples": [
+                    10.52
+                  ]
+                },
+                "Longueur": {
+                  "$id": "#/items/properties/Pieces/items/properties/Surface/properties/Longueur",
+                  "type": "number",
+                  "title": "Longueur",
+                  "default": 0,
+                  "examples": [
+                    10.52
+                  ]
+                },
+                "ReferenceExterne": {
+                  "$id": "#/items/properties/Pieces/items/properties/Surface/properties/ReferenceExterne",
+                  "type": "integer",
+                  "title": "La reference externe de la surface (Hors Invimmo)",
+                  "default": 0,
+                  "examples": [
+                    "16548"
+                  ]
+                }
+              }
+            },
+            "ReferenceExterne": {
+              "$id": "#/items/properties/Pieces/items/properties/ReferenceExterne",
+              "type": "string",
+              "title": "La reference externe de la piece (Hors Invimmo)",
+              "default": "",
+              "examples": [
+                "CUI123"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "Nom": {
+              "$id": "#/items/properties/Pieces/items/properties/Nom",
+              "type": "string",
+              "title": "Le type de piece (parapmetrage)",
+              "default": "",
+              "examples": [
+                "SALON"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "Etat": {
+              "$id": "#/items/properties/Pieces/items/properties/Etat",
+              "type": "string",
+              "title": "Le type etat (parametrage)",
+              "default": "",
+              "examples": [
+                "HS"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "Ordre": {
+              "$id": "#/items/properties/Pieces/items/properties/Ordre",
+              "type": "integer",
+              "title": "Ordre",
+              "default": 0,
+              "examples": [
+                10
+              ]
+            }
+          },
+          "required": [
+            "ReferenceExterne",
+            "Nom"
+          ]
+        }
+      },
+      "Locataires": {
+        "$id": "#/items/properties/Locataires",
+        "type": "array",
+        "title": "Locataires",
+        "items": {
+          "$id": "#/items/properties/Locataires/items",
+          "type": "object",
+          "title": "The Items Schema",
+          "required": [
+            "ReferenceExterne"
+          ],
+          "properties": {
+            "ReferenceExterne": {
+              "$id": "#/items/properties/Locataires/items/properties/ReferenceExterne",
+              "type": "string",
+              "title": "La reference du locataire (Hors Invimmo)",
+              "default": "",
+              "examples": [
+                "RDUPOND"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "Nom": {
+              "$id": "#/items/properties/Locataires/items/properties/Nom",
+              "type": "string",
+              "title": "Nom du locataire",
+              "default": "",
+              "examples": [
+                "DUPOND"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "Prenom": {
+              "$id": "#/items/properties/Locataires/items/properties/Prenom",
+              "type": "string",
+              "title": "Nom du locataire",
+              "default": "",
+              "examples": [
+                "Robert"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "Civilite": {
+              "$id": "#/items/properties/Locataires/items/properties/Civilite",
+              "type": "string",
+              "title": "Civilite",
+              "default": "",
+              "examples": [
+                "M"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "Telephone": {
+              "$id": "#/items/properties/Locataires/items/properties/Telephone",
+              "type": "string",
+              "title": "Telephone locataire",
+              "default": "",
+              "examples": [
+                "351557010202731"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "Email": {
+              "$id": "#/items/properties/Locataires/items/properties/Email",
+              "type": "string",
+              "title": "Email locataire",
+              "default": "",
+              "examples": [
+                "toto@gmail.com"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "absent": {
+              "$id": "#/items/properties/Locataires/items/properties/absent",
+              "type": "boolean",
+              "title": "Indication d abscence du locataire",
+              "default": false,
+              "examples": [
+                true
+              ]
+            },
+            "refuseDeSigner": {
+              "$id": "#/items/properties/Locataires/items/properties/refuseDeSigner",
+              "type": "boolean",
+              "title": "Indication de refus de signature du locataire",
+              "default": false,
+              "examples": [
+                true
+              ]
+            },
+            "Procuration": {
+              "$id": "#/items/properties/Locataires/items/properties/Procuration",
+              "type": "object",
+              "title": "Procuration du locataire",
+              "required": [
+                "Nom",
+                "Prenom"
+              ],
+              "properties": {
+                "Nom": {
+                  "$id": "#/items/properties/Locataires/items/properties/Procuration/properties/Nom",
+                  "type": "string",
+                  "title": "Nom du mandataire",
+                  "default": "",
+                  "examples": [
+                    "Dupont"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "Prenom": {
+                  "$id": "#/items/properties/Locataires/items/properties/Procuration/properties/Prenom",
+                  "type": "string",
+                  "title": "Prenom du mandataire",
+                  "default": "",
+                  "examples": [
+                    "Dupont"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "Adresse": {
+                  "$id": "#/items/properties/Locataires/items/properties/Procuration/properties/Adresse",
+                  "type": "string",
+                  "title": "Adresse du mandataire",
+                  "default": "",
+                  "examples": [
+                    "rue de lille"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "ComplementAdresse": {
+                  "$id": "#/items/properties/Locataires/items/properties/Procuration/properties/ComplementAdresse",
+                  "type": "string",
+                  "title": "Complement adresse",
+                  "default": "",
+                  "examples": [
+                    "Appt 2"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "CodePostal": {
+                  "$id": "#/items/properties/Locataires/items/properties/Procuration/properties/CodePostal",
+                  "type": "string",
+                  "title": "Code postal du mandataire",
+                  "default": "",
+                  "examples": [
+                    "59000"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "Ville": {
+                  "$id": "#/items/properties/Locataires/items/properties/Procuration/properties/Ville",
+                  "type": "string",
+                  "title": "Ville du mandataire",
+                  "default": "",
+                  "examples": [
+                    "Lille"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "Pays": {
+                  "$id": "#/items/properties/Locataires/items/properties/Procuration/properties/Pays",
+                  "type": "string",
+                  "title": "Pays du mandataire",
+                  "default": "",
+                  "examples": [
+                    "France"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "Telephone": {
+                  "$id": "#/items/properties/Locataires/items/properties/Procuration/properties/Telephone",
+                  "type": "string",
+                  "title": "Telephone du mandataire",
+                  "default": "",
+                  "examples": [
+                    "351557010202731"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "Email": {
+                  "$id": "#/items/properties/Locataires/items/properties/Procuration/properties/Email",
+                  "type": "string",
+                  "title": "Email du mandataire",
+                  "default": "",
+                  "examples": [
+                    "toto@gmail.com"
+                  ],
+                  "pattern": "^(.*)$"
+                }
+              }
+            },
+            "FutureAdresse": {
+              "$id": "#/items/properties/Locataires/items/properties/FutureAdresse",
+              "type": "object",
+              "title": "The Futureadresse Schema",
+              "required": [
+                "Adresse",
+                "CodePostal",
+                "Ville"
+              ],
+              "properties": {
+                "Adresse": {
+                  "$id": "#/items/properties/Locataires/items/properties/FutureAdresse/properties/Adresse",
+                  "type": "string",
+                  "title": "Future adresse",
+                  "default": "",
+                  "examples": [
+                    "rue de lille"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "ComplementAdresse": {
+                  "$id": "#/items/properties/Locataires/items/properties/FutureAdresse/properties/ComplementAdresse",
+                  "type": "string",
+                  "title": "Complement future adresse",
+                  "default": "",
+                  "examples": [
+                    "Appt 2"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "CodePostal": {
+                  "$id": "#/items/properties/Locataires/items/properties/FutureAdresse/properties/CodePostal",
+                  "type": "string",
+                  "title": "Code postal future adresse",
+                  "default": "",
+                  "examples": [
+                    "59000"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "Ville": {
+                  "$id": "#/items/properties/Locataires/items/properties/FutureAdresse/properties/Ville",
+                  "type": "string",
+                  "title": "Ville future adresse",
+                  "default": "",
+                  "examples": [
+                    "Lille"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "Pays": {
+                  "$id": "#/items/properties/Locataires/items/properties/FutureAdresse/properties/Pays",
+                  "type": "string",
+                  "title": "Pays future adresse",
+                  "default": "",
+                  "examples": [
+                    "France"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "TelephonePortable": {
+                  "$id": "#/items/properties/Locataires/items/properties/FutureAdresse/properties/TelephonePortable",
+                  "type": "string",
+                  "title": "Nouvelle coordonnee telephone portable",
+                  "default": "",
+                  "examples": [
+                    "351557010202731"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "TelephoneFixe": {
+                  "$id": "#/items/properties/Locataires/items/properties/FutureAdresse/properties/TelephoneFixe",
+                  "type": "string",
+                  "title": "Nouvelle coordonnee telephone fixe",
+                  "default": "",
+                  "examples": [
+                    "351557010202731"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "Email": {
+                  "$id": "#/items/properties/Locataires/items/properties/FutureAdresse/properties/Email",
+                  "type": "string",
+                  "title": "Nouvelle coordonnee email",
+                  "default": "",
+                  "examples": [
+                    "toto@gmail.com"
+                  ],
+                  "pattern": "^(.*)$"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Travaux": {
+        "$id": "#/items/properties/Travaux",
+        "type": "object",
+        "title": "Interventions constatees",
+        "required": [
+          "CoutTotalDegradations"
+        ],
+        "properties": {
+          "CoutTotalDegradations": {
+            "$id": "#/items/properties/Travaux/properties/CoutTotalDegradations",
+            "type": "number",
+            "title": "Cout total Intervention",
+            "default": 0,
+            "examples": [
+              500.45
+            ]
+          },
+          "PourcentageRemise": {
+            "$id": "#/items/properties/Travaux/properties/PourcentageRemise",
+            "type": "number",
+            "title": "Pourcentage de remise",
+            "default": 0,
+            "examples": [
+              500.45
+            ]
+          },
+          "MontantApresRemise": {
+            "$id": "#/items/properties/Travaux/properties/MontantApresRemise",
+            "type": "number",
+            "title": "Montant apres remise",
+            "default": 0,
+            "examples": [
+              500.45
+            ]
+          },
+          "MontantRameneA": {
+            "$id": "#/items/properties/Travaux/properties/MontantRameneA",
+            "type": "number",
+            "title": "Montant arrondi durant le constat",
+            "default": 0,
+            "examples": [
+              500.45
+            ]
+          },
+          "ConstatHuissier": {
+            "$id": "#/items/properties/Travaux/properties/ConstatHuissier",
+            "type": "number",
+            "title": "Frais contat huissier",
+            "default": 0,
+            "examples": [
+              249.99
+            ]
+          },
+          "degradations": {
+            "$id": "#/items/properties/Travaux/properties/degradations",
+            "type": "array",
+            "title": "Liste des lignes interventions constatees",
+            "items": {
+              "$id": "#/items/properties/Travaux/properties/degradations/items",
+              "type": "object",
+              "title": "The Items Schema",
+              "required": [
+                "Designation",
+                "ReferenceExterneEquipement"
+              ],
+              "properties": {
+                "Designation": {
+                  "$id": "#/items/properties/Travaux/properties/degradations/items/properties/Designation",
+                  "type": "string",
+                  "title": "Designation ligne intervention",
+                  "default": "",
+                  "examples": [
+                    "Remplacement integral "
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "PrixUnitaire": {
+                  "$id": "#/items/properties/Travaux/properties/degradations/items/properties/PrixUnitaire",
+                  "type": "number",
+                  "title": "Prix unitaire",
+                  "default": 0,
+                  "examples": [
+                    10.4
+                  ]
+                },
+                "Quantite": {
+                  "$id": "#/items/properties/Travaux/properties/degradations/items/properties/Quantite",
+                  "type": "integer",
+                  "title": "Quantite",
+                  "default": 0,
+                  "examples": [
+                    1
+                  ]
+                },
+                "CoutTotal": {
+                  "$id": "#/items/properties/Travaux/properties/degradations/items/properties/CoutTotal",
+                  "type": "number",
+                  "title": "Cout total",
+                  "default": 0,
+                  "examples": [
+                    18.3
+                  ]
+                },
+                "Vetuste": {
+                  "$id": "#/items/properties/Travaux/properties/degradations/items/properties/Vetuste",
+                  "type": "number",
+                  "title": "Vetuste",
+                  "default": 0,
+                  "examples": [
+                    2.1
+                  ]
+                },
+                "Forfait": {
+                  "$id": "#/items/properties/Travaux/properties/degradations/items/properties/Forfait",
+                  "type": "boolean",
+                  "title": "Forfait",
+                  "default": false,
+                  "examples": [
+                    true
+                  ]
+                },
+                "AChargeDuBailleur": {
+                  "$id": "#/items/properties/Travaux/properties/degradations/items/properties/AChargeDuBailleur",
+                  "type": "boolean",
+                  "title": "A charge du bailleur",
+                  "default": false,
+                  "examples": [
+                    true
+                  ]
+                },
+                "ReferenceExterneEquipement": {
+                  "$id": "#/items/properties/Travaux/properties/degradations/items/properties/ReferenceExterneEquipement",
+                  "type": "string",
+                  "title": "La reference externe equipement (Hors Invimmo)",
+                  "default": "",
+                  "examples": [
+                    "CON125"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "RubriqueAssocie": {
+                  "$id": "#/items/properties/Travaux/properties/degradations/items/properties/RubriqueAssocie",
+                  "type": "string",
+                  "title": "Libelle type equipement associe",
+                  "default": "",
+                  "examples": [
+                    "Contremarche"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "CodeBordereau": {
+                  "$id": "#/items/properties/Travaux/properties/degradations/items/properties/CodeBordereau",
+                  "type": "string",
+                  "title": "Code ligne bareme (si bordereau de prix)",
+                  "default": "",
+                  "examples": [
+                    "CARO89"
+                  ],
+                  "pattern": "^(.*)$"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Reponses": {
+        "$id": "#/items/properties/Reponses",
+        "type": "array",
+        "title": "The Reponses Schema",
+        "items": {
+          "$id": "#/items/properties/Reponses/items",
+          "type": "object",
+          "title": "The Items Schema",
+          "required": [
+            "Question",
+            "ReferenceExterne",
+            "Reponse"
+          ],
+          "properties": {
+            "Question": {
+              "$id": "#/items/properties/Reponses/items/properties/Question",
+              "type": "string",
+              "title": "Le type de question EDL (parametrage)",
+              "default": "",
+              "examples": [
+                "L'état du logement nécessite l'intervention d'une société de nettoyage?"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "ReferenceExterne": {
+              "$id": "#/items/properties/Reponses/items/properties/ReferenceExterne",
+              "type": "string",
+              "title": "La reference externe de la reponse (hors Invimmo)",
+              "default": 0,
+              "examples": [
+                "16548"
+              ]
+            },
+            "Reponse": {
+              "$id": "#/items/properties/Reponses/items/properties/Reponse",
+              "type": "boolean",
+              "title": "Reponse (oui ou non)",
+              "default": false,
+              "examples": [
+                true
+              ]
+            }
+          }
+        }
+      },
+      "Cles": {
+        "$id": "#/items/properties/Cles",
+        "type": "array",
+        "title": "Cles",
+        "items": {
+          "$id": "#/items/properties/Cles/items",
+          "type": "object",
+          "title": "The Items Schema",
+          "required": [
+            "ReferenceExterne",
+            "Nom",
+            "QuantiteDonnee",
+            "QuantiteRecue"
+          ],
+          "properties": {
+            "ReferenceExterne": {
+              "$id": "#/items/properties/Cles/items/properties/ReferenceExterne",
+              "type": "string",
+              "title": "La reference externe de la cle (hors Invimmo)",
+              "default": "",
+              "examples": [
+                "EDH123"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "Nom": {
+              "$id": "#/items/properties/Cles/items/properties/Nom",
+              "type": "string",
+              "title": "Le libelle du type de cle (parametrage)",
+              "default": "",
+              "examples": [
+                "Badge"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "QuantiteDonnee": {
+              "$id": "#/items/properties/Cles/items/properties/QuantiteDonnee",
+              "type": "integer",
+              "title": "Quantite donnee",
+              "default": 0,
+              "examples": [
+                1
+              ]
+            },
+            "QuantiteRecue": {
+              "$id": "#/items/properties/Cles/items/properties/QuantiteRecue",
+              "type": "integer",
+              "title": "Quantite recue",
+              "default": 0,
+              "examples": [
+                2
+              ]
+            },
+            "CoutTotal": {
+              "$id": "#/items/properties/Cles/items/properties/CoutTotal",
+              "type": "number",
+              "title": "Cout total",
+              "default": 0,
+              "examples": [
+                18.3
+              ]
+            },
+            "Commentaire": {
+              "$id": "#/items/properties/Cles/items/properties/Commentaire",
+              "type": "string",
+              "title": "Commentaire sur la cle",
+              "default": "",
+              "examples": [
+                "Badge temporaire car changement du sytème en cours"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "Tarif": {
+              "$id": "#/items/properties/Cles/items/properties/Tarif",
+              "type": "number",
+              "title": "Tarif de la cle",
+              "default": 0,
+              "examples": [
+                24.9
+              ]
+            },
+            "CodeTarif": {
+              "$id": "#/items/properties/Cles/items/properties/CodeTarif",
+              "type": "string",
+              "title": "Code tarif",
+              "default": "",
+              "examples": [
+                "BA001"
+              ],
+              "pattern": "^(.*)$"
+            }
+          }
+        }
+      },
+      "ReferenceExterne": {
+        "$id": "#/items/properties/ReferenceExterne",
+        "type": "string",
+        "title": "La reference externe EDL (Hors Invimmo)",
+        "default": "",
+        "examples": [
+          "8000"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "DateEdl": {
+        "$id": "#/items/properties/DateEdl",
+        "type": "string",
+        "title": "Date de realisation EDL",
+        "default": "",
+        "examples": [
+          "2016-10-03 14:44:36"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "DateEntrant": {
+        "$id": "#/items/properties/DateEntrant",
+        "type": "string",
+        "title": "Date EDL entrant",
+        "default": "",
+        "examples": [
+          "2016-10-03"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "Commentaire": {
+        "$id": "#/items/properties/Commentaire",
+        "type": "string",
+        "title": "Commentaire global",
+        "default": "",
+        "examples": [
+          "Logement très propre"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "CommentaireMotifDeDepart": {
+        "$id": "#/items/properties/CommentaireMotifDeDepart",
+        "type": "string",
+        "title": "Commentaire sur le motif de depart",
+        "default": "",
+        "examples": [
+          "Cherche un logement centre ville"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "ReferenceExterneLogement": {
+        "$id": "#/items/properties/ReferenceExterneLogement",
+        "type": "string",
+        "title": "La reference externe Logement (Hors Invimmo)",
+        "default": "",
+        "examples": [
+          "001.001.001A"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "referenceExterneBail": {
+        "$id": "#/items/properties/referenceExterneBail",
+        "type": "string",
+        "title": "La reference externe du bail (Hors Invimmo)",
+        "default": "",
+        "examples": [
+          "80125"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "ReferenceExterneProprietaire": {
+        "$id": "#/items/properties/ReferenceExterneProprietaire",
+        "type": "string",
+        "title": "La reference externe du proprietaire (Hors Invimmo)",
+        "default": "",
+        "examples": [
+          "RDurand"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "TypeLogement": {
+        "$id": "#/items/properties/TypeLogement",
+        "type": "string",
+        "title": "Le type de logement (parametrage)",
+        "default": "",
+        "examples": [
+          "T2"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "TypeEdl": {
+        "$id": "#/items/properties/TypeEdl",
+        "type": "string",
+        "title": "Le type EDL (parametrage)",
+        "default": "",
+        "examples": [
+          "Etat des lieux entrant"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "Etat": {
+        "$id": "#/items/properties/Etat",
+        "type": "string",
+        "title": "Le type etat (parametrage)",
+        "default": "",
+        "examples": [
+          "Clos"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "MotifDepart": {
+        "$id": "#/items/properties/MotifDepart",
+        "type": "string",
+        "title": "Le motif de depart (parametrage)",
+        "default": "",
+        "examples": [
+          "Logement centre ville"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "DestinationClient": {
+        "$id": "#/items/properties/DestinationClient",
+        "type": "string",
+        "title": "La destination du client (parametrage)",
+        "default": "",
+        "examples": [
+          "Centre ville de MELIN"
+        ],
+        "pattern": "^(.*)$"
+      }
+    },
+    "required": [
+      "ReferenceExterne",
+      "DateEdl",
+      "ReferenceExterneLogement",
+      "TypeEdl"
+    ]
+  }
+}
