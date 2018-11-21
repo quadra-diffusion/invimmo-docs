@@ -1,105 +1,174 @@
 [
   {
-    "Assurance": {
-      "ReferenceExterne": "465",
-      "DateDebut": "2016-01-31",
-      "DateFin": "2017-01-31",
-      "NomCompagnie": "AXA",
-      "CodeContrat": "ZS45EMI4442",
-      "NumeroAssure": "Robert DUPOND",
-      "TelCompagnie": "351557010202731",
-      "MailCompagnie": "toto@compagnie.fr"
+    "assurance": {
+      "referenceExterne": "27",
+      "codeContrat": "tey3536",
+      "numeroAssure": "Ludunge",
+      "dateDebut": "2015-12-12",
+      "dateFin": "2018-02-02",
+      "nomCompagnie": "ICCA",
+      "mailCompagnie": "bicfd@gmail.com",
+      "telCompagnie": "0010000000"
     },
-    "Pieces": [
+    "pieces": [
       {
+        "referenceExterne": "1136",
+        "nom": "Chambre",
+        "etat": "Neuf",
+        "ordre": 7,
         "equipements": [
           {
-            "ReferenceExterne": "EDH123",
-            "Nom": "Evier Inox",
-            "DatePose": "2017-02-14",
-            "Etat": "Bon",
-            "Commentaire": "Evier Inox double",
-            "Ordre": 10
+            "referenceExterne": "29958",
+            "nom": "Volet",
+            "etat": "Bon état",
+            "commentaire": "X2",
+            "ordre": 34,
+            "datePose": "2017-12-12"
+          },
+          {
+            "referenceExterne": "29958",
+            "nom": "Télécommande",
+            "etat": "Bon état",
+            "commentaire": null,
+            "ordre": 33,
+            "datePose": null
           }
-        ],
-        "Surface": {
-          "Surface": 110.67,
-          "Hauteur": 2.5,
-          "Largeur": 10.52,
-          "Longueur": 10.52,
-          "ReferenceExterne": "16548"
-        },
-        "ReferenceExterne": "CUI123",
-        "Nom": "SALON",
-        "Etat": "HS",
-        "Ordre": 10
+        ]
       }
     ],
-    "Locataires": [
+    "locataires": [
       {
-        "ReferenceExterne": "RDUPOND",
-        "Nom": "DUPOND",
-        "Prenom": "Robert",
-        "Civilite": "M",
-        "Telephone": "351557010202731",
-        "Email": "toto@gmail.com",
+        "referenceExterne": "256",
+        "nom": "DESBEAUX",
+        "prenom": "Ali",
+        "civilite": "Monsieur",
+        "telephone": "0010000000",
+        "email": "antonia.ludunge@quadra-diffusion.fr",
         "absent": true,
-        "refuseDeSigner": true,
-        "Procuration": {
-          "Nom": "Dupont",
-          "Prenom": "Dupont",
-          "Adresse": "rue de lille",
-          "ComplementAdresse": "Appt 2",
-          "CodePostal": "59000",
-          "Ville": "Lille",
-          "Pays": "France",
-          "Telephone": "351557010202731",
-          "Email": "toto@gmail.com"
+        "refuseDeSigner": false,
+        "procuration": {
+          "nom": "Dupont",
+          "prenom": "Dupont",
+          "adresse": "rue de lille",
+          "complementAdresse": "Appt 2",
+          "codePostal": "59000",
+          "ville": "Lille",
+          "pays": "France",
+          "telephone": "351557010202731",
+          "email": "toto@gmail.com"
         },
-        "FutureAdresse": {
-          "Adresse": "rue de lille",
-          "ComplementAdresse": "Appt 2",
-          "CodePostal": "59000",
-          "Ville": "Lille",
-          "Pays": "France",
-          "TelephonePortable": "351557010202731",
-          "TelephoneFixe": "351557010202731",
-          "Email": "toto@gmail.com",
-          "ReferenceExterneLocataire": "RDUPOND"
+        "futureAdresse": {
+          "adresse": "rue de lille",
+          "complementAdresse": "Appt 2",
+          "codePostal": "59000",
+          "ville": "Lille",
+          "pays": "France",
+          "telephonePortable": "351557010202731",
+          "telephoneFixe": "351557010202731",
+          "email": "toto@gmail.com",
+          "referenceExterneLocataire": "RDUPOND"
         }
       }
     ],
-  "Reponses": [
-    {
-      "Question": "L'état du logement nécessite l'intervention d'une société de nettoyage?",
-      "ReferenceExterne": "16548",
-      "Reponse": true
-    }
-  ],
-   "Cles" : [
-    {
-	  "ReferenceExterne": "EDH123",
-      "Nom": "Badge",
-      "QuantiteDonnee": 1,
-      "QuantiteRecue": 2,
-      "CoutTotal": 18.3,
-      "Commentaire": "Badge temporaire car changement du sytème en cours",
-      "Tarif":  24.90,
-      "CodeTarif": "BA001"
-    }
-   ],
-    "ReferenceExterne": "8000",
-    "DateEdl": "2016-10-03 14:44:36",
-    "DateEntrant": "2016-10-03",
-    "Commentaire": "Logement très propre",
-    "CommentaireMotifDeDepart": "Cherche un logement centre ville",
-    "ReferenceExterneLogement": "001.001.001A",
-    "referenceExterneBail": "80125",
-    "ReferenceExterneProprietaire": "RDurand",
-    "TypeLogement": "T2",
-    "TypeEdl": "Etat des lieux entrant",
-    "Etat": "Clos",
-    "MotifDepart": "Logement centre ville",
-    "DestinationClient": "Centre ville de MELIN"
+    "travaux": {
+      "coutTotalDegradations": 242.20,
+      "pourcentageRemise": 10,
+      "montantApresRemise": 400.00,
+      "montantRameneA": 380.00,
+      "constatHuissier": 412.25,
+      "degradations": [
+        {
+          "designation": "1m² de peinture pièce sèche (M, oeuvre / Déplacement / Fourniture)",
+          "prixUnitaire": 15.31,
+          "quantite": 1,
+          "coutTotal": 15.31,
+          "vetuste": 0,
+          "forfait": false,
+          "aChargeDuBailleur": false,
+          "referenceExterneEquipement": "29966",
+          "rubriqueAssocie": "Luminaire",
+          "codeBordereau": "93"
+        },
+        {
+          "designation": "Bouchon et chaînette (évier, baignoire, lavabo)",
+          "prixUnitaire": 16.96,
+          "quantite": 1,
+          "coutTotal": 16.96,
+          "vetuste": 0,
+          "forfait": false,
+          "aChargeDuBailleur": false,
+          "referenceExterneEquipement": "29967",
+          "rubriqueAssocie": "Luminaire",
+          "codeBordereau": "227"
+        },
+        {
+          "designation": "test devis non facturé au locataire",
+          "prixUnitaire": 150.23,
+          "quantite": 1,
+          "coutTotal": 150.45,
+          "vetuste": 0,
+          "forfait": false,
+          "aChargeDuBailleur": true,
+          "referenceExterneEquipement": null,
+          "rubriqueAssocie": null,
+          "codeBordereau": null
+        },
+        {
+          "designation": "test devis",
+          "prixUnitaire": 500,
+          "quantite": 1,
+          "coutTotal": 500,
+          "vetuste": 0,
+          "forfait": true,
+          "aChargeDuBailleur": false,
+          "referenceExterneEquipement": "30009",
+          "rubriqueAssocie": null,
+          "codeBordereau": null
+        }
+      ]
+    },
+    "reponses": [
+      {
+        "question": "L\u0027état de propreté et d\u0027hygiène du logement nécessite l\u0027intervention d\u0027une entreprise de nettoyage?",
+        "referenceExterne": "6",
+        "reponse": true
+      },
+      {
+        "question": "L\u0027état du logement nécessite l\u0027intervention d\u0027une entreprise de désinsectisation?",
+        "referenceExterne": "4",
+        "reponse": false
+      },
+      {
+        "question": "L\u0027encombrement du logement nécessite l\u0027intervention d\u0027une entreprise?",
+        "referenceExterne": "3",
+        "reponse": false
+      }
+    ],
+    "cles": [
+      {
+        "referenceExterne": "EDH123",
+        "rom": "Badge",
+        "quantiteDonnee": 1,
+        "quantiteRecue": 2,
+        "coutTotal": 18.3,
+        "commentaire": "Badge temporaire car changement du sytème en cours",
+        "tarif": 24.90,
+        "codeTarif": "BA001"
+      }
+
+    ],
+    "referenceExterne": "204",
+    "dateEdl": "2018-11-14",
+    "dateEntrant": "2018-11-14",
+    "commentaire": "pas mal",
+    "commentaireMotifDeDepart": "Pas le choix",
+    "referenceExterneLogement": "52014",
+    "referenceExterneBail": "8000",
+    "referenceExterneProprietaire": "1200",
+    "typeLogement": "LOGEMENT",
+    "typeEdl": "Etat des lieux entrant",
+    "etat": "Neuf",
+    "motifDepart": "Trop petit",
+    "destinationClient": "HORS FRANCE"
   }
 ]
