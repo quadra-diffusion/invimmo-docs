@@ -33,7 +33,14 @@
             "ordre": 33,
             "datePose": null
           }
-        ]
+        ],
+        "surface": {
+          "surface": 110.67,
+          "hauteur": 2.5,
+          "largeur": 10.52,
+          "longueur": 10.52,
+          "referenceExterne": "16548"
+        }
       }
     ],
     "locataires": [
