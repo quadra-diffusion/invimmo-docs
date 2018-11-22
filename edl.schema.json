@@ -208,7 +208,7 @@
                 },
                 "hauteur": {
                   "$id": "#/items/properties/pieces/items/properties/surface/properties/hauteur",
-                  "type": "number",
+                  "type": [ "number", "null" ],
                   "title": "Hauteur",
                   "default": 0,
                   "examples": [
@@ -217,7 +217,7 @@
                 },
                 "largeur": {
                   "$id": "#/items/properties/pieces/items/properties/surface/properties/largeur",
-                  "type": "number",
+                  "type": [ "number", "null" ],
                   "title": "Largeur",
                   "default": 0,
                   "examples": [
@@ -226,7 +226,7 @@
                 },
                 "longueur": {
                   "$id": "#/items/properties/pieces/items/properties/surface/properties/longueur",
-                  "type": "number",
+                  "type": [ "number", "null" ],
                   "title": "Longueur",
                   "default": 0,
                   "examples": [
@@ -594,7 +594,7 @@
           },
           "pourcentageRemise": {
             "$id": "#/items/properties/travaux/properties/pourcentageRemise",
-            "type": "number",
+            "type": ["number", "null"],
             "title": "Pourcentage de remise",
             "default": 0,
             "examples": [
@@ -603,7 +603,7 @@
           },
           "montantApresRemise": {
             "$id": "#/items/properties/travaux/properties/montantApresRemise",
-            "type": "number",
+            "type": ["number", "null"],
             "title": "Montant apres remise",
             "default": 0,
             "examples": [
@@ -612,7 +612,7 @@
           },
           "montantRameneA": {
             "$id": "#/items/properties/travaux/properties/montantRameneA",
-            "type": "number",
+            "type": ["number", "null"],
             "title": "Montant arrondi durant le constat",
             "default": 0,
             "examples": [
@@ -621,7 +621,7 @@
           },
           "constatHuissier": {
             "$id": "#/items/properties/travaux/properties/constatHuissier",
-            "type": "number",
+            "type": [ "number", "null" ],
             "title": "Frais contat huissier",
             "default": 0,
             "examples": [
@@ -909,7 +909,7 @@
       "commentaire": {
         "$id": "#/items/properties/commentaire",
         "maxLength": 2000,
-        "type": "string",
+        "type": [ "string", "null" ],
         "title": "Commentaire global",
         "default": "",
         "examples": [
@@ -919,7 +919,7 @@
       "commentaireMotifDeDepart": {
         "$id": "#/items/properties/commentaireMotifDeDepart",
         "maxLength": 2000,
-        "type": "string",
+        "type": [ "string", "null" ],
         "title": "Commentaire sur le motif de depart",
         "default": "",
         "examples": [
@@ -940,7 +940,7 @@
       "referenceExterneBail": {
         "$id": "#/items/properties/referenceExterneBail",
         "maxLength": 255,
-        "type": "string",
+        "type": [ "string", "null" ],
         "title": "La reference externe du bail (Hors Invimmo)",
         "default": "",
         "examples": [
@@ -950,7 +950,7 @@
       "referenceExterneProprietaire": {
         "$id": "#/items/properties/referenceExterneProprietaire",
         "maxLength": 255,
-        "type": "string",
+        "type": [ "string", "null" ],
         "title": "La reference externe du proprietaire (Hors Invimmo)",
         "default": "",
         "examples": [
@@ -960,7 +960,7 @@
       "typeLogement": {
         "$id": "#/items/properties/typeLogement",
         "maxLength": 50,
-        "type": "string",
+        "type": [ "string", "null" ],
         "title": "Le type de logement (parametrage)",
         "default": "",
         "examples": [
@@ -981,7 +981,7 @@
       "etat": {
         "$id": "#/items/properties/etat",
         "maxLength": 100,
-        "type": "string",
+        "type": [ "string", "null" ],
         "title": "Le type etat (parametrage)",
         "default": "",
         "examples": [
@@ -991,7 +991,7 @@
       "motifDepart": {
         "$id": "#/items/properties/motifDepart",
         "maxLength": 100,
-        "type": "string",
+        "type": [ "string", "null" ],
         "title": "Le motif de depart (parametrage)",
         "default": "",
         "examples": [
@@ -1001,7 +1001,7 @@
       "destinationClient": {
         "$id": "#/items/properties/destinationClient",
         "maxLength": 100,
-        "type": "string",
+        "type": [ "string", "null" ],
         "title": "La destination du client (parametrage)",
         "default": "",
         "examples": [
