@@ -120,7 +120,7 @@
                 "type": "object",
                 "title": "The Items Schema",
                 "required": [
-                  "nom"
+                  "type"
                 ],
                 "properties": {
                   "referenceExterne": {
@@ -137,12 +137,45 @@
                   "nom": {
                     "$id": "#/items/properties/pieces/items/properties/equipements/items/properties/nom",
                     "minLength": 1,
-                    "maxLength": 200,
+                    "maxLength": 400,
                     "type": "string",
                     "title": "Le type equipement (parametrage)",
                     "default": "",
                     "examples": [
                       "Evier Inox"
+                    ]
+                  },
+                  "code": {
+                    "$id": "#/items/properties/pieces/items/properties/equipements/items/properties/code",
+                    "minLength": 1,
+                    "maxLength": 50,
+                    "type": [ "string", "null" ],
+                    "title": "Le code du type de piece (parapmetrage reconnu par l ERP)",
+                    "default": "",
+                    "examples": [
+                      "sa"
+                    ]
+                  },
+                  "type": {
+                    "$id": "#/items/properties/pieces/items/properties/equipements/items/properties/type",
+                    "minLength": 1,
+                    "maxLength": 100,
+                    "type": "string",
+                    "title": "Le type de piece (parapmetrage)",
+                    "default": "",
+                    "examples": [
+                      "Salon"
+                    ]
+                  },
+                  "informationComplementaire": {
+                    "$id": "#/items/properties/pieces/items/properties/equipements/items/properties/informationComplementaire",
+                    "minLength": 1,
+                    "maxLength": 200,
+                    "type": [ "string", "null" ],
+                    "title": "Information sur la piece (souvent une indication)",
+                    "default": "",
+                    "examples": [
+                      "hors salle à manger"
                     ]
                   },
                   "datePose": {
@@ -258,12 +291,45 @@
             "nom": {
               "$id": "#/items/properties/pieces/items/properties/nom",
               "minLength": 1,
+              "maxLength": 300,
+              "type": "string",
+              "title": "Le nom  complet (avec toute information additionnelle",
+              "default": "",
+              "examples": [
+                "Salon hors salle à manger"
+              ]
+            },
+            "code": {
+              "$id": "#/items/properties/pieces/items/properties/code",
+              "minLength": 1,
+              "maxLength": 50,
+              "type": [ "string", "null" ],
+              "title": "Le code du type de piece (parapmetrage reconnu par l ERP)",
+              "default": "",
+              "examples": [
+                "sa"
+              ]
+            },
+            "type": {
+              "$id": "#/items/properties/pieces/items/properties/type",
+              "minLength": 1,
               "maxLength": 100,
               "type": "string",
               "title": "Le type de piece (parapmetrage)",
               "default": "",
               "examples": [
-                "SALON"
+                "Salon"
+              ]
+            },
+            "informationComplementaire": {
+              "$id": "#/items/properties/pieces/items/properties/informationComplementaire",
+              "minLength": 1,
+              "maxLength": 200,
+              "type": [ "string", "null" ],
+              "title": "Information sur la piece (souvent une indication)",
+              "default": "",
+              "examples": [
+                "hors salle à manger"
               ]
             },
             "etat": {
@@ -287,7 +353,7 @@
             }
           },
           "required": [
-            "nom"
+            "type"
           ]
         }
       },

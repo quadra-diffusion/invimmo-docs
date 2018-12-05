@@ -13,13 +13,19 @@
     "pieces": [
       {
         "referenceExterne": "1136",
-        "nom": "Chambre",
+        "nom": "Chambre bout du couloir",
+        "code": "ch",
+        "type": "Chambre",
+        "informationComplementaire": "bout du couloir",
         "etat": "Neuf",
         "ordre": 7,
         "equipements": [
           {
             "referenceExterne": "29958",
-            "nom": "Volet",
+            "nom": "Volet fenêtre droite",
+            "code": "vo",
+            "type": "Volet",
+            "informationComplementaire": "bout fenêtre droite",
             "etat": "Bon état",
             "commentaire": "X2",
             "ordre": 34,
@@ -27,7 +33,7 @@
           },
           {
             "referenceExterne": "29958",
-            "nom": "Télécommande",
+            "type": "Télécommande",
             "etat": "Bon état",
             "commentaire": null,
             "ordre": 33,
