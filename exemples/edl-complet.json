@@ -160,7 +160,7 @@
     "cles": [
       {
         "referenceExterne": "EDH123",
-        "rom": "Badge",
+        "nom": "Badge",
         "quantiteDonnee": 1,
         "quantiteRecue": 2,
         "coutTotal": 18.3,

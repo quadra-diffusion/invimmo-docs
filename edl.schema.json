@@ -795,7 +795,11 @@
                     "CARO89"
                   ]
                 }
-              }
+              },
+              "required": [
+                "designation"
+
+              ]
             }
           }
         }
@@ -934,7 +938,10 @@
                 "BA001"
               ]
             }
-          }
+          },
+          "required": [
+            "nom"
+          ]
         }
       },
       "referenceExterne": {
