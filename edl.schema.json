@@ -11,7 +11,7 @@
     "properties": {
       "assurance": {
         "$id": "#/items/properties/assurance",
-        "type": "object",
+        "type": [ "object", "null" ],
         "title": "Assurance",
         "required": [
           "referenceExterne",
@@ -125,9 +125,8 @@
                 "properties": {
                   "referenceExterne": {
                     "$id": "#/items/properties/pieces/items/properties/equipements/items/properties/referenceExterne",
-                    "minLength": 1,
                     "maxLength": 255,
-                    "type": "string",
+                    "type": [ "string", "null" ],
                     "title": "The Referenceexterne Schema",
                     "default": "",
                     "examples": [
@@ -279,9 +278,8 @@
             },
             "referenceExterne": {
               "$id": "#/items/properties/pieces/items/properties/referenceExterne",
-              "minLength": 1,
               "maxLength": 255,
-              "type": "string",
+              "type": [ "string", "null" ],
               "title": "La reference externe de la piece (Hors Invimmo)",
               "default": "",
               "examples": [
@@ -450,7 +448,7 @@
             },
             "procuration": {
               "$id": "#/items/properties/locataires/items/properties/procuration",
-              "type": "object",
+              "type": [ "object", "null" ],
               "title": "Procuration du locataire",
               "required": [
                 "nom"
@@ -550,7 +548,7 @@
             },
             "futureAdresse": {
               "$id": "#/items/properties/locataires/items/properties/futureAdresse",
-              "type": "object",
+              "type": [ "object", "null" ],
               "title": "The Futureadresse Schema",
               "required": [
                 "adresse"
@@ -862,9 +860,8 @@
           "properties": {
             "referenceExterne": {
               "$id": "#/items/properties/cles/items/properties/referenceExterne",
-              "minLength": 1,
               "maxLength": 255,
-              "type": "string",
+              "type": [ "string", "null" ],
               "title": "La reference externe de la cle (hors Invimmo)",
               "default": "",
               "examples": [
@@ -913,7 +910,7 @@
             },
             "coutTotal": {
               "$id": "#/items/properties/cles/items/properties/coutTotal",
-              "type": "number",
+              "type": [ "number", "null" ],
               "title": "Cout total",
               "default": 0,
               "examples": [
@@ -923,7 +920,7 @@
             "commentaire": {
               "$id": "#/items/properties/cles/items/properties/commentaire",
               "maxLength": 2000,
-              "type": "string",
+              "type": [ "string", "null" ],
               "title": "Commentaire sur la cle",
               "default": "",
               "examples": [
@@ -932,7 +929,7 @@
             },
             "tarif": {
               "$id": "#/items/properties/cles/items/properties/tarif",
-              "type": "number",
+              "type": [ "number", "null" ],
               "title": "Tarif de la cle",
               "default": 0,
               "examples": [
@@ -942,7 +939,7 @@
             "codeTarif": {
               "$id": "#/items/properties/cles/items/properties/codeTarif",
               "maxLength": 50,
-              "type": "string",
+              "type": [ "string", "null" ],
               "title": "Code tarif",
               "default": "",
               "examples": [
