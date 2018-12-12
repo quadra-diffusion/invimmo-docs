@@ -3,7 +3,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://example.com/root.json",
   "type": "array",
-  "title": "Scheme EDL Invimmo",
+  "title": "Schema EDL Invimmo",
   "items": {
     "$id": "#/items",
     "type": "object",
@@ -882,6 +882,17 @@
                 "Badge"
               ]
             },
+            "informationComplementaire": {
+              "$id": "#/items/properties/cles/items/properties/informationComplementaire",
+              "minLength": 1,
+              "maxLength": 200,
+              "type": [ "string", "null" ],
+              "title": "Information sur la clé(souvent une indication)",
+              "default": "",
+              "examples": [
+                "Remplacement LASER"
+              ]
+            },
             "quantiteDonnee": {
               "$id": "#/items/properties/cles/items/properties/quantiteDonnee",
               "type": "integer",
@@ -1016,14 +1027,34 @@
           "80125"
         ]
       },
-      "referenceExterneProprietaire": {
-        "$id": "#/items/properties/referenceExterneProprietaire",
+    "referenceExterneProprietaire": {
+      "$id": "#/items/properties/referenceExterneProprietaire",
+      "maxLength": 255,
+      "type": [ "string", "null" ],
+      "title": "La reference externe du proprietaire (Hors Invimmo)",
+      "default": "",
+      "examples": [
+        "RDurand"
+      ]
+    },
+    "agent": {
+      "$id": "#/items/properties/agent",
+      "maxLength": 255,
+      "type": [ "string", "null" ],
+      "title": "Les nom et prénom de l'agent EDL ayant fait le constat",
+      "default": "",
+      "examples": [
+        "James Brid"
+      ]
+    },
+	"referenceExterneAgent": {
+        "$id": "#/items/properties/referenceExterneAgent",
         "maxLength": 255,
         "type": [ "string", "null" ],
-        "title": "La reference externe du proprietaire (Hors Invimmo)",
+        "title": "La reference externe de l'agent EDL ayant fait le constant (code Hors Invimmo)",
         "default": "",
         "examples": [
-          "RDurand"
+          "00552621"
         ]
       },
       "typeLogement": {

@@ -161,6 +161,7 @@
       {
         "referenceExterne": "EDH123",
         "nom": "Badge",
+        "informationComplementaire": "système LASER",
         "quantiteDonnee": 1,
         "quantiteRecue": 2,
         "coutTotal": 18.3,
@@ -178,6 +179,8 @@
     "referenceExterneLogement": "52014",
     "referenceExterneBail": "8000",
     "referenceExterneProprietaire": "1200",
+    "referenceAgent": "ANTONIN LUDI",
+    "agent": "0045525",
     "typeLogement": "LOGEMENT",
     "typeEdl": "Etat des lieux entrant",
     "etat": "Neuf",
