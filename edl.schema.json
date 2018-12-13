@@ -146,7 +146,6 @@
                   },
                   "code": {
                     "$id": "#/items/properties/pieces/items/properties/equipements/items/properties/code",
-                    "minLength": 1,
                     "maxLength": 50,
                     "type": [ "string", "null" ],
                     "title": "Le code du type de piece (parapmetrage reconnu par l ERP)",
