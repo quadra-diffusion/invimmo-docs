@@ -93,7 +93,7 @@
         {
           "designation": "1m² de peinture pièce sèche (M, oeuvre / Déplacement / Fourniture)",
           "prixUnitaire": 15.31,
-          "quantite": 1,
+          "quantite": 1.00,
           "coutTotal": 15.31,
           "vetuste": 0,
           "forfait": false,
@@ -105,7 +105,7 @@
         {
           "designation": "Bouchon et chaînette (évier, baignoire, lavabo)",
           "prixUnitaire": 16.96,
-          "quantite": 1,
+          "quantite": 1.00,
           "coutTotal": 16.96,
           "vetuste": 0,
           "forfait": false,
@@ -117,7 +117,7 @@
         {
           "designation": "test devis non facturé au locataire",
           "prixUnitaire": 150.23,
-          "quantite": 1,
+          "quantite": 1.00,
           "coutTotal": 150.45,
           "vetuste": 0,
           "forfait": false,
@@ -129,7 +129,7 @@
         {
           "designation": "test devis",
           "prixUnitaire": 500,
-          "quantite": 1,
+          "quantite": 1.00,
           "coutTotal": 500,
           "vetuste": 0,
           "forfait": true,
