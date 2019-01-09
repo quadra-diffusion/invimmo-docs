@@ -3,7 +3,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://example.com/root.json",
   "type": "array",
-  "title": "Schema EDL Invimmo",
+  "title": "Schema EDL Invimmo Cocapiiae",
   "items": {
     "$id": "#/items",
     "type": "object",
@@ -221,7 +221,7 @@
             },
             "surface": {
               "$id": "#/items/properties/pieces/items/properties/surface",
-              "type": "object",
+			  "type": [ "object", "null" ],
               "title": "The Surface Schema",
               "required": [
                 "surface"
