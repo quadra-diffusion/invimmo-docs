@@ -641,7 +641,7 @@
       },
       "travaux": {
         "$id": "#/items/properties/travaux",
-        "type": "object",
+        "type": [ "object", "null" ],
         "title": "Interventions constatees",
         "properties": {
           "coutTotalDegradations": {
@@ -691,7 +691,7 @@
           },
           "degradations": {
             "$id": "#/items/properties/travaux/properties/degradations",
-            "type": "array",
+            "type": [ "array", "null"],
             "title": "Liste des lignes interventions constatees",
             "items": {
               "$id": "#/items/properties/travaux/properties/degradations/items",
