@@ -208,7 +208,7 @@
                   },
                   "ordre": {
                     "$id": "#/items/properties/pieces/items/properties/equipements/items/properties/ordre",
-                    "type": "integer",
+                    "type": [ "integer", "null" ],
                     "title": "Ordre",
                     "default": 0,
                     "examples": [
@@ -220,7 +220,7 @@
             },
             "surface": {
               "$id": "#/items/properties/pieces/items/properties/surface",
-              "type": "object",
+              "type": [ "object", "null" ],
               "title": "The Surface Schema",
               "required": [
                 "surface"
@@ -341,7 +341,7 @@
             },
             "ordre": {
               "$id": "#/items/properties/pieces/items/properties/ordre",
-              "type": "integer",
+              "type": ["integer", "null"],
               "title": "Ordre",
               "default": 0,
               "examples": [
@@ -429,7 +429,7 @@
             },
             "absent": {
               "$id": "#/items/properties/locataires/items/properties/absent",
-              "type": "boolean",
+              "type": [ "boolean", "null" ],
               "title": "Indication d abscence du locataire",
               "default": false,
               "examples": [
@@ -438,7 +438,7 @@
             },
             "refuseDeSigner": {
               "$id": "#/items/properties/locataires/items/properties/refuseDeSigner",
-              "type": "boolean",
+              "type": [ "boolean", "null" ],
               "title": "Indication de refus de signature du locataire",
               "default": false,
               "examples": [
@@ -803,7 +803,7 @@
       },
       "reponses": {
         "$id": "#/items/properties/reponses",
-        "type": "array",
+        "type": [ "array", "null" ],
         "title": "The Reponses Schema",
         "items": {
           "$id": "#/items/properties/reponses/items",
