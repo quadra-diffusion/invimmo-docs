@@ -720,11 +720,11 @@
                 },
                 "quantite": {
                   "$id": "#/items/properties/travaux/properties/degradations/items/properties/quantite",
-                  "type": "integer",
+                  "type": "number",
                   "title": "Quantite",
                   "default": 0,
                   "examples": [
-                    1
+                    1.5
                   ]
                 },
                 "coutTotal": {
