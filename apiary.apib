@@ -1,5 +1,5 @@
 FORMAT: 1A
-HOST: http://localhost:8888/api/v1/[ReferenceClient]
+HOST: https://api-preprod.invimmo.fr/api/v1/[ReferenceClient]
 
 # API Invimmo
 
@@ -451,6 +451,50 @@ Désactive une liste de baux dans la base de données d’Invimmo
 + Response 500 (application/json)
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
+    
+## Document bail [/baux/{id}/{typeAttachement}/{nomFichier}?TYPE_REFERENCE={TypeReference}]
+
+Ajoute le document du bail dont la référence a été passée en paramètre
+
++ Parameters
+    + id: `1` (required, string) - Référence interne ou externe du bail auquel il faut ajouter le document à retourner.
+    + typeAttachement: `PdfBaux` (required, string) - Type d'attachement.
+    + nomFichier: `BAI_PAT545_BAIL854.pdf` (required, string) - Nom du fichier.
+    + TypeReference: `INTERNE` (required, string) - valeur possibles : INTERNE ou EXTERNE, EXTERNE par défaut si non spécifié.
+
+### Ajouter un document à signer [POST]
+
+Ajoute un document à signer avec un état des lieux pour un bail donné
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
++ Response 200 (application/json)
+    Dans le cas ou l'ajout d'un document se passe bien
+    + Body
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un document.
+    + Body
+    
++ Response 404 (application/json)
+    (Not found) L'identifiant du bail donné ne correspond à aucun bail dans Invimmo.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
 
 
 ## Compteurs [/patrimoines/{RefPatrimoineInterneOuExterne}/compteurs]
@@ -763,6 +807,50 @@ Récupération de l’intégralité d’un état des lieux avec son contenu.
 
 + Response 404 (application/json)
     (Not Found) : Le point de terminaison n’existe pas.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+    
+## Etats des lieux [/edls/{id}/{typeAttachement}/{nomFichier}?TYPE_REFERENCE={TypeReference}]
+
+Récupère le document signé lié à l'état des lieux dont la référence a été passée en paramètre
+
++ Parameters
+    + id: `1` (required, string) - Référence interne ou externe de l'état des lieux duquel il faut récupérer le document.
+    + typeAttachement: `PdfBaux` (required, string) - Type d'attachement à récupérer.
+    + nomFichier: `BAI_PAT545_BAIL854.pdf` (required, string) - Nom du fichier.
+    + TypeReference: `INTERNE` (required, string) - valeur possibles : INTERNE ou EXTERNE, EXTERNE par défaut si non spécifié.
+
+### Récupère le contenu d'un document d'état des lieux [POST]
+
+Récupération d'un document signé d'un état des lieux
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
++ Response 200 (application/octet-stream)
+    Dans le cas ou la récupération d'un document se passe bien
+    + Body
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un document.
+    + Body
+    
++ Response 404 (application/json)
+    (Not found) L'identifiant de l'état des lieux donné ne correspond à aucun état des lieux dans Invimmo.
     + Body
 
 + Response 500 (application/json)
