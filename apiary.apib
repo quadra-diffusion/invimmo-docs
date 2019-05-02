@@ -782,7 +782,7 @@ Retourne l'Etat des lieux dont la référence a été passée en paramètre
     + TypeReference: `INTERNE` (required, string) - valeur possibles : INTERNE ou EXTERNE, EXTERNE par défaut si non spécifié.
     + Reference: `1` (required, string) - Référence interne ou externe de l'edl à retourner.
 
-### Récupère l état des lieux avec son contenu [GET]
+### Récupère l état des lieux avec son contenu [POST]
 
 Récupération de l’intégralité d’un état des lieux avec son contenu.
 
@@ -813,17 +813,17 @@ Récupération de l’intégralité d’un état des lieux avec son contenu.
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
     
-## Etats des lieux [/edls/{id}/{typeAttachement}/{nomFichier}?TYPE_REFERENCE={TypeReference}]
+## Etats des lieux [/edls/{id}/{typeAttachement}/{nomFichier}]
 
 Récupère le document signé lié à l'état des lieux dont la référence a été passée en paramètre
 
 + Parameters
-    + id: `1` (required, string) - Référence interne ou externe de l'état des lieux duquel il faut récupérer le document.
+    + id: `1` (required, string) - Référence interne de l'état des lieux duquel il faut récupérer le document.
     + typeAttachement: `PdfBaux` (required, string) - Type d'attachement à récupérer.
     + nomFichier: `BAI_PAT545_BAIL854.pdf` (required, string) - Nom du fichier.
     + TypeReference: `INTERNE` (required, string) - valeur possibles : INTERNE ou EXTERNE, EXTERNE par défaut si non spécifié.
 
-### Récupère le contenu d'un document d'état des lieux [POST]
+### Récupère le contenu d'un document d'état des lieux [GET]
 
 Récupération d'un document signé d'un état des lieux
 
