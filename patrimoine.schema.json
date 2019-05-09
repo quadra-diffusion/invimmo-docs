@@ -478,6 +478,14 @@
                 "title": "The UG Group schema",
                 "type": "string"
             },
+            "GroupeUgReferenceExterne": {
+                "default": "ReferenceGroupe",
+                "description": "Référence du Groupe Ug.",
+                "id": "/properties/GroupeUgReferenceExterne",
+                "maxLength": 255,
+                "title": "The UG Group reference schema",
+                "type": "string"
+            },
             "TypeLibelle": {
                 "default": "Type",
                 "description": "Type de patrimoine.",
