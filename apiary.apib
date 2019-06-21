@@ -855,6 +855,45 @@ Récupération d'un document signé d'un état des lieux
 + Response 500 (application/json)
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
+    
+## Statistiques Etats des lieux [/edls/statistiques/{annee}/export]
+
+Envoie les statistiques de réalisation d'état des lieux
+
++ Parameters
+    + annee: 2019 (required, int) - Année sur laquelle faire l'export des statistiques
+
+### Envoie par mail des statistiques d'état des lieux [POST]
+
+Envoie les statistiques d'état des lieux
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+    + Attributes (ParametrageRequeteStatistiques POST)
+    
++ Response 200 (application/octet-stream)
+    Dans le cas ou l'envoie se passe bien
+    + Body
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un document.
+    + Body
+    
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
 
 ## Index [/baux/{RefBailInterneOuExterne}/index]
 
@@ -1731,6 +1770,7 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
     + Body
 
 
+
 # Data Structures
 
 ## Authentification POST (object)
@@ -2169,10 +2209,17 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 - Incident: `true` (boolean) - Relevé suite à incident (changement de compteur / fuite / etc.) true/false.
 - Commentaire: `Index estimatif` (string) - Commentaire (Max 500 caractères).
 
-## Index Invimmo POST (object)
+## ParametrageRequeteStatistiques POST (object)
 
-- ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
-- Include Index POST
+- Environnements (array[Environnement POST])
+- DestinatairesEmail (array[string])
+
+## Environnement POST(object)
+
+- Nomclient : `Valeurs sures` (string) - Le nom du client qui sera visible dans l'export
+- Cleclient : `valeurssures` (string) - Le client
+- Url : `http://localhost:8180/RestServiceImpl.svc` (string) - Le lien vers le webservice du client
+- Token : `185f96b7-c828-4465-b478-290369a67379` (string) - Le token permettant d'avoir un compte valide
 
 ## Index PUT (object)
 
