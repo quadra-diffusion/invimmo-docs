@@ -1,4 +1,4 @@
-{
+﻿{
   "definitions": { },
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://example.com/root.json",
@@ -645,7 +645,7 @@
         "properties": {
           "coutTotalDegradations": {
             "$id": "#/items/properties/travaux/properties/coutTotalDegradations",
-            "type": "number",
+            "type": ["number", "null" ],
             "title": "Cout total Intervention",
             "default": 0,
             "examples": [
