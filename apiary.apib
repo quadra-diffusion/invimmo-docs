@@ -9,7 +9,7 @@ A remplir
 ## Affectation Locataires au bail [/bail/{refBailInterneOuExterne}/locataires{?type_reference}]
 
 + Parameters
-    + refBailInterneOuExterne: `15689` (required, string) - Référence bail interne ou externe du locataire.
+    + refBailInterneOuExterne: `15689` (required, string) - Référence bail interne ou externe.
     + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
 
 ### Ajouter une liste d affectation Locataires au bail [POST]
@@ -552,11 +552,11 @@ Modifie une liste de compteurs dans la base de données d’Invimmo
 
             Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
 
-    + Attributes (array[compteurs PUT])
+    + Attributes (array[Compteurs PUT])
 
 + Response 200 (application/json)
     Dans le cas ou les modifications de compteurs se passent bien.
-    + Attributes (array[compteurs Invimmo PUT])
+    + Attributes (array[Compteurs Invimmo PUT])
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -588,11 +588,11 @@ Supprime une liste de compteurs dans la base de données d’Invimmo
 
             Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
 
-    + Attributes (array[compteurs DELETE])
+    + Attributes (array[Compteurs DELETE])
 
 + Response 200 (application/json)
     Dans le cas ou les suppressions de compteurs se passent bien.
-    + Attributes (array[compteurs Invimmo DELETE])
+    + Attributes (array[Compteurs Invimmo DELETE])
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -706,11 +706,11 @@ Supprime une liste de compteurs externes dans la base de données d’Invimmo
 
             Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
 
-    + Attributes (array[excompteurs DELETE])
+    + Attributes (array[Excompteurs DELETE])
 
 + Response 200 (application/json)
     Dans le cas ou les suppressions de excompteurs se passent bien.
-    + Attributes (array[excompteurs Invimmo DELETE])
+    + Attributes (array[Excompteurs Invimmo DELETE])
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -740,7 +740,7 @@ Liste d’états des lieux pour la date donnée
 + Parameters
     + date: `2017-05-26` (required, string) - date format YYYY-MM-DD.
 
-### Récupère l état des lieux avec son contenu [GET]
+### Récupère la liste des états des lieux [GET]
 
 Récupération de l’intégralité d’un état des lieux avec son contenu.
 
@@ -755,7 +755,7 @@ Récupération de l’intégralité d’un état des lieux avec son contenu.
 
 + Response 200 (application/json)
     Dans le cas ou la récupération des etats des lieux se passent bien.
-    + Attributes (array[Edls Invimmo GET])
+    + Attributes (array[Edls GET])
     
 + Response 401 (application/json)
     (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
@@ -795,7 +795,7 @@ Récupération de l’intégralité d’un état des lieux avec son contenu.
 
 + Response 200 (application/json)
     Dans le cas ou la récupération des etats des lieux se passent bien.
-    + Attributes (array[Edls Invimmo GET])
+    + Attributes (Edls GET)
     
 + Response 401 (application/json)
     (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
@@ -917,7 +917,7 @@ Modification des relevés d’index pour un bail, en complétant les données pr
 
 + Response 201 (application/json)
     Dans le cas ou les insertions d’index se passent bien.
-    + Attributes (array[Index Invimmo POST])
+    + Attributes (array[Index POST])
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -1958,37 +1958,37 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 
 ## AffectationLocataire POST (object)
 
-- ReferenceExterne: `80125` (required, string) - Référence externe de l'affectation locataire (Max 255 caractères).
-- TypeLocataire: `true` (boolean) - Type locataire true/false.
+- ReferenceExterne: `80125` (required, string) - Référence externe du locataire (Max 255 caractères).
+- LocatairePrincipal: `true` (boolean) - Le locataire est t'il principal ou non sur ce bail.
 
 ## AffectationLocataire Invimmo POST (object)
 
-- ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
+- ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo du locataire
 - Include AffectationLocataire POST
 
 ## AffectationLocataire PUT (object)
 
-- ReferenceExterne: `80125` (required, string) - Référence externe de l'affectation locataire (Max 255 caractères).
-- TypeLocataire: `true` (boolean) - Type locataire true/false.
+- ReferenceExterne: `80125` (required, string) - Référence externe du locataire (Max 255 caractères).
+- LocatairePrincipal: `true` (boolean) - Le locataire est t'il principal ou non sur ce bail..
 
 ## AffectationLocataire Invimmo PUT (object)
 
-- ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo.
+- ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo du locataire.
 - Include AffectationLocataire PUT
 
 ## AffectationLocataire DELETE (object)
 
-- ReferenceExterne: `80125` (required, string) - Référence externe de l'affectation locataire (Max 255 caractères).
+- ReferenceExterne: `80125` (required, string) - Référence externe du locataire (Max 255 caractères).
 
 ## AffectationLocataire Invimmo DELETE (object)
 
-- ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
+- ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo du locataire
 - Include AffectationLocataire DELETE
 
 
 ## GroupePatrimoine POST (object)
 
-- ReferenceExterne: `80125` (required, string) - Référence externe de l'affectation locataire (Max 255 caractères).
+- ReferenceExterne: `80125` (required, string) - Référence externe du groupe patrimoine (Max 255 caractères).
 - ReferenceExterneBareme: `grp1` (string) - Référence externe du baréme (Max 255 caractères).
 - Libelle: `groupe 1` (string) - Libelle du groupe patrimoine  (Max 200 caractères).
 
@@ -1999,7 +1999,7 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 
 ## GroupePatrimoine PUT (object)
 
-- ReferenceExterne: `grp1` (required, string) - Référence externe de l'affectation locataire (Max 255 caractères).
+- ReferenceExterne: `grp1` (required, string) - Référence externe du groupe patrimoine (Max 255 caractères).
 - Libelle: `groupe 1` (string) - Libelle du groupe patrimoine  (Max 200 caractères).
 
 ## GroupePatrimoine Invimmo PUT (object)
@@ -2009,7 +2009,7 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 
 ## GroupePatrimoine DELETE (object)
 
-- ReferenceExterne: `grp1` (required, string) - Référence externe de l'affectation locataire (Max 255 caractères).
+- ReferenceExterne: `grp1` (required, string) - Référence externe du groupe patrimoine (Max 255 caractères).
 
 ## GroupePatrimoine Invimmo DELETE (object)
 
@@ -2060,20 +2060,20 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 
 ## AffectationUtilisateurs POST (object)
 
-- ReferenceExterne: `RDurand` (required, string) - Référence externe de l'Affectation Utilisateurs (Max 255 caractères).
+- ReferenceExterne: `RDurand` (required, string) - Référence externe du patrimoine (Max 255 caractères).
 
 ## AffectationUtilisateurs Invimmo POST (object)
 
-- ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
+- ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo du patrimoine
 - Include AffectationUtilisateurs POST
 
 ## AffectationUtilisateurs DELETE (object)
 
-- ReferenceExterne: `RDurand` (required, string) - Référence externe de l'Affectation Utilisateurs (Max 255 caractères).
+- ReferenceExterne: `RDurand` (required, string) - Référence externe du patrimoine (Max 255 caractères).
 
 ## AffectationUtilisateurs Invimmo DELETE (object)
 
-- ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
+- ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo du patrimoine
 - Include AffectationUtilisateurs DELETE
 
 
@@ -2127,7 +2127,7 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 
 - ReferenceExterne: `001.230E` (required, string) - Référence externe du Compteur (Max 255 caractères).
 - CodeConstructeur: `T016701` (required, string) - Code Compteur (Max 200 caractères).
-- TypeCompteur: `Electrique` (required, string) - Type de compteur (Eau, eletricité, etc...) (Max 500 caractères).
+- CodeTypeCompteur: `ELEC` (required, string) - Code du type de compteur (Eau, eletricité, etc...) (Max 500 caractères).
 - Emplacement: `Sous l'évier` (string) - Emplacement physique du compteur (Max 100 caractères).
 - InformationComplementaire: `Compteur jour/nuit` (string) - Informations complémentaires (Max 200 caractères).
 - Tarif: `0.52` (number) - Tarif Compteur (e.g. prix kw/h) (Double 10.2).
@@ -2141,7 +2141,7 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 
 - ReferenceExterne: `001.230E` (required, string) - Référence externe du Compteur (Max 255 caractères).
 - CodeConstructeur: `T016701` (string) - Code Compteur (Max 200 caractères).
-- TypeCompteur: `Electrique` (string) - Type de compteur (Eau, eletricité, etc...) (Max 500 caractères).
+- CodeTypeCompteur: `ELEC` (string) - Code du yype de compteur (Eau, eletricité, etc...) (Max 500 caractères).
 - Emplacement: `Sous l'évier` (string) - Emplacement physique du compteur (Max 100 caractères).
 - InformationComplementaire: `Compteur jour/nuit` (string) - Code Postal (Max 200 caractères).
 - Tarif: `0.52` (number) - Tarif Compteur (e.g. prix kw/h) (Double 10.2).
@@ -2164,7 +2164,7 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 
 - ReferenceExterne: `001.230E` (required, string) - Référence externe du Compteur (Max 255 caractères).
 - CodeConstructeur: `T016701` (required, string) - Code Compteur (Max 200 caractères).
-- TypeCompteur: `Electrique` (required, string) - Type de compteur (Eau, eletricité, etc...) (Max 500 caractères).
+- CodeTypeCompteur: `ELEC` (required, string) - Code du type de compteur (Eau, eletricité, etc...) (Max 500 caractères).
 - Emplacement: `Sous l'évier` (string) - Emplacement physique du compteur (Max 100 caractères).
 - InformationComplementaire: `Compteur jour/nuit` (string) - Informations complémentaires (Max 200 caractères).
 - TarifEc: `0.52` (number) - Tarif EC Compteur (e.g. prix kw/h) (Double 10.2).
@@ -2180,7 +2180,7 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 
 - ReferenceExterne: `001.230E` (required, string) - Référence externe du Compteur (Max 255 caractères).
 - CodeConstructeur: `T016701` (string) - Code Compteur (Max 200 caractères).
-- TypeCompteur: `Electrique` (string) - Type de compteur (Eau, eletricité, etc...) (Max 500 caractères).
+- CodeTypeCompteur: `Electrique` (string) - Code du type de compteur (Eau, eletricité, etc...) (Max 500 caractères).
 - Emplacement: `Sous l'évier` (string) - Emplacement physique du compteur (Max 100 caractères).
 - InformationComplementaire: `Compteur jour/nuit` (string) - Code Postal (Max 200 caractères).
 - TarifEc: `0.52` (number) - Tarif EC Compteur (e.g. prix kw/h) (Double 10.2).
@@ -2200,6 +2200,7 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 
 - ReferenceInvimmo: `1526` (required, number) - Référence unique Invimmo
 - Include Excompteurs DELETE
+
 ## Index POST (object)
 
 - ReferenceExterne: `4568` (required, string) - Référence externe de l'Index (Max 255 caractères).
@@ -2281,13 +2282,13 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 - IdTypeEquipement: `45` (required, number) - L'identifiant du type d'équipement venant du paramètrage d'invimmo (Integer 10).
 - Forfait: `450` (required, number) - Montant forfaitaire 0 = Non, 1 = Oui (Integer 1).
 - Designation: `Evier Inox` (required, string) - Désignation de la ligne de barème (Max 255 caractères).
-- CodeLigneBareme: `Evier Inox` (string) - Code de le ligne de Barème (Max 500 caractères).
+- Code: `Evier Inox` (string) - Code de le ligne de Barème (Max 500 caractères).
 - Franchise: `500` (number) - Franchise appliqué sur le ligne de Barème (Interger 4).
 - VetusteResiduelle: `500` (number) - Franchise appliqué sur le ligne de Barème (double, 12.2).
 - Devis: `300` (number) - Montant Devisé de ligne de Barème (integer, 3).
 - Unite: `Evier Inox` (string) - Unité de la ligne de Barème (Max 5 caractères).
-- PrixHT: `500` (number) - Prix Hors Taxe de ligne de Barème (double, 12.2).
-- PrixTTC: `500` (number) - Prix toutes Taxes comprises de ligne de Barème (double, 12.2).
+- PrixHt: `500` (number) - Prix Hors Taxe de ligne de Barème (double, 12.2).
+- PrixTtc: `500` (number) - Prix toutes Taxes comprises de ligne de Barème (double, 12.2).
 
 ## LigneBaremes Invimmo POST (object)
 
@@ -2300,13 +2301,13 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 - IdTypeEquipement: `45` (number) - L'identifiant du type d'équipement venant du paramètrage d'invimmo (Integer 10).
 - Forfait: `450` (number) - Montant forfaitaire 0 = Non, 1 = Oui (Integer 1).
 - Designation: `Evier Inox` (string) - Désignation de la ligne de barème (Max 255 caractères).
-- CodeLigneBareme: `Evier Inox` (string) - Code de le ligne de Barème (Max 500 caractères).
+- Code: `Evier Inox` (string) - Code de le ligne de Barème (Max 500 caractères).
 - Franchise: `500` (number) - Franchise appliqué sur le ligne de Barème (Interger 4).
 - VetusteResiduelle: `500` (number) - Franchise appliqué sur le ligne de Barème (double, 12.2).
 - Devis: `300` (number) - Montant Devisé de ligne de Barème (integer, 3).
 - Unite: `Evier Inox` (string) - Unité de la ligne de Barème (Max 5 caractères).
-- PrixHT: `500` (number) - Prix Hors Taxe de ligne de Barème (double, 12.2).
-- PrixTTC: `500` (number) - Prix toutes Taxes comprises de ligne de Barème (double, 12.2).
+- PrixHt: `500` (number) - Prix Hors Taxe de ligne de Barème (double, 12.2).
+- PrixTtc: `500` (number) - Prix toutes Taxes comprises de ligne de Barème (double, 12.2).
 
 ## LigneBaremes Invimmo PUT (object)
 
@@ -2350,8 +2351,6 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 - DestinationClient: `Centre ville de MELIN` (required, string) - Destination du locataire partant.
 - LienEditionEdl: `http://localhost:8180/Attachements/Invimmo/TREO/EditionEDL/5/11_edl__EditionEDL.pdf`
 - LienEditionDegradation: `http://localhost:8180/Attachements/Invimmo/TREO/EditionReparation/5/11_edl__EditionEDL.pdf`
-
-## Edls Invimmo GET (object)
 
 ## Reponses GET (object)
 
