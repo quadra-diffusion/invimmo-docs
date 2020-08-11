@@ -742,7 +742,7 @@ Liste d’états des lieux pour la date donnée
 
 ### Récupère la liste des états des lieux [GET]
 
-Récupération de l’intégralité d’un état des lieux avec son contenu.
+Récupération de la liste des identifiants des états des lieux de la date
 
 + Request (application/json)
 
@@ -750,12 +750,10 @@ Récupération de l’intégralité d’un état des lieux avec son contenu.
 
             Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
 
-    + Attributes (array[Edls GET])
-
 
 + Response 200 (application/json)
     Dans le cas ou la récupération des etats des lieux se passent bien.
-    + Attributes (array[Edls GET])
+    + Attributes
     
 + Response 401 (application/json)
     (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
@@ -851,45 +849,6 @@ Récupération d'un document signé d'un état des lieux
 + Response 404 (application/json)
     (Not found) L'identifiant de l'état des lieux donné ne correspond à aucun état des lieux dans Invimmo.
     + Body
-
-+ Response 500 (application/json)
-    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
-    + Body
-    
-## Statistiques Etats des lieux [/edls/statistiques/{annee}/export]
-
-Envoie les statistiques de réalisation d'état des lieux
-
-+ Parameters
-    + annee: 2019 (required, int) - Année sur laquelle faire l'export des statistiques
-
-### Envoie par mail des statistiques d'état des lieux [POST]
-
-Envoie les statistiques d'état des lieux
-
-+ Request (application/json)
-
-    + Headers
-    
-            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
-    + Attributes (ParametrageRequeteStatistiques POST)
-    
-+ Response 200 (application/octet-stream)
-    Dans le cas ou l'envoie se passe bien
-    + Body
-    
-+ Response 400 (application/json)
-    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
-    + Body
-
-+ Response 401 (application/json)
-    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
-    + Body
-
-+ Response 403 (application/json)
-    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un document.
-    + Body
-    
 
 + Response 500 (application/json)
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
@@ -2022,7 +1981,7 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 - NomUtilisateur: `Durand` (required, string) - Nom de l'utilisateur (Max 50 caractères).
 - CodeUtilisateur: `RDurand` (required, string) - Code utilisateur (Max 50 caractères).
 - ReferenceExterne: `RDurand` (required, string) - Référence externe du Bail (Max 255 caractères).
-- Motdepasse: `RDurand` (required, string) - Mot de passe utilisateur (Max 255 caractères).
+- MotDePasse: `RDurand` (required, string) - Mot de passe utilisateur (Max 255 caractères).
 - Prenom: `Robert` (string) - Prénom utilisateur (Max 50 caractères).
 - ImeiMobile: `351557010202731` (string) - Code IMEI du mobile (Max 100 caractères).
 - Telephone: `351557010202731` (string) - Numéro de téléphone (Max 17 caractères).
@@ -2210,18 +2169,6 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 - Incident: `true` (boolean) - Relevé suite à incident (changement de compteur / fuite / etc.) true/false.
 - Commentaire: `Index estimatif` (string) - Commentaire (Max 500 caractères).
 
-## ParametrageRequeteStatistiques POST (object)
-
-- Environnements (array[Environnement POST])
-- DestinatairesEmail (array[string])
-
-## Environnement POST(object)
-
-- Nomclient : `Valeurs sures` (string) - Le nom du client qui sera visible dans l'export
-- Cleclient : `valeurssures` (string) - Le client
-- Url : `http://localhost:8180/RestServiceImpl.svc` (string) - Le lien vers le webservice du client
-- Token : `185f96b7-c828-4465-b478-290369a67379` (string) - Le token permettant d'avoir un compte valide
-
 ## Index PUT (object)
 
 - ReferenceExterne: `4568` (required, string) - Référence externe de l'Index (Max 255 caractères).
@@ -2349,8 +2296,9 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 - Etat: `Clos` (required, string) - Etat de l'état des lieux.
 - MotifDepart: `Logement centre ville` (required, string) - Motif de départ du locataire.
 - DestinationClient: `Centre ville de MELIN` (required, string) - Destination du locataire partant.
-- LienEditionEdl: `http://localhost:8180/Attachements/Invimmo/TREO/EditionEDL/5/11_edl__EditionEDL.pdf`
-- LienEditionDegradation: `http://localhost:8180/Attachements/Invimmo/TREO/EditionReparation/5/11_edl__EditionEDL.pdf`
+- LienEditionEdl: `11_edl__EditionEDL.pdf` - Le nom du pdf d'état des lieux
+- LienEditionDegradation: `11_reparation__EditionReparation.pdf` - Le nom du pdf des réparations
+- Agent: `Yann Bacquaert`  - Agent qui a effectué l'état des lieux
 
 ## Reponses GET (object)
 
