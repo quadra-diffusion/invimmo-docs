@@ -1625,7 +1625,7 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 
 
 ## Patrimoine POST (object)
-
+- StructurePatrimoine(EdlsStructure POST) - structure du patrimoine
 - ReferenceExterne: `001.001.001A` (required, string) - Référence externe du patrimoine (Max 255 caractères).
 - CodePatrimoine: `001.001.001A` (required, string) - Code Patrimoine (Max 40 caractères).
 - LibelleAdresse: `12 Rue des Bleuets, Appartement 1` (required, string) - Adresse (Max 100 caractères).
@@ -2181,6 +2181,35 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 - LienEditionEdl: `11_edl__EditionEDL.pdf` - Le nom du pdf d'état des lieux
 - LienEditionDegradation: `11_reparation__EditionReparation.pdf` - Le nom du pdf des réparations
 - Agent: `Yann Bacquaert`  - Agent qui a effectué l'état des lieux
+
+## EdlsStructure POST (object)
+
+- Clef (array[ClefStructure POST])
+- Pieces (array[PieceStructure POST])
+
+## ClefStructure POST (object)
+
+- Type (required,string) Nom du type de clef
+- Commentaire (string) Commentaire sur la clef
+- InfoComplementaire (string) Information complémentaire sur la clef
+
+## PieceStructure POST (object)
+- Equipements (array[EquipementStructure POST])
+- Surface (array[SurfaceStructure POST])
+- Type (required,string) Nom du type de pièce
+- Etat (string) Etat de la pièce
+- InfoComplementaire (string) Information complémentaire sur la pièce
+
+## EquipementStructure POST (object)
+- Type (required,string) - Nom du type d'équipement
+- Etat (string) - Etat de l'équipement
+- InfoComplementaire (string) - Information complémentaire sur l'équipement
+
+## SurfaceStructure POST (object)
+- Surface (number) - Surface de la pièce
+- Hauteur (number) - Surface de la pièce
+- Largeur (number) - Largeur de la pièce
+- Longueur (number) - Longueur de la pièce
 
 ## Reponses GET (object)
 
