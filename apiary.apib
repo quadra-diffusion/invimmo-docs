@@ -133,7 +133,7 @@ Récupère une liste d'affectation locataire au bail dans la base de données d�
 
 + Response 200 (application/json)
     La récupération s'est bien passée
-    + Attributes (array)
+    + Attributes (array[LocataireBail GET], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -243,7 +243,7 @@ Récupère une liste d'affectation dans la base de données d’Invimmo
 
 + Response 200 (application/json)
     La récupération s'est bien passée
-    + Attributes (array)
+    + Attributes (array[Patrimoine Invimmo GET], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -423,7 +423,7 @@ Récupère un barème
 
 + Response 200 (application/json)
     La récupération s'est bien passée
-    + Attributes (array)
+    + Attributes (array[Baremes Invimmo GET], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -1231,7 +1231,7 @@ Récupère un Locataire
 
 + Response 200 (application/json)
     La récupération s'est bien passée
-    + Attributes (array)
+    + Attributes (array[Locataire GET],fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -1381,7 +1381,7 @@ Récupère un Patrimoine
 
 + Response 200 (application/json)
     La récupération s'est bien passée
-    + Attributes (array)
+    + Attributes (array[Patrimoine GET],fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -1532,7 +1532,7 @@ Récupère un Groupe Patrimoine
 
 + Response 200 (application/json)
     La récupération s'est bien passée
-    + Attributes (array)
+    + Attributes (array[GroupePatrimoine GET],fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -1664,11 +1664,10 @@ Désactive une liste de groupes patrimoines dans la base de données d’Invimmo
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-## Planifications [/planifications/{id}?TYPE_REFERENCE={type_reference}]
+## Planifications [/planifications/{id}]
 
 + Parameters
-    + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
-    + id: `1` (required, string) - Référence interne ou externe.
+    + id: `1` (required, string) - Référence externe.
 
 ### Récupérer une Planification [GET]
 
@@ -1683,7 +1682,7 @@ Récupère une Planification
 
 + Response 200 (application/json)
     La récupération s'est bien passée
-    + Attributes (array)
+    + Attributes (array[Planification GET],fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -1798,7 +1797,7 @@ Récupère un Propriétaire
 
 + Response 200 (application/json)
     La récupération s'est bien passée
-    + Attributes (array)
+    + Attributes (array[Proprietaires GET],fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -2062,7 +2061,7 @@ Récupère un Utilisateur
 
 + Response 200 (application/json)
     La récupération s'est bien passée
-    + Attributes (array)
+    + Attributes (array[Utilisateurs GET],fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -2091,9 +2090,7 @@ Récupère un Utilisateur
 
 - Access_Token: `0a86a11f-d06e-46b7-a133-5240cb27d1e5` (required, string) - Token d'accès à Invimmo
 
-
-## Patrimoine POST (object)
-- StructurePatrimoine (EdlsStructure POST) - structure du patrimoine
+## Patrimoine (object)
 - ReferenceExterne: `001.001.001A` (required, string) - Référence externe du patrimoine (Max 255 caractères).
 - CodePatrimoine: `001.001.001A` (required, string) - Code Patrimoine (Max 40 caractères).
 - LibelleAdresse: `12 Rue des Bleuets, Appartement 1` (required, string) - Adresse (Max 100 caractères).
@@ -2108,6 +2105,15 @@ Récupère un Utilisateur
 - ReferenceExterneProprietaire: `MONHABITAT` (string) - Référence externe du propriétaire du patrimoine (Max 255 caractères).
 - TypeLibelle : `T3` (string) - Libelle du type de patrimoine (Max 50 caractères).
 - GroupeUgLibelle : `Groupe 1` (string) - Libelle du groupe UG du patrimoine (Max 200 caractères).
+
+## Patrimoine GET (object)
+
+- ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
+- Include Patrimoine
+
+## Patrimoine POST (object)
+- StructurePatrimoine (EdlsStructure POST) - structure du patrimoine
+- Include Patrimoine
 
 ## Patrimoine Invimmo POST (object)
 
@@ -2150,7 +2156,36 @@ Récupère un Utilisateur
 - ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
 - Include Patrimoine DELETE
 
-## Planification POST (object)
+## EdlsStructure POST (object)
+
+- Cles (array[ClefStructure POST],fixed-type)
+- Pieces (array[PieceStructure POST],fixed-type)
+
+## ClefStructure POST (object)
+
+- Type: `Chambre` (required,string) Nom du type de clef
+- Commentaire (string) Commentaire sur la clef
+- InfoComplementaire (string) Information complémentaire sur la clef
+
+## PieceStructure POST (object)
+- Equipements (array[EquipementStructure POST],fixed-type)
+- Surface (array[SurfaceStructure POST],fixed-type)
+- Type (required,string) Nom du type de pièce
+- Etat (string) Etat de la pièce
+- InfoComplementaire (string) Information complémentaire sur la pièce
+
+## EquipementStructure POST (object)
+- Type: `prise` (required,string) - Nom du type d'équipement
+- Etat (string) - Etat de l'équipement
+- InfoComplementaire (string) - Information complémentaire sur l'équipement
+
+## SurfaceStructure POST (object)
+- Surface (number) - Surface de la pièce
+- Hauteur (number) - Surface de la pièce
+- Largeur (number) - Largeur de la pièce
+- Longueur (number) - Longueur de la pièce
+
+## Planification (object)
 
 - ReferenceExterne: `001.001.001A` (required, string) - Référence externe de la planification (Max 255 caractères).
 - ReferenceExterneBail: `002.002.002A` (string) - Référence externe du bail (Max 255 caractères).
@@ -2159,22 +2194,35 @@ Récupère un Utilisateur
 - DateHeure: `2000-10-14 10:10:10` (string) - Date et heure de la planification (YYYY-MM-DD HH:MM:SS).
 - TypeEdl: `1` (number) - le type de l'EDL (1, 2..).
 
+## Planification References (object)
+
+- Include Planification
+- ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
+- ReferenceInvimmoUtilisateur: `TEST` (required, string) - Référence unique Invimmo utilisateur
+- ReferenceInterneLogement: `16548` (required, number) - Référence unique Invimmo logement
+- ReferenceInvimmoBail: `16548` (required, number) - Référence unique Invimmo Bail
+
+## Planification GET (object)
+
+- Include Planification References
+- TypeEdlLibelle: `Entrant` (required, string) - Type d'état des lieux
+
+
+## Planification POST (object)
+
+- Include Planification
+
 ## Planification Invimmo POST (object)
 
-- Include Planification POST
+- Include Planification References
 
 ## Planification PUT (object)
 
-- ReferenceExterne: `001.001.001A` (required, string) - Référence externe de la planification (Max 255 caractères).
-- ReferenceExterneBail: `002.002.002A` (required, string) - Référence externe du bail (Max 255 caractères).
-- ReferenceExterneUtilisateur: `003.003.003A` (required, string) - Référence externe de l'utilisateur (Max 255 caractères).
-- Agence: `Paris` (required, string) - l'agence concernée par la planification (Max 200 caractères).
-- DateHeure: `2000-10-14 10:10:10` (required, string) - Date et heure de la planification (YYYY-MM-DD HH:MM:SS).
-- TypeEdl: `1` (required, number) - le type de l'EDL (1, 2..).
+- Include Planification
 
 ## Planification Invimmo PUT (object)
 
-- Include Planification PUT
+- Include Planification References
 
 ## Baux (object)
 
@@ -2197,13 +2245,13 @@ Récupère un Utilisateur
 ## Baux POST (object)
 
 - Include Baux
-- Locataires (array[LocataireBail POST]) - Locataires
+- Locataires (array[LocataireBail POST],fixed-type) - Locataires
 
 ## Baux GET (object)
 
 - Include Baux
 - Patrimoine (Patrimoine Invimmo GET) - Patrimoine
-- Locataires (array[Locataire GET]) - Locataires
+- Locataires (array[Locataire GET],fixed-type) - Locataires
 - Assurance (Assurances GET)
 
 
@@ -2214,21 +2262,7 @@ Récupère un Utilisateur
 
 ## Baux PUT (object)
 
-- ReferenceExterne: `80125` (required, string) - Référence externe du bail (Max 255 caractères).
-- ReferenceExternePatrimoine: `001.001.001A` (string) - Référence externe du patrimoine (Max 255 caractères).
-- LibelleAdresse: `12 Rue des Bleuets, Appartement 1` (string) - Adresse (Max 100 caractères).
-- Ville: `MELUN` (string) - Ville (Max 100 caractères).
-- CodePostal: `77000` (string) - Code Postal (Max 10 caractères).
-- DateDebutBail: `2010-12-28` (string) - Date de début de bail (YYYY-MM-DD).
-- DateFinBail: `2017-02-14` (string) - Date de fin de bail (YYYY-MM-DD).
-- DateDepotPreavis: `2017-02-14` (string) - Date de dépot de garantie de bail (YYYY-MM-DD).
-- DepotGarantie: `345.20` (number) - montant de dépot de garantie (decimal, 12.2).
-- SoldeBail: `-10.54` (number) - Solde du bail (decimal, 12.2).
-- EstBailPrincipal: `true` (boolean) - Bail principal true/false.
-- DateRetourLD: `2017-02-14` (string) - Date de retour Lettre D (YYYY-MM-DD).
-- EtatBail: `O` (string) - Etat du Bail (O)ccupé, (V)acant (Max 50 caractères).
-- BailAssocie: `50425` (number) - Numéro du bail associé (number 10).
-- CautionsBail: `10.54` (number) - Solde du bail (decimal, 10.2).
+- Include Baux
 
 ## Baux Invimmo PUT (object)
 
@@ -2245,8 +2279,19 @@ Récupère un Utilisateur
 - ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
 - Include Baux DELETE
 
+## LocataireBail POST (object)
 
-## Locataire POST (object)
+- Include Locataire POST
+- Principal (boolean) - Locataire principal ou non.
+
+## LocataireBail GET (object)
+
+- Include Locataire GET
+- LocatairePrincipal (boolean) - Locataire principal ou non.
+- ReferenceInvimmoBail: `16548` (required, number) - Référence unique Invimmo du bail
+- ReferenceExterneBail: `RDUPOND` (required, string) - Référence externe du bail (Max 255 caractères).
+
+## Locataire (object)
 
 - ReferenceExterne: `100254` (required, string) - Référence externe du locataire (Max 255 caractères).
 - Nom: `DUPOND` (required, string) - Nom du locataire (Max 50 caractères).
@@ -2255,10 +2300,9 @@ Récupère un Utilisateur
 - Telephone: `03.20.44.44.44` (string) - Numéro de téléphone (Max 17 caractères).
 - Email: `gerard.dupond@mondomaine.fr` (string) - Email (Max 255 caractères).
 
-## LocataireBail POST (object)
+## Locataire POST (object)
 
-- Include Locataire POST
-- Principal (boolean) - Locataire principal ou non.
+- Include Locataire
 
 ## Locataire Invimmo POST (object)
 
@@ -2272,13 +2316,8 @@ Récupère un Utilisateur
 
 ## Locataires EDL GET (object)
 
+- Include Locataire
 - ReferenceInvimmo: `465` (required, number) - Référence interne du locataire (Integer 10).
-- ReferenceExterne: `RDUPOND` (required, string) - Référence externe du locataire si requete edl (Max 255 caractères).
-- Nom: `DUPOND` (required, string) - Nom du locataire si requete edl (Max 50 caractères).
-- Prenom: `Robert` (required, string) - Prenom du locataire si requete edl (Max 50 caractères).
-- Civilite: `M` (required, string) - Civilité du locataire si requete edl (Max 10 caractères).
-- Telephone: `351557010202731` (string) - Numéro de téléphone (Max 17 caractères).
-- Email: `toto@gmail.com` (string) - Email (Max 255 caractères).
 - absent: `true` (boolean) - Absent lors de l'état des lieux true/false.
 - refuseDeSigner: `true` (boolean) - Refuse de signer l'état des lieux true/false.
 
@@ -2287,12 +2326,7 @@ Récupère un Utilisateur
 
 ## Locataire PUT (object)
 
-- ReferenceExterne: `100254` (required, string) - Référence externe du locataire (Max 255 caractères).
-- Nom: `DUPOND` (string) - Nom du locataire (Max 50 caractères).
-- Prenom: `Gérard` (string) - Prénom du locataire (Max 50 caractères).
-- Civilite: `Monsieur` (string) - Civilité du locataire (Max 10 caractères).
-- Telephone: `03.20.44.44.44` (string) - Numéro de téléphone (Max 17 caractères).
-- Email: `gerard.dupond@mondomaine.fr` (string) - Email (Max 255 caractères).
+- Include Locataire
 
 ## Locataire Invimmo PUT (object)
 
@@ -2338,12 +2372,22 @@ Récupère un Utilisateur
 - ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo du locataire
 - Include AffectationLocataire DELETE
 
-
-## GroupePatrimoine POST (object)
+## GroupePatrimoine  (object)
 
 - ReferenceExterne: `80125` (required, string) - Référence externe du groupe patrimoine (Max 255 caractères).
 - ReferenceExterneBareme: `grp1` (string) - Référence externe du baréme (Max 255 caractères).
 - Libelle: `groupe 1` (string) - Libelle du groupe patrimoine  (Max 200 caractères).
+- LogementsActifs (boolean) - Information pour indiquer si le groupe a des logements actifs
+
+## GroupePatrimoine GET (object)
+
+- Include GroupePatrimoine
+- ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
+- ReferenceBaremeInvimmo: `16549` (required, number) - Référence unique Invimmo barème
+
+## GroupePatrimoine POST (object)
+
+- Include GroupePatrimoine
 
 ## GroupePatrimoine Invimmo POST (object)
 
@@ -2369,8 +2413,7 @@ Récupère un Utilisateur
 - ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
 - Include GroupePatrimoine DELETE
 
-
-## Utilisateurs POST (object)
+## Utilisateurs (object)
 
 - NomUtilisateur: `Durand` (required, string) - Nom de l'utilisateur (Max 50 caractères).
 - CodeUtilisateur: `RDurand` (required, string) - Code utilisateur (Max 50 caractères).
@@ -2381,6 +2424,15 @@ Récupère un Utilisateur
 - Telephone: `351557010202731` (string) - Numéro de téléphone (Max 17 caractères).
 - Email: `351557010202731` (string) - Email (Max 255 caractères).
 
+## Utilisateurs GET (object)
+
+- Include Utilisateurs
+- ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
+
+## Utilisateurs POST (object)
+
+- Include Utilisateurs
+
 ## Utilisateurs Invimmo POST (object)
 
 - ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
@@ -2388,13 +2440,7 @@ Récupère un Utilisateur
 
 ## Utilisateurs PUT (object)
 
-- CodeUtilisateur: `RDurand` (required, string) - Code utilisateur (Max 50 caractères).
-- NomUtilisateur: `Durand` (string) - Nom de l'utilisateur (Max 50 caractères).
-- Prenom: `Robert` (string) - Prénom utilisateur (Max 50 caractères).
-- Motdepasse: `RDurand` (string) - Mot de passe utilisateur (Max 255 caractères).
-- ImeiMobile: `351557010202731` (string) - Code IMEI du mobile (Max 100 caractères).
-- Telephone: `351557010202731` (string) - Numéro de téléphone (Max 17 caractères).
-- Email: `351557010202731` (string) - Email (Max 255 caractères).
+- Include Utilisateurs
 
 ## Utilisateurs Invimmo PUT (object)
 
@@ -2429,19 +2475,28 @@ Récupère un Utilisateur
 - ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo du patrimoine
 - Include AffectationUtilisateurs DELETE
 
-
-## Proprietaires POST (object)
+## Proprietaires (object)
 
 - ReferenceExterne: `RDurand` (required, string) - Référence externe du Propriétaire (Max 255 caractères).
 - Nom: `Durand` (required, string) - Nom du Propriétaire (Max 50 caractères).
 - Prenom: `Robert` (required, string) - Prénom du Propriétaire (Max 50 caractères).
 - Civilite: `Monsieur` (string) - Civilité du Propriétaire (Max 10 caractères).
 - Adresse: `12 Rue des Bleuets, Appartement 1` (string) - Adresse (Max 100 caractères).
+- ComplementAdresse: `Etage 4` (string) - Adresse (Max 100 caractères).
 - CodePostal: `77000` (string) - Code Postal (Max 10 caractères).
 - Ville: `MELUN` (string) - Ville (Max 100 caractères).
 - Email: `351557010202731` (string) - Email (Max 255 caractères).
 - Telephone: `351557010202731` (string) - Numéro de téléphone (Max 20 caractères).
 - Pays: `FRANCE` (string) - Pays (Max 50 caractères).
+
+## Proprietaires GET (object)
+
+- Include Proprietaires
+- ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
+
+## Proprietaires POST (object)
+
+- Include Proprietaires
 
 ## Proprietaires Invimmo POST (object)
 
@@ -2475,8 +2530,7 @@ Récupère un Utilisateur
 - ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
 - Include Proprietaires DELETE
 
-
-## Compteurs POST (object)
+## Compteurs (object)
 
 - ReferenceExterne: `001.230E` (required, string) - Référence externe du Compteur (Max 255 caractères).
 - CodeConstructeur: `T016701` (required, string) - Code Compteur (Max 200 caractères).
@@ -2485,6 +2539,10 @@ Récupère un Utilisateur
 - InformationComplementaire: `Compteur jour/nuit` (string) - Informations complémentaires (Max 200 caractères).
 - Tarif: `0.52` (number) - Tarif Compteur (e.g. prix kw/h) (Double 10.2).
 
+## Compteurs POST (object)
+
+- Include Compteurs
+
 ## Compteurs Invimmo POST (object)
 
 - ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
@@ -2492,30 +2550,19 @@ Récupère un Utilisateur
 
 ## Compteurs GET (object)
 
-- ReferenceExterne: `001.230E` (string) - Référence externe du Compteur (Max 255 caractères).
-- ReferenceInvimmo: `465` (required, number) - Référence interne du Compteur (Integer 10).
-- CodeConstructeur: `T016701` (required, string) - Code Compteur (Max 200 caractères).
-- CodeTypeCompteur: `ELEC` (required, string) - Code de Type de compteur (Max 500 caractères).
+- Include Compteurs
 - libelleTypeCompteur: `Compteur Electrique` (required, string)  (Max 500 caractères).
-- Emplacement: `Sous l'évier` (string) - Emplacement physique du compteur (Max 100 caractères).
-- InformationComplementaire: `Compteur jour/nuit` (string) - Code Postal (Max 200 caractères).
-- Tarif: `0.52` (number) - Tarif Compteur (e.g. prix kw/h) (Double 10.2).
+- ReferenceInvimmo: `465` (required, number) - Référence interne du Compteur (Integer 10).
 
 
 ## Compteurs EDL GET (object)
 
 - Include Compteurs GET
-
-- index (array[Index GET])
+- index (array[Index GET],fixed-type)
 
 ## Compteurs PUT (object)
 
-- ReferenceExterne: `001.230E` (required, string) - Référence externe du Compteur (Max 255 caractères).
-- CodeConstructeur: `T016701` (string) - Code Compteur (Max 200 caractères).
-- CodeTypeCompteur: `ELEC` (string) - Code du yype de compteur (Eau, eletricité, etc...) (Max 500 caractères).
-- Emplacement: `Sous l'évier` (string) - Emplacement physique du compteur (Max 100 caractères).
-- InformationComplementaire: `Compteur jour/nuit` (string) - Code Postal (Max 200 caractères).
-- Tarif: `0.52` (number) - Tarif Compteur (e.g. prix kw/h) (Double 10.2).
+- Include Compteurs
 
 ## Compteurs Invimmo PUT (object)
 
@@ -2531,14 +2578,7 @@ Récupère un Utilisateur
 - ReferenceInvimmo: `1526` (required, number) - Référence unique Invimmo
 - Include Compteurs DELETE
 
-## Excompteurs GET (object)
-
-- Include Excompteurs POST
-- ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
-- ReferenceInvimmoBail: `16548` (required, number) - Référence unique Invimmo bail
-- ReferenceInvimmoPatrimoine: `16548` (required, number) - Référence unique Invimmo patrimoine
-
-## Excompteurs POST (object)
+## Excompteurs (object)
 
 - ReferenceExterne: `001.230E` (required, string) - Référence externe du Compteur (Max 255 caractères).
 - CodeConstructeur: `T016701` (required, string) - Code Compteur (Max 200 caractères).
@@ -2549,6 +2589,17 @@ Récupère un Utilisateur
 - TarifEf: `0.55` (number) - Tarif EF Compteur (e.g. prix kw/h) (Double 10.2).
 - IndexDebut: `55` (number) - Index de début du bail.
 
+## Excompteurs GET (object)
+
+- Include Excompteurs
+- ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
+- ReferenceInvimmoBail: `16548` (required, number) - Référence unique Invimmo bail
+- ReferenceInvimmoPatrimoine: `16548` (required, number) - Référence unique Invimmo patrimoine
+
+## Excompteurs POST (object)
+
+- Include Excompteurs
+
 ## Excompteurs Invimmo POST (object)
 
 - ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
@@ -2556,14 +2607,7 @@ Récupère un Utilisateur
 
 ## Excompteurs PUT (object)
 
-- ReferenceExterne: `001.230E` (required, string) - Référence externe du Compteur (Max 255 caractères).
-- CodeConstructeur: `T016701` (string) - Code Compteur (Max 200 caractères).
-- CodeTypeCompteur: `Electrique` (string) - Code du type de compteur (Eau, eletricité, etc...) (Max 500 caractères).
-- Emplacement: `Sous l'évier` (string) - Emplacement physique du compteur (Max 100 caractères).
-- InformationComplementaire: `Compteur jour/nuit` (string) - Code Postal (Max 200 caractères).
-- TarifEc: `0.52` (number) - Tarif EC Compteur (e.g. prix kw/h) (Double 10.2).
-- TarifEf: `0.55` (number) - Tarif EF Compteur (e.g. prix kw/h) (Double 10.2).
-- IndexDebut: `55` (number) - Index de début du bail.
+- Include Excompteurs
 
 ## Excompteurs Invimmo PUT (object)
 
@@ -2579,7 +2623,7 @@ Récupère un Utilisateur
 - ReferenceInvimmo: `1526` (required, number) - Référence unique Invimmo
 - Include Excompteurs DELETE
 
-## Index POST (object)
+## Index (object)
 
 - ReferenceExterne: `4568` (required, string) - Référence externe de l'Index (Max 255 caractères).
 - ReferenceExterneCompteur: `001.230E` (required, string) - Référence externe du Compteur (Max 255 caractères).
@@ -2588,14 +2632,13 @@ Récupère un Utilisateur
 - Incident: `true` (boolean) - Relevé suite à incident (changement de compteur / fuite / etc.) true/false.
 - Commentaire: `Index estimatif` (string) - Commentaire (Max 500 caractères).
 
+## Index POST (object)
+
+- Include Index
+
 ## Index PUT (object)
 
-- ReferenceExterne: `4568` (required, string) - Référence externe de l'Index (Max 255 caractères).
-- ReferenceExterneCompteur: `001.230E` (string) - Référence externe du Compteur (Max 255 caractères).
-- Releve: `1235` (number) - relevé de l'index (Max 10).
-- DateReleve: `2017-02-14` (string) - Date de relevé de l'index (YYYY-MM-DD).
-- Incident: `true` (boolean) - Relevé suite à incident (changement de compteur / fuite / etc.) true/false.
-- Commentaire: `Index estimatif` (string) - Commentaire (Max 500 caractères).
+- Include Index
 
 ## Index Invimmo PUT (object)
 
@@ -2611,11 +2654,19 @@ Récupère un Utilisateur
 - ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
 - Include Index DELETE
 
-
-## Baremes POST (object)
+## Baremes (object)
 
 - ReferenceExterne: `PLOMB1` (required, string) - Référence externe du Barème (Max 255 caractères).
 - Libelle: `Plomberie` (required, string) - Libellé du barème (Max 200 caractères).
+
+## Baremes Invimmo GET (object)
+
+- ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
+- Include Baremes
+
+## Baremes POST (object)
+
+- Include Baremes
 
 ## Baremes Invimmo POST (object)
 
@@ -2641,13 +2692,7 @@ Récupère un Utilisateur
 - ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
 - Include Baremes DELETE
 
-## LigneBaremes GET (object)
-
-- ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
-- LibelleTypeEquipement: `Prise` (required, string) - Nom du type
-- Include LigneBaremes POST
-
-## LigneBaremes POST (object)
+## LigneBaremes (object)
 
 - ReferenceExterne: `7895` (required, string) - Référence externe de la ligne de Barème (Max 255 caractères).
 - IdTypeEquipement: `45` (required, number) - L'identifiant du type d'équipement venant du paramètrage d'invimmo (Integer 10).
@@ -2661,6 +2706,16 @@ Récupère un Utilisateur
 - PrixHt: `500` (number) - Prix Hors Taxe de ligne de Barème (double, 12.2).
 - PrixTtc: `500` (number) - Prix toutes Taxes comprises de ligne de Barème (double, 12.2).
 
+## LigneBaremes GET (object)
+
+- ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
+- LibelleTypeEquipement: `Prise` (required, string) - Nom du type
+- Include LigneBaremes
+
+## LigneBaremes POST (object)
+
+- Include LigneBaremes
+
 ## LigneBaremes Invimmo POST (object)
 
 - ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
@@ -2668,17 +2723,7 @@ Récupère un Utilisateur
 
 ## LigneBaremes PUT (object)
 
-- ReferenceExterne: `7895` (required, string) - Référence externe de la ligne de Barème (Max 255 caractères).
-- IdTypeEquipement: `45` (number) - L'identifiant du type d'équipement venant du paramètrage d'invimmo (Integer 10).
-- Forfait: `450` (number) - Montant forfaitaire 0 = Non, 1 = Oui (Integer 1).
-- Designation: `Evier Inox` (string) - Désignation de la ligne de barème (Max 255 caractères).
-- Code: `Evier Inox` (string) - Code de le ligne de Barème (Max 500 caractères).
-- Franchise: `500` (number) - Franchise appliqué sur le ligne de Barème (Interger 4).
-- VetusteResiduelle: `500` (number) - Franchise appliqué sur le ligne de Barème (double, 12.2).
-- Devis: `300` (number) - Montant Devisé de ligne de Barème (integer, 3).
-- Unite: `Evier Inox` (string) - Unité de la ligne de Barème (Max 5 caractères).
-- PrixHt: `500` (number) - Prix Hors Taxe de ligne de Barème (double, 12.2).
-- PrixTtc: `500` (number) - Prix toutes Taxes comprises de ligne de Barème (double, 12.2).
+- Include LigneBaremes
 
 ## LigneBaremes Invimmo PUT (object)
 
@@ -2698,11 +2743,11 @@ Récupère un Utilisateur
 ## Edls GET (object)
 
 - Assurance (Assurances GET)
-- Pieces (array[Pieces GET])
-- Locataires (array[Locataires EDL GET])
-- Compteurs (array[Compteurs EDL GET])
+- Pieces (array[Pieces GET], fixed-type)
+- Locataires (array[Locataires EDL GET],fixed-type)
+- Compteurs (array[Compteurs EDL GET],fixed-type)
 - Travaux (Travaux GET)
-- Reponses (array[Reponses GET])
+- Reponses (array[Reponses GET],fixed-type)
 
 - ReferenceInvimmo: `149` (required, number) - Référence unique Invimmo.
 - DateEdl: `2016-10-03 14:44:36` (required, string) - Date de l'état des lieux (YYYY-MM-DD HH:MM:SS).
@@ -2724,35 +2769,6 @@ Récupère un Utilisateur
 - LienEditionDegradation: `11_reparation__EditionReparation.pdf` - Le nom du pdf des réparations
 - Agent: `Yann Bacquaert`  - Agent qui a effectué l'état des lieux
 
-## EdlsStructure POST (object)
-
-- Cles (array[ClefStructure POST])
-- Pieces (array[PieceStructure POST])
-
-## ClefStructure POST (object)
-
-- Type: `Chambre` (required,string) Nom du type de clef
-- Commentaire (string) Commentaire sur la clef
-- InfoComplementaire (string) Information complémentaire sur la clef
-
-## PieceStructure POST (object)
-- Equipements (array[EquipementStructure POST])
-- Surface (array[SurfaceStructure POST])
-- Type (required,string) Nom du type de pièce
-- Etat (string) Etat de la pièce
-- InfoComplementaire (string) Information complémentaire sur la pièce
-
-## EquipementStructure POST (object)
-- Type: `prise` (required,string) - Nom du type d'équipement
-- Etat (string) - Etat de l'équipement
-- InfoComplementaire (string) - Information complémentaire sur l'équipement
-
-## SurfaceStructure POST (object)
-- Surface (number) - Surface de la pièce
-- Hauteur (number) - Surface de la pièce
-- Largeur (number) - Largeur de la pièce
-- Longueur (number) - Longueur de la pièce
-
 ## Reponses GET (object)
 
 - Question: `EDL est terminé?` (string) - Libelle de la question (Max 2000 caractères).
@@ -2772,7 +2788,7 @@ Récupère un Utilisateur
 
 ## Pieces GET (object)
 
-- equipements (array[Equipements GET])
+- equipements (array[Equipements GET],fixed-type)
 - Surface (Surface GET)
 
 - ReferenceInvimmo: `465` (required, number) - Référence interne de la Pièce (Integer 10).
@@ -2847,7 +2863,7 @@ Récupère un Utilisateur
 - MontantRameneA: `500.45` (number) - Cout total des dégradations ramené au montant de... (double, 12.2).
 - ConstatHuissier: `O` (string) - Y-a-t-il un constat d'huissier? O/N.
 
-- degradations (array[Degradations GET])
+- degradations (array[Degradations GET],fixed-type)
 
 ## Degradations GET (object)
 
