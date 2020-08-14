@@ -6,7 +6,7 @@ HOST: https://api-preprod.invimmo.fr/api/v1/[ReferenceClient]
 A remplir
 
 
-## Affectation Locataires au bail [/bail/{refBailInterneOuExterne}/locataires{?type_reference}]
+## Affectation Locataires au bail [/bail/{refBailInterneOuExterne}/locataires?TYPE_REFERENCE={type_reference}]
 
 + Parameters
     + refBailInterneOuExterne: `15689` (required, string) - Référence bail interne ou externe.
@@ -152,10 +152,11 @@ Récupère une liste d'affectation locataire au bail dans la base de données d�
     + Body
 
 
-## Affectation Patrimoines à l'utilisateur [/utilisateurs/{refUtilisateurInterneOuExterne}/patrimoines]
+## Affectation Patrimoines à l'utilisateur [/utilisateurs/{refUtilisateurInterneOuExterne}/patrimoines?TYPE_REFERENCE={type_reference}]
 
 + Parameters
     + refUtilisateurInterneOuExterne: `16548` (required, number) - Référence interne ou externe utilisateur.
+    + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
     
 ### Ajouter une liste d Affectation [POST]
 
@@ -288,9 +289,11 @@ S"authentifier à l'application
     + Body
 
 
-## Barèmes [/baremes]
+## Barèmes [/baremes?TYPE_REFERENCE={type_reference}]
 
-Table Optionnel
++ Parameters
+    + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
+
 
 ### Ajouter une liste de Barèmes [POST]
 
@@ -401,9 +404,10 @@ Désactive une liste de barèmes dans la base de données d’Invimmo
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-## Barèmes [/baremes/{id}]
+## Barèmes [/baremes/{id}?TYPE_REFERENCE={type_reference}]
 
 + Parameters
+    + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
     + id: `1` (required, string) - Référence interne ou externe.
 
 ### Récupérer un barème [GET]
@@ -437,9 +441,10 @@ Récupère un barème
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-## Baux [/baux]
+## Baux [/baux?TYPE_REFERENCE={type_reference}]
 
-Renseigner au préalable un patrimoine
++ Parameters
+    + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
 
 ### Ajouter une liste de Baux [POST]
 
@@ -549,9 +554,10 @@ Désactive une liste de baux dans la base de données d’Invimmo
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-## Baux [/baux/{id}]
+## Baux [/baux/{id}?TYPE_REFERENCE={type_reference}]
 
 + Parameters
+    + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
     + id: `1` (required, string) - Référence interne ou externe.
 
 ### Récupérer un bail [GET]
@@ -593,7 +599,7 @@ Ajoute le document du bail dont la référence a été passée en paramètre
     + id: `1` (required, string) - Référence interne ou externe du bail auquel il faut ajouter le document à retourner.
     + typeAttachement: `PdfBaux` (required, string) - Type d'attachement.
     + nomFichier: `BAI_PAT545_BAIL854.pdf` (required, string) - Nom du fichier.
-    + TypeReference: `INTERNE` (required, string) - valeur possibles : INTERNE ou EXTERNE, EXTERNE par défaut si non spécifié.
+    + TypeReference: `INTERNE` (optional, string) - valeur possibles : INTERNE ou EXTERNE, EXTERNE par défaut si non spécifié.
 
 ### Ajouter un document à signer [POST]
 
@@ -629,9 +635,10 @@ Ajoute un document à signer avec un état des lieux pour un bail donné
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-## Excompteurs [/patrimoines/{RefPatrimoineInterneOuExterne}/Baux/{RefBailInterneOuExterne}/excompteurs/{id}]
+## Excompteurs [/patrimoines/{RefPatrimoineInterneOuExterne}/Baux/{RefBailInterneOuExterne}/excompteurs/{id}?TYPE_REFERENCE={type_reference}]
 
 + Parameters
+    + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
     + id: `1` (required, string) - Référence interne ou externe.
 
 ### Récupérer un Excompteur [GET]
@@ -665,11 +672,10 @@ Récupère un Excompteur
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-## Excompteurs [/patrimoines/{RefPatrimoineInterneOuExterne}/Baux/{RefBailInterneOuExterne}/excompteurs]
-
-Table Optionnel
+## Excompteurs [/patrimoines/{RefPatrimoineInterneOuExterne}/Baux/{RefBailInterneOuExterne}/excompteurs?TYPE_REFERENCE={type_reference}]
 
 + Parameters
+    + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
     + RefPatrimoineInterneOuExterne: `001.001.001A` (string) - Référence interne ou externe du patrimoine. 
     + RefBailInterneOuExterne: `001.001.001A` (string) - Référence interne ou externe du bail. 
     
@@ -784,7 +790,7 @@ Supprime une liste de compteurs externes dans la base de données d’Invimmo
     + Body
 
 
-## Etats des lieux [/edls/{date}/]
+## Etats des lieux [/edls/{date}]
 
 Liste d’états des lieux pour la date donnée
 
@@ -828,7 +834,7 @@ Récupération de la liste des identifiants des états des lieux de la date
 Retourne l'Etat des lieux dont la référence a été passée en paramètre
 
 + Parameters
-    + TypeReference: `INTERNE` (required, string) - valeur possibles : INTERNE ou EXTERNE, EXTERNE par défaut si non spécifié.
+    + TypeReference: `INTERNE` (optional,string) - valeur possibles : INTERNE ou EXTERNE, EXTERNE par défaut si non spécifié.
     + Reference: `1` (required, string) - Référence interne ou externe de l'edl à retourner.
 
 ### Récupère l état des lieux avec son contenu [POST]
@@ -905,11 +911,10 @@ Récupération d'un document signé d'un état des lieux
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-## Index [/baux/{RefBailInterneOuExterne}/index]
-
-Table Optionnel
+## Index [/baux/{RefBailInterneOuExterne}/index?TYPE_REFERENCE={type_reference}]
 
 + Parameters
+    + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
     + RefBailInterneOuExterne: `80125` (required, string) - Référence interne ou externe du bail.
 
 ### Ajouter une liste d%27index [POST]
@@ -1021,10 +1026,10 @@ Supprime une liste d'Index dans la base de données d’Invimmo
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-## Ligne de Barèmes [/baremes/{RefBaremeInterneOuExterne}/LigneBaremes/{id}]
+## Ligne de Barèmes [/baremes/{RefBaremeInterneOuExterne}/LigneBaremes/{id}?TYPE_REFERENCE={type_reference}]
 
 + Parameters
-    + id: `1` (required, string) - Référence interne ou externe.
+    + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
 
 ### Récupérer une Ligne de Barème [GET]
 
@@ -1057,11 +1062,10 @@ Récupère une Ligne de Barème
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-## Ligne de Barèmes [/baremes/{RefBaremeInterneOuExterne}/LigneBaremes]
-
-Table Optionnel
+## Ligne de Barèmes [/baremes/{RefBaremeInterneOuExterne}/LigneBaremes?TYPE_REFERENCE={type_reference}]
 
 + Parameters
+    + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
     + RefBaremeInterneOuExterne: `PLOMB1` (required, string) - Référence interne ou externe du barème.
 
 ### Ajouter une liste de ligne de Barèmes [POST]
@@ -1208,9 +1212,10 @@ Récupère les Lignes d'un Barème
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-## Locataires [/locataires/{id}]
+## Locataires [/locataires/{id}?TYPE_REFERENCE={type_reference}]
 
 + Parameters
+    + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
     + id: `1` (required, string) - Référence interne ou externe.
 
 ### Récupérer un Locataire [GET]
@@ -1244,7 +1249,10 @@ Récupère un Locataire
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-## Locataires [/locataires]
+## Locataires [/locataires?TYPE_REFERENCE={type_reference}]
+
++ Parameters
+    + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
 
 ### Ajouter une liste de Locataires [POST]
 
@@ -1354,9 +1362,10 @@ Désactive une liste de locataire dans la base de données d’Invimmo
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-## Patrimoine [/patrimoines/{id}]
+## Patrimoine [/patrimoines/{id}?TYPE_REFERENCE={type_reference}]
 
 + Parameters
+    + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
     + id: `1` (required, string) - Référence interne ou externe.
 
 ### Récupérer un Patrimoine [GET]
@@ -1390,7 +1399,10 @@ Récupère un Patrimoine
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-## Patrimoine [/patrimoines]
+## Patrimoine [/patrimoines?TYPE_REFERENCE={type_reference}]
+
++ Parameters
+    + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
 
 ### Ajouter une liste de patrimoine [POST]
 
@@ -1501,9 +1513,10 @@ Désactive une liste de patrimoines dans la base de données d’Invimmo
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-## Groupe Patrimoine [/groupePatrimoines/{id}]
+## Groupe Patrimoine [/groupePatrimoines/{id}?TYPE_REFERENCE={type_reference}]
 
 + Parameters
+    + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
     + id: `1` (required, string) - Référence interne ou externe.
 
 ### Récupérer un Groupe Patrimoine [GET]
@@ -1537,7 +1550,10 @@ Récupère un Groupe Patrimoine
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-## Groupe Patrimoine [/groupePatrimoines]
+## Groupe Patrimoine [/groupePatrimoines?TYPE_REFERENCE={type_reference}]
+
++ Parameters
+    + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
 
 ### Ajouter une liste de groupes patrimoine [POST]
 
@@ -1648,9 +1664,10 @@ Désactive une liste de groupes patrimoines dans la base de données d’Invimmo
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-## Planifications [/planifications/{id}]
+## Planifications [/planifications/{id}?TYPE_REFERENCE={type_reference}]
 
 + Parameters
+    + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
     + id: `1` (required, string) - Référence interne ou externe.
 
 ### Récupérer une Planification [GET]
@@ -1684,9 +1701,10 @@ Récupère une Planification
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-## Planifications [/planifications]
+## Planifications [/planifications?TYPE_REFERENCE={type_reference}]
 
-Table Optionnel
++ Parameters
+    + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
 
 ### Ajouter une liste de planifications [POST]
 
@@ -1761,9 +1779,10 @@ Modifie une liste de Planifications dans la base de données d’Invimmo
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-## Propriétaires [/proprietaires/{id}]
+## Propriétaires [/proprietaires/{id}?TYPE_REFERENCE={type_reference}]
 
 + Parameters
+    + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
     + id: `1` (required, string) - Référence interne ou externe.
 
 ### Récupérer un Propriétaire [GET]
@@ -1797,9 +1816,10 @@ Récupère un Propriétaire
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-## Propriétaires [/proprietaires]
+## Propriétaires [/proprietaires?TYPE_REFERENCE={type_reference}]
 
-Table Optionnel
++ Parameters
+    + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
 
 ### Ajouter une liste de Propriétaires [POST]
 
@@ -1910,7 +1930,10 @@ Désactive une liste de Propriétaires dans la base de données d’Invimmo
     + Body
 
 
-## Utilisateurs [/utilisateurs]
+## Utilisateurs [/utilisateurs?TYPE_REFERENCE={type_reference}]
+
++ Parameters
+    + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
 
 ### Ajouter une liste d utilisateurs [POST]
 
@@ -2020,9 +2043,10 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-## Utilisateurs [/utilisateurs/{id}]
+## Utilisateurs [/utilisateurs/{id}?TYPE_REFERENCE={type_reference}]
 
 + Parameters
+    + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
     + id: `1` (required, string) - Référence interne ou externe.
 
 ### Récupérer un Utilisateur [GET]
@@ -2146,6 +2170,7 @@ Récupère un Utilisateur
 ## Planification Invimmo PUT (object)
 
 - Include Planification PUT
+
 ## Baux POST (object)
 
 - ReferenceExterne: `80125` (required, string) - Référence externe du bail (Max 255 caractères).
@@ -2163,6 +2188,7 @@ Récupère un Utilisateur
 - EtatBail: `O` (string) - Etat du Bail (O)ccupé, (V)acant (Max 50 caractères).
 - BailAssocie: `50425` (number) - Numéro du bail associé (number 10).
 - CautionsBail: `10.54` (number) - Solde du bail (decimal, 10.2).
+- Locataires (array[Locataire POST]) - Locataires
 
 ## Baux Invimmo POST (object)
 
