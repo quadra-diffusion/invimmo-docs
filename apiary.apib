@@ -26,7 +26,7 @@ Insère une liste d'affectation locataires au bail dans la base de données d’
 
 + Response 201 (application/json)
     Dans le cas ou les insertions d'affectation locataire se passent bien.
-    + Attributes (array[AffectationLocataire Invimmo POST])
+    + Attributes (array[AffectationLocataire Invimmo POST], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -62,7 +62,7 @@ Modifie une liste d'affectation locataires au bail dans la base de données d’
 
 + Response 200 (application/json)
     Dans le cas ou les modifications d'affectation locataire se passent bien.
-    + Attributes (array[AffectationLocataire Invimmo PUT])
+    + Attributes (array[AffectationLocataire Invimmo PUT], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -98,7 +98,7 @@ Désactive une liste d'affectation locataire au bail dans la base de données d�
 
 + Response 200 (application/json)
     Dans le cas ou les désactivations d'affectation locataire se passent bien.
-    + Attributes (array[AffectationLocataire Invimmo DELETE])
+    + Attributes (array[AffectationLocataire Invimmo DELETE], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -172,7 +172,7 @@ Insère une liste d’Affectation dans la base de données d’Invimmo.
 
 + Response 201 (application/json)
     Dans le cas ou les insertions de liste d'Affectation Utilisateurs se passent bien.
-    + Attributes (array[AffectationUtilisateurs Invimmo POST])
+    + Attributes (array[AffectationUtilisateurs Invimmo POST], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -208,7 +208,7 @@ Supprime une liste d'Affectation dans la base de données d’Invimmo
 
 + Response 200 (application/json)
     Dans le cas ou les suppressions de liste d'Affectation Utilisateurs se passent bien.
-    + Attributes (array[AffectationUtilisateurs Invimmo DELETE])
+    + Attributes (array[AffectationUtilisateurs Invimmo DELETE], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -310,7 +310,7 @@ Insère une liste de Barèmes dans la base de données d’Invimmo.
 
 + Response 201 (application/json)
     Dans le cas ou les insertions des barèmes se passent bien.
-    + Attributes (array[Baremes Invimmo POST])
+    + Attributes (array[Baremes Invimmo POST], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -346,7 +346,7 @@ Modifie une liste de barèmes dans la base de données d’Invimmo
 
 + Response 200 (application/json)
     Dans le cas ou les modifications de barèmes se passent bien.
-    + Attributes (array[Baremes Invimmo PUT])
+    + Attributes (array[Baremes Invimmo PUT], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -382,7 +382,7 @@ Désactive une liste de barèmes dans la base de données d’Invimmo
 
 + Response 200 (application/json)
     Dans le cas ou les désactivation de barèmes se passent bien.
-    + Attributes (array[Baremes Invimmo DELETE])
+    + Attributes (array[Baremes Invimmo DELETE], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -460,7 +460,7 @@ Insère une liste des baux dans la base de données d’Invimmo.
 
 + Response 201 (application/json)
     Dans le cas ou les insertions de baux se passent bien.
-    + Attributes (array[Baux Invimmo POST])
+    + Attributes (array[Baux Invimmo POST], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -496,7 +496,7 @@ Modifie une liste de baux dans la base de données d’Invimmo
 
 + Response 200 (application/json)
     Dans le cas ou les modifications de baux se passent bien.
-    + Attributes (array[Baux Invimmo PUT])
+    + Attributes (array[Baux Invimmo PUT], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -532,7 +532,7 @@ Désactive une liste de baux dans la base de données d’Invimmo
 
 + Response 200 (application/json)
     Dans le cas ou les désactivation de baux se passent bien.
-    + Attributes (array[Baux Invimmo DELETE])
+    + Attributes (array[Baux Invimmo DELETE], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -573,7 +573,7 @@ Récupère un bail
 
 + Response 200 (application/json)
     La récupération s'est bien passée
-    + Attributes (array)
+    + Attributes (array[Baux GET], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -654,7 +654,7 @@ Récupère un Excompteur
 
 + Response 200 (application/json)
     La récupération s'est bien passée
-    + Attributes (array)
+    + Attributes (array[Excompteurs GET], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -695,7 +695,7 @@ Insère une liste de compteurs externes dans la base de données d’Invimmo
 
 + Response 201 (application/json)
     Dans le cas ou les insertions de excompteurs se passent bien.
-    + Attributes (array[Excompteurs Invimmo POST])
+    + Attributes (array[Excompteurs Invimmo POST], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -731,7 +731,7 @@ Modifie une liste de compteurs externes dans la base de données d’Invimmo
 
 + Response 200 (application/json)
     Dans le cas ou les modifications de excompteurs se passent bien.
-    + Attributes (array[Excompteurs Invimmo PUT])
+    + Attributes (array[Excompteurs Invimmo PUT], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -767,7 +767,7 @@ Supprime une liste de compteurs externes dans la base de données d’Invimmo
 
 + Response 200 (application/json)
     Dans le cas ou les suppressions de excompteurs se passent bien.
-    + Attributes (array[Excompteurs Invimmo DELETE])
+    + Attributes (array[Excompteurs Invimmo DELETE], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -932,7 +932,7 @@ Modification des relevés d’index pour un bail, en complétant les données pr
 
 + Response 201 (application/json)
     Dans le cas ou les insertions d’index se passent bien.
-    + Attributes (array[Index POST])
+    + Attributes (array[Index POST], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -968,7 +968,7 @@ Modifie une liste d'Index dans la base de données d’Invimmo
 
 + Response 200 (application/json)
     Dans le cas ou les modifications d'Index se passent bien.
-    + Attributes (array[Index Invimmo PUT])
+    + Attributes (array[Index Invimmo PUT], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -1004,7 +1004,7 @@ Supprime une liste d'Index dans la base de données d’Invimmo
 
 + Response 200 (application/json)
     Dans le cas ou les suppressions d'Index se passent bien.
-    + Attributes (array[Index Invimmo DELETE])
+    + Attributes (array[Index Invimmo DELETE], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -1044,7 +1044,7 @@ Récupère une Ligne de Barème
 
 + Response 200 (application/json)
     La récupération s'est bien passée
-    + Attributes (array)
+    + Attributes (array[LigneBaremes GET], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -1083,7 +1083,7 @@ Insère une liste de ligne de Barèmes dans la base de données d’Invimmo.
 
 + Response 201 (application/json)
     Dans le cas ou les insertions des lignes de barèmes se passent bien.
-    + Attributes (array[LigneBaremes Invimmo POST])
+    + Attributes (array[LigneBaremes Invimmo POST], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -1123,7 +1123,7 @@ Modifie une liste de ligne de barèmes dans la base de données d’Invimmo
 
 + Response 200 (application/json)
     Dans le cas ou les modifications de ligne de barèmes se passent bien.
-    + Attributes (array[LigneBaremes Invimmo PUT])
+    + Attributes (array[LigneBaremes Invimmo PUT], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -1159,7 +1159,7 @@ Désactive une liste de ligne de barèmes dans la base de données d’Invimmo
 
 + Response 200 (application/json)
     Dans le cas ou les désactivation de ligne de barèmes se passent bien.
-    + Attributes (array[LigneBaremes Invimmo DELETE])
+    + Attributes (array[LigneBaremes Invimmo DELETE], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -1194,7 +1194,7 @@ Récupère les Lignes d'un Barème
 
 + Response 200 (application/json)
     La récupération s'est bien passée
-    + Attributes (array)
+    + Attributes (array[LigneBaremes GET], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -1268,7 +1268,7 @@ Insère une liste de locataires dans la base de données d’Invimmo.
 
 + Response 201 (application/json)
     Dans le cas ou les insertions de Locataires se passent bien.
-    + Attributes (array[Locataire Invimmo POST])
+    + Attributes (array[Locataire Invimmo POST], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -1304,7 +1304,7 @@ Modifie une liste de locataires dans la base de données d’Invimmo
 
 + Response 200 (application/json)
     Dans le cas ou les modifications de Locataires se passent bien.
-    + Attributes (array[Locataire Invimmo PUT])
+    + Attributes (array[Locataire Invimmo PUT], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -1340,7 +1340,7 @@ Désactive une liste de locataire dans la base de données d’Invimmo
 
 + Response 200 (application/json)
     Dans le cas ou les désactivations de Locataires se passent bien.
-    + Attributes (array[Locataire Invimmo DELETE])
+    + Attributes (array[Locataire Invimmo DELETE], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -1419,7 +1419,7 @@ Insère une liste de patrimoines dans la base de données d’Invimmo
 
 + Response 201 (application/json)
     Dans le cas ou les insertions de patrimoine se passent bien.
-    + Attributes (array[Patrimoine Invimmo POST])
+    + Attributes (array[Patrimoine Invimmo POST], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -1455,7 +1455,7 @@ Modifie une liste de patrimoines dans la base de données d’Invimmo
 
 + Response 200 (application/json)
     Dans le cas ou les modifications de patrimoine se passent bien.
-    + Attributes (array[Patrimoine Invimmo PUT])
+    + Attributes (array[Patrimoine Invimmo PUT], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -1491,7 +1491,7 @@ Désactive une liste de patrimoines dans la base de données d’Invimmo
 
 + Response 200 (application/json)
     Dans le cas ou les désactivations de patrimoine se passent bien.
-    + Attributes (array[Patrimoine Invimmo DELETE])
+    + Attributes (array[Patrimoine Invimmo DELETE], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -1570,7 +1570,7 @@ Insère une liste de groupes patrimoines dans la base de données d’Invimmo
 
 + Response 201 (application/json)
     Dans le cas ou les insertions de groupe patrimoine se passent bien.
-    + Attributes (array[GroupePatrimoine Invimmo POST])
+    + Attributes (array[GroupePatrimoine Invimmo POST], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -1606,7 +1606,7 @@ Modifie une liste de groupes patrimoines dans la base de données d’Invimmo
 
 + Response 200 (application/json)
     Dans le cas ou les modifications de groupe patrimoine se passent bien.
-    + Attributes (array[GroupePatrimoine Invimmo PUT])
+    + Attributes (array[GroupePatrimoine Invimmo PUT], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -1642,7 +1642,7 @@ Désactive une liste de groupes patrimoines dans la base de données d’Invimmo
 
 + Response 200 (application/json)
     Dans le cas ou les désactivations de groupe patrimoine se passent bien.
-    + Attributes (array[GroupePatrimoine Invimmo DELETE])
+    + Attributes (array[GroupePatrimoine Invimmo DELETE], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -1721,7 +1721,7 @@ Insère une liste de Planifications dans la base de données d’Invimmo.
 
 + Response 201 (application/json)
     Dans le cas ou les insertions des Planifications se passent bien.
-    + Attributes (array[Planification Invimmo POST])
+    + Attributes (array[Planification Invimmo POST], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -1757,7 +1757,7 @@ Modifie une liste de Planifications dans la base de données d’Invimmo
 
 + Response 200 (application/json)
     Dans le cas ou les modifications de Planifications se passent bien.
-    + Attributes (array[Planification Invimmo PUT])
+    + Attributes (array[Planification Invimmo PUT], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -1835,7 +1835,7 @@ Insère une liste de propriétaires dans la base de données d’Invimmo.
 
 + Response 201 (application/json)
     Dans le cas ou les insertions de Proprietaires se passent bien.
-    + Attributes (array[Proprietaires Invimmo POST])
+    + Attributes (array[Proprietaires Invimmo POST], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -1871,7 +1871,7 @@ Modifie une liste de Propriétaires dans la base de données d’Invimmo
 
 + Response 200 (application/json)
     Dans le cas ou les modifications de Proprietaires se passent bien.
-    + Attributes (array[Proprietaires Invimmo PUT])
+    + Attributes (array[Proprietaires Invimmo PUT], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -1907,7 +1907,7 @@ Désactive une liste de Propriétaires dans la base de données d’Invimmo
 
 + Response 200 (application/json)
     Dans le cas ou les désactivations de Propriétaires se passent bien.
-    + Attributes (array[Proprietaires Invimmo DELETE])
+    + Attributes (array[Proprietaires Invimmo DELETE], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -1949,7 +1949,7 @@ Insère une liste d’utilisateurs dans la base de données d’Invimmo.
 
 + Response 201 (application/json)
     Dans le cas ou les insertions d'Utilisateurs se passent bien.
-    + Attributes (array[Utilisateurs Invimmo POST])
+    + Attributes (array[Utilisateurs Invimmo POST], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -1985,7 +1985,7 @@ Modifie une liste d'Utilisateurs dans la base de données d’Invimmo
 
 + Response 200 (application/json)
     Dans le cas ou les modifications d'Utilisateurs se passent bien.
-    + Attributes (array[Utilisateurs Invimmo PUT])
+    + Attributes (array[Utilisateurs Invimmo PUT], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -2021,7 +2021,7 @@ Désactive une liste d'Utilisateurs dans la base de données d’Invimmo
 
 + Response 200 (application/json)
     Dans le cas ou les désactivations d'Utilisateurs se passent bien.
-    + Attributes (array[Utilisateurs Invimmo DELETE])
+    + Attributes (array[Utilisateurs Invimmo DELETE], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -2136,6 +2136,11 @@ Récupère un Utilisateur
 - ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo.
 - Include Patrimoine PUT
 
+## Patrimoine Invimmo GET (object)
+
+- ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo.
+- Include Patrimoine PUT
+
 ## Patrimoine DELETE (object)
 
 - ReferenceExterne: `001.001.001A` (required, string) - Référence externe du patrimoine (Max 255 caractères).
@@ -2171,7 +2176,7 @@ Récupère un Utilisateur
 
 - Include Planification PUT
 
-## Baux POST (object)
+## Baux (object)
 
 - ReferenceExterne: `80125` (required, string) - Référence externe du bail (Max 255 caractères).
 - ReferenceExternePatrimoine: `001.001.001A` (required, string) - Référence externe du patrimoine (Max 255 caractères).
@@ -2188,7 +2193,19 @@ Récupère un Utilisateur
 - EtatBail: `O` (string) - Etat du Bail (O)ccupé, (V)acant (Max 50 caractères).
 - BailAssocie: `50425` (number) - Numéro du bail associé (number 10).
 - CautionsBail: `10.54` (number) - Solde du bail (decimal, 10.2).
-- Locataires (array[Locataire POST]) - Locataires
+
+## Baux POST (object)
+
+- Include Baux
+- Locataires (array[LocataireBail POST]) - Locataires
+
+## Baux GET (object)
+
+- Include Baux
+- Patrimoine (Patrimoine Invimmo GET) - Patrimoine
+- Locataires (array[Locataire GET]) - Locataires
+- Assurance (Assurances GET)
+
 
 ## Baux Invimmo POST (object)
 
@@ -2238,10 +2255,35 @@ Récupère un Utilisateur
 - Telephone: `03.20.44.44.44` (string) - Numéro de téléphone (Max 17 caractères).
 - Email: `gerard.dupond@mondomaine.fr` (string) - Email (Max 255 caractères).
 
+## LocataireBail POST (object)
+
+- Include Locataire POST
+- Principal (boolean) - Locataire principal ou non.
+
 ## Locataire Invimmo POST (object)
 
 - ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
 - Include Locataire POST
+
+## Locataire GET (object)
+
+- ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
+- Include Locataire POST
+
+## Locataires EDL GET (object)
+
+- ReferenceInvimmo: `465` (required, number) - Référence interne du locataire (Integer 10).
+- ReferenceExterne: `RDUPOND` (required, string) - Référence externe du locataire si requete edl (Max 255 caractères).
+- Nom: `DUPOND` (required, string) - Nom du locataire si requete edl (Max 50 caractères).
+- Prenom: `Robert` (required, string) - Prenom du locataire si requete edl (Max 50 caractères).
+- Civilite: `M` (required, string) - Civilité du locataire si requete edl (Max 10 caractères).
+- Telephone: `351557010202731` (string) - Numéro de téléphone (Max 17 caractères).
+- Email: `toto@gmail.com` (string) - Email (Max 255 caractères).
+- absent: `true` (boolean) - Absent lors de l'état des lieux true/false.
+- refuseDeSigner: `true` (boolean) - Refuse de signer l'état des lieux true/false.
+
+- Procuration (Procuration GET)
+- FutureAdresse (FutureAdresse GET)
 
 ## Locataire PUT (object)
 
@@ -2448,6 +2490,24 @@ Récupère un Utilisateur
 - ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
 - Include Compteurs POST
 
+## Compteurs GET (object)
+
+- ReferenceExterne: `001.230E` (string) - Référence externe du Compteur (Max 255 caractères).
+- ReferenceInvimmo: `465` (required, number) - Référence interne du Compteur (Integer 10).
+- CodeConstructeur: `T016701` (required, string) - Code Compteur (Max 200 caractères).
+- CodeTypeCompteur: `ELEC` (required, string) - Code de Type de compteur (Max 500 caractères).
+- libelleTypeCompteur: `Compteur Electrique` (required, string)  (Max 500 caractères).
+- Emplacement: `Sous l'évier` (string) - Emplacement physique du compteur (Max 100 caractères).
+- InformationComplementaire: `Compteur jour/nuit` (string) - Code Postal (Max 200 caractères).
+- Tarif: `0.52` (number) - Tarif Compteur (e.g. prix kw/h) (Double 10.2).
+
+
+## Compteurs EDL GET (object)
+
+- Include Compteurs GET
+
+- index (array[Index GET])
+
 ## Compteurs PUT (object)
 
 - ReferenceExterne: `001.230E` (required, string) - Référence externe du Compteur (Max 255 caractères).
@@ -2470,6 +2530,13 @@ Récupère un Utilisateur
 
 - ReferenceInvimmo: `1526` (required, number) - Référence unique Invimmo
 - Include Compteurs DELETE
+
+## Excompteurs GET (object)
+
+- Include Excompteurs POST
+- ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
+- ReferenceInvimmoBail: `16548` (required, number) - Référence unique Invimmo bail
+- ReferenceInvimmoPatrimoine: `16548` (required, number) - Référence unique Invimmo patrimoine
 
 ## Excompteurs POST (object)
 
@@ -2574,6 +2641,11 @@ Récupère un Utilisateur
 - ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
 - Include Baremes DELETE
 
+## LigneBaremes GET (object)
+
+- ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
+- LibelleTypeEquipement: `Prise` (required, string) - Nom du type
+- Include LigneBaremes POST
 
 ## LigneBaremes POST (object)
 
@@ -2627,8 +2699,8 @@ Récupère un Utilisateur
 
 - Assurance (Assurances GET)
 - Pieces (array[Pieces GET])
-- Locataires (array[Locataires GET])
-- Compteurs (array[Compteurs GET])
+- Locataires (array[Locataires EDL GET])
+- Compteurs (array[Compteurs EDL GET])
 - Travaux (Travaux GET)
 - Reponses (array[Reponses GET])
 
@@ -2752,34 +2824,6 @@ Récupère un Utilisateur
 - Email: `toto@gmail.com` (string) - Email (Max 255 caractères).
 - ReferenceInvimmoLocataire: `16548` (number) - Référence unique Invimmo du locataire.
 - ReferenceExterneLocataire: `RDUPOND` (string) - Référence externe du locataire (Max 255 caractères).
-
-## Locataires GET (object)
-
-- ReferenceInvimmo: `465` (required, number) - Référence interne du locataire (Integer 10).
-- ReferenceExterne: `RDUPOND` (required, string) - Référence externe du locataire si requete edl (Max 255 caractères).
-- Nom: `DUPOND` (required, string) - Nom du locataire si requete edl (Max 50 caractères).
-- Prenom: `Robert` (required, string) - Prenom du locataire si requete edl (Max 50 caractères).
-- Civilite: `M` (required, string) - Civilité du locataire si requete edl (Max 10 caractères).
-- Telephone: `351557010202731` (string) - Numéro de téléphone (Max 17 caractères).
-- Email: `toto@gmail.com` (string) - Email (Max 255 caractères).
-- absent: `true` (boolean) - Absent lors de l'état des lieux true/false.
-- refuseDeSigner: `true` (boolean) - Refuse de signer l'état des lieux true/false.
-
-- Procuration (Procuration GET)
-- FutureAdresse (FutureAdresse GET)
-
-## Compteurs GET (object)
-
-- ReferenceExterne: `001.230E` (string) - Référence externe du Compteur (Max 255 caractères).
-- ReferenceInvimmo: `465` (required, number) - Référence interne du Compteur (Integer 10).
-- CodeConstructeur: `T016701` (required, string) - Code Compteur (Max 200 caractères).
-- CodeTypeCompteur: `ELEC` (required, string) - Code de Type de compteur (Max 500 caractères).
-- libelleTypeCompteur: `Compteur Electrique` (required, string)  (Max 500 caractères).
-- Emplacement: `Sous l'évier` (string) - Emplacement physique du compteur (Max 100 caractères).
-- InformationComplementaire: `Compteur jour/nuit` (string) - Code Postal (Max 200 caractères).
-- Tarif: `0.52` (number) - Tarif Compteur (e.g. prix kw/h) (Double 10.2).
-
-- index (array[Index GET])
 
 ## Index GET (object)
 
