@@ -1362,6 +1362,48 @@ Désactive une liste de locataire dans la base de données d’Invimmo
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
+## Remarques patrimoine [/patrimoines/{id}/remarques]
+
++ Parameters
+    + id: `1` (required, string) - Référence externe du patrimoine.
+
+### Modifier les remarques du patrimoine [PUT]
+
+Modifie les remarques du patrimoine
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+    + Attributes (array[RemarquePatrimoine],fixed-type)
+
+
++ Response 201 (application/json)
+    Dans le cas ou les modifications des remarques se passent bien.
+    + Attributes (array[RemarquePatrimoine], fixed-type)
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
+    + Body
+
++ Response 409 (application/json)
+    (Conflict) La demande n'a pas pu être terminée.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
 ## Patrimoine [/patrimoines/{id}?TYPE_REFERENCE={type_reference}]
 
 + Parameters
@@ -1399,10 +1441,11 @@ Récupère un Patrimoine
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-## Patrimoine [/patrimoines?TYPE_REFERENCE={type_reference}]
+## Patrimoine [/patrimoines?TYPE_REFERENCE={type_reference}&FORCE_PARAMETRAGE={force_parametrage}]
 
 + Parameters
     + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
+    + force_parametrage: `Oui` (optional,string) - Force la création du paramétrage si inexistant
 
 ### Ajouter une liste de patrimoine [POST]
 
@@ -2090,6 +2133,11 @@ Récupère un Utilisateur
 
 - Access_Token: `0a86a11f-d06e-46b7-a133-5240cb27d1e5` (required, string) - Token d'accès à Invimmo
 
+## RemarquePatrimoine (object)
+- Objet (string) - Objet de la remarque (Max 500 caractères).
+- Remarque (string) - Contenu de la remarque (Max 2000 caractères).
+- Date: `1999-12-28` (string) - Date de la remarque (YYYY-MM-DD).
+
 ## Patrimoine (object)
 - ReferenceExterne: `001.001.001A` (required, string) - Référence externe du patrimoine (Max 255 caractères).
 - CodePatrimoine: `001.001.001A` (required, string) - Code Patrimoine (Max 40 caractères).
@@ -2113,6 +2161,7 @@ Récupère un Utilisateur
 
 ## Patrimoine POST (object)
 - StructurePatrimoine (EdlsStructure POST) - structure du patrimoine
+- RemarquesLogement (array[RemarquePatrimoine], fixed-type) - remarques du patrimoine
 - Include Patrimoine
 
 ## Patrimoine Invimmo POST (object)
@@ -2122,20 +2171,7 @@ Récupère un Utilisateur
 
 ## Patrimoine PUT (object)
 
-- ReferenceExterne: `001.001.001A` (required, string) - Référence externe du patrimoine (Max 255 caractères).
-- CodePatrimoine: `001.001.001A` (string) - Code Patrimoine (Max 40 caractères).
-- LibelleAdresse: `12 Rue des Bleuets, Appartement 1` (string) - Adresse (Max 100 caractères).
-- Ville: `MELUN` (string) - Ville (Max 100 caractères).
-- CodePostal: `77000` (string) - Code Postal (Max 10 caractères).
-- DateMiseEnService: `1999-12-28` (string) - Date de mise en service du patrimoine (YYYY-MM-DD).
-- DateLocation: `2000-02-14` (string) - Date de première location du patrimoine (YYYY-MM-DD).
-- NumEtage: `3` (string) - Numéro d'étage du patrimoine (Max 3 caractères).
-- NumImmeuble: `105` (string) - Numéro de l'immeuble du patrimoine (Max 10 caractères).
-- NomResidence: `Les bleuets` (string) - Nom de la résidence du patrimoine (Max 40 caractères).
-- Agence: `MELUN` (string) - Nom de l'agence à laquelle est attaché le patrimoine (Max 500 caractères).
-- ReferenceExterneProprietaire: `MONHABITAT` (string) - Référence externe du propriétaire du patrimoine (Max 255 caractères).
-- TypeLibelle : `T3` (string) - Libelle du type de patrimoine (Max 50 caractères).
-- GroupeUgLibelle : `Groupe 1` (string) - Libelle du groupe UG du patrimoine (Max 200 caractères).
+- Include Patrimoine
 
 ## Patrimoine Invimmo PUT (object)
 
