@@ -554,6 +554,46 @@ Désactive une liste de baux dans la base de données d’Invimmo
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
+## Reactivation Baux [/baux-reactivation?TYPE_REFERENCE={type_reference}]
++ Parameters
+    + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
+
+### Réactive une liste de baux [PUT]
+
+Réactive une liste de baux dans la base de données d’Invimmo
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+    + Attributes (array[Baux Reactivation],fixed-type)
+
++ Response 200 (application/json)
+    Dans le cas ou les réactivations se passent bien.
+    + Attributes (array[Baux Invimmo Reactivation], fixed-type)
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
+    + Body
+
++ Response 409 (application/json)
+    (Conflict) La demande n'a pas pu être terminée.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
 ## Baux [/baux/{id}?TYPE_REFERENCE={type_reference}]
 
 + Parameters
@@ -1362,6 +1402,46 @@ Désactive une liste de locataire dans la base de données d’Invimmo
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
+## Reactivation Locataires [/locataires-reactivation?TYPE_REFERENCE={type_reference}]
++ Parameters
+    + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
+
+### Réactive une liste de locataires [PUT]
+
+Réactive une liste de locataires dans la base de données d’Invimmo
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+    + Attributes (array[Locataire Reactivation],fixed-type)
+
++ Response 200 (application/json)
+    Dans le cas ou les réactivations se passent bien.
+    + Attributes (array[Locataire Invimmo Reactivation], fixed-type)
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
+    + Body
+
++ Response 409 (application/json)
+    (Conflict) La demande n'a pas pu être terminée.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
 ## Remarques patrimoine [/patrimoines/{id}/remarques]
 
 + Parameters
@@ -1556,6 +1636,46 @@ Désactive une liste de patrimoines dans la base de données d’Invimmo
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
+## Reactivation Patrimoine [/patrimoines-reactivation?TYPE_REFERENCE={type_reference}]
++ Parameters
+    + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
+
+### Réactive une liste de patrimoine [PUT]
+
+Réactive une liste de patrimoines dans la base de données d’Invimmo
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+    + Attributes (array[Patrimoine Reactivation],fixed-type)
+
++ Response 200 (application/json)
+    Dans le cas ou les réactivations se passent bien.
+    + Attributes (array[Patrimoine Invimmo Reactivation], fixed-type)
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
+    + Body
+
++ Response 409 (application/json)
+    (Conflict) La demande n'a pas pu être terminée.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
 ## Groupe Patrimoine [/groupeUgs/{id}?TYPE_REFERENCE={type_reference}]
 
 + Parameters
@@ -1686,6 +1806,46 @@ Désactive une liste de groupes patrimoines dans la base de données d’Invimmo
 + Response 200 (application/json)
     Dans le cas ou les désactivations de groupe patrimoine se passent bien.
     + Attributes (array[GroupePatrimoine Invimmo DELETE], fixed-type)
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un groupe patrimoine.
+    + Body
+
++ Response 409 (application/json)
+    (Conflict) La demande n'a pas pu être terminée.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
+## Reactivation groupes patrimoines [/groupeUgs-reactivation?TYPE_REFERENCE={type_reference}]
++ Parameters
+    + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
+
+### Réactiver une liste de groupes patrimoine [DELETE]
+
+Réactive une liste de groupes patrimoines dans la base de données d’Invimmo
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+    + Attributes (array[GroupePatrimoine Reactivation],fixed-type)
+
++ Response 200 (application/json)
+    Dans le cas ou les réactivations de groupe patrimoine se passent bien.
+    + Attributes (array[GroupePatrimoine Invimmo Reactivation], fixed-type)
     
 + Response 400 (application/json)
     (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
@@ -1971,6 +2131,45 @@ Désactive une liste de Propriétaires dans la base de données d’Invimmo
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
+## Reactivation Proprietaires [/proprietaires-reactivation?TYPE_REFERENCE={type_reference}]
++ Parameters
+    + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
+
+### Réactive une liste de proprietaires [PUT]
+
+Réactive une liste de proprietaires dans la base de données d’Invimmo
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+    + Attributes (array[Proprietaires Reactivation],fixed-type)
+
++ Response 200 (application/json)
+    Dans le cas ou les réactivations se passent bien.
+    + Attributes (array[Proprietaires Invimmo Reactivation], fixed-type)
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
+    + Body
+
++ Response 409 (application/json)
+    (Conflict) La demande n'a pas pu être terminée.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
 
 ## Utilisateurs [/utilisateurs?TYPE_REFERENCE={type_reference}]
 
@@ -2192,6 +2391,15 @@ Récupère un Utilisateur
 - ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
 - Include Patrimoine DELETE
 
+## Patrimoine Reactivation (object)
+
+- ReferenceExterne: `001.001.001A` (required, string) - Référence externe du patrimoine (Max 255 caractères).
+
+## Patrimoine Invimmo Reactivation (object)
+
+- ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
+- Include Patrimoine Reactivation
+
 ## EdlsStructure POST (object)
 
 - Cles (array[ClefStructure POST],fixed-type)
@@ -2308,9 +2516,17 @@ Récupère un Utilisateur
 ## Baux DELETE (object)
 
 - ReferenceExterne: `80125` (required, string) - Référence externe du bail (Max 255 caractères).
-- ReferenceExternePatrimoine: `001.001.001A` (required, string) - Référence externe du patrimoine (Max 255 caractères).
 
 ## Baux Invimmo DELETE (object)
+
+- ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
+- Include Baux DELETE
+
+## Baux Reactivation (object)
+
+- ReferenceExterne: `80125` (required, string) - Référence externe du bail (Max 255 caractères).
+
+## Baux Invimmo Reactivation (object)
 
 - ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
 - Include Baux DELETE
@@ -2377,6 +2593,15 @@ Récupère un Utilisateur
 
 - ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
 - Include Locataire DELETE
+
+## Locataire Reactivation (object)
+
+- ReferenceExterne: `100254` (required, string) - Référence externe du locataire (Max 255 caractères).
+
+## Locataire Invimmo Reactivation (object)
+
+- ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
+- Include Locataire Reactivation
 
 
 ## AffectationLocataire POST (object)
@@ -2448,6 +2673,15 @@ Récupère un Utilisateur
 
 - ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
 - Include GroupePatrimoine DELETE
+
+## GroupePatrimoine Reactivation (object)
+
+- ReferenceExterne: `grp1` (required, string) - Référence externe du groupe patrimoine (Max 255 caractères).
+
+## GroupePatrimoine Invimmo Reactivation (object)
+
+- ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
+- Include GroupePatrimoine Reactivation
 
 ## Utilisateurs (object)
 
@@ -2562,6 +2796,15 @@ Récupère un Utilisateur
 - ReferenceExterne: `RDurand` (required, string) - Référence externe du propriétaire (Max 255 caractères).
 
 ## Proprietaires Invimmo DELETE (object)
+
+- ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
+- Include Proprietaires DELETE
+
+## Proprietaires Reactivation (object)
+
+- ReferenceExterne: `RDurand` (required, string) - Référence externe du propriétaire (Max 255 caractères).
+
+## Proprietaires Invimmo Reactivation (object)
 
 - ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
 - Include Proprietaires DELETE
