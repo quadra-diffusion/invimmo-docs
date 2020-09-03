@@ -1578,6 +1578,7 @@ Modifie une liste de patrimoines dans la base de données d’Invimmo
 
 + Response 200 (application/json)
     Dans le cas ou les modifications de patrimoine se passent bien.
+    Le statut sera "Structure existante." si la structure du patrimoine existe déja et n'est pas crée
     + Attributes (array[Patrimoine Invimmo PUT], fixed-type)
     
 + Response 400 (application/json)
@@ -2371,6 +2372,7 @@ Récupère un Utilisateur
 ## Patrimoine PUT (object)
 
 - Include Patrimoine
+- StructurePatrimoine (EdlsStructure POST) - structure du patrimoine
 
 ## Patrimoine Invimmo PUT (object)
 
