@@ -914,8 +914,8 @@ Récupère le document signé lié à l'état des lieux dont la référence a é
 
 + Parameters
     + id: `1` (required, string) - Référence interne de l'état des lieux duquel il faut récupérer le document.
-    + typeAttachement: `EditionEDL` (required, string) - Type d'attachement à récupérer (se trouve entre le double "__" et l'extension du fichier).
-    + nomFichier: `BAI_PAT545_BAIL854.pdf` (required, string) - Nom du fichier.
+    + typeAttachement: `EditionEDL` (required, string) - Type d'attachement à récupérer (se trouve entre le double "__" et l'extension du fichier EditionEDL ou EditionReparation.
+    + nomFichier: `5_edl__EditionEDL.pdf` (required, string) - Nom du fichier se trouvant dans le contenu d'un état des lieux.
 
 ### Récupère le contenu d'un document d'état des lieux [GET]
 
@@ -3046,8 +3046,8 @@ Récupère un Utilisateur
 - Etat: `Clos` (required, string) - Etat de l'état des lieux.
 - MotifDepart: `Logement centre ville` (required, string) - Motif de départ du locataire.
 - DestinationClient: `Centre ville de MELIN` (required, string) - Destination du locataire partant.
-- LienEditionEdl: `11_edl__EditionEDL.pdf` - Le nom du pdf d'état des lieux
-- LienEditionDegradation: `11_reparation__EditionReparation.pdf` - Le nom du pdf des réparations
+- LienEditionEdl: `11_edl__EditionEDL.pdf` - Le nom du pdf d'état des lieux afin de pouvoir récupérer le document
+- LienEditionDegradation: `11_reparation__EditionReparation.pdf` - Le nom du pdf des réparations afin de pouvoir récupérer le document
 - Agent: `Yann Bacquaert`  - Agent qui a effectué l'état des lieux
 
 ## Reponses GET (object)
