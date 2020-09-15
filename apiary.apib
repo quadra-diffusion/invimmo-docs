@@ -2338,6 +2338,10 @@ Récupère un Utilisateur
 - Remarque (string) - Contenu de la remarque (Max 2000 caractères).
 - Date: `1999-12-28` (string) - Date de la remarque (YYYY-MM-DD).
 
+## DocumentPatrimoine (object)
+- Nom (string) - Nom du document (Max 255 caractères).
+- Lien (string) - Lien du document (Max 500 caractères).
+
 ## Patrimoine (object)
 - ReferenceExterne: `001.001.001A` (required, string) - Référence externe du patrimoine unique (Max 255 caractères).
 - CodePatrimoine: `001.001.001A` (required, string) - Code Patrimoine unique (Max 40 caractères).
@@ -2353,6 +2357,7 @@ Récupère un Utilisateur
 - ReferenceExterneProprietaire: `MONHABITAT` (string) - Référence externe du propriétaire du patrimoine (Max 255 caractères).
 - TypeLibelle : `T3` (string) - Libelle du type de patrimoine (Max 50 caractères).
 - GroupeUgLibelle : `Groupe 1` (string) - Libelle du groupe UG du patrimoine (Max 200 caractères).
+- DocumentsAssocies (array[DocumentPatrimoine],fixed-type) - documents associés au patrimoine
 
 ## Patrimoine GET (object)
 
