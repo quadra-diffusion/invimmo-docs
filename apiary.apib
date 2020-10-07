@@ -951,6 +951,46 @@ Récupération d'un document signé d'un état des lieux
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
+## Récupération d'un document [/{token}/attachements/{typeAttachement}/{reference}/{nomFichier}]
+
+Récupère un document, les informations se trouvent dans les objets "photos" dans le retour d'un état des lieux
+
++ Parameters
+    + token: `1` (required, string) - Token d'authentification encodé en base64
+    + typeAttachement: `Degradations` (required, string) - Type d'attachement à récupérer.
+    + reference: `1` (required, string) - Référence du document.
+    + nomFichier: `5_edl__EditionEDL.pdf` (required, string) - Nom du fichier.
+
+### Récupère un document [GET]
+
+Récupération d'un document
+
++ Request (application/json)
+
++ Response 200 (application/octet-stream)
+    Dans le cas ou la récupération d'un document se passe bien
+    + Body
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un document.
+    + Body
+    
++ Response 404 (application/json)
+    (Not found) L'identifiant de l'état des lieux donné ne correspond à aucun état des lieux dans Invimmo.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
 ## Index [/baux/{RefBailInterneOuExterne}/index?TYPE_REFERENCE={type_reference}]
 
 + Parameters
