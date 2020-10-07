@@ -2594,9 +2594,9 @@ Récupère un Utilisateur
 ## Locataire (object)
 
 - ReferenceExterne: `100254` (required, string) - Référence externe du locataire (Max 255 caractères).
-- Nom: `DUPOND` (required, string) - Nom du locataire (Max 50 caractères).
-- Prenom: `Gérard` (required, string) - Prénom du locataire (Max 50 caractères).
-- Civilite: `Monsieur` (string) - Civilité du locataire (Max 10 caractères).
+- Nom: `Durand` (string) - Nom de l'utilisateur ou Type de la personne morale (SCI...) (Max 50 caractères).
+- Prenom: `Robert` (string) - Prénom utilisateur ou Nom de la personne morale (SCI...) (Max 50 caractères).
+- Civilite: `Monsieur` (string) - Civilité du locataire, renseigner "PM" si personne morale (Max 10 caractères).
 - Telephone: `03.20.44.44.44` (string) - Numéro de téléphone (Max 17 caractères).
 - Email: `gerard.dupond@mondomaine.fr` (string) - Email (Max 255 caractères).
 
@@ -2796,9 +2796,9 @@ Récupère un Utilisateur
 ## Proprietaires (object)
 
 - ReferenceExterne: `RDurand` (required, string) - Référence externe du Propriétaire (Max 255 caractères).
-- Nom: `Durand` (required, string) - Nom du Propriétaire (Max 50 caractères).
-- Prenom: `Robert` (required, string) - Prénom du Propriétaire (Max 50 caractères).
-- Civilite: `Monsieur` (string) - Civilité du Propriétaire (Max 10 caractères).
+- Nom: `Durand` (string) - Nom du propriétaire ou Type de la personne morale (SCI...) (Max 50 caractères).
+- Prenom: `Robert` (string) - Prénom propriétaire ou Nom de la personne morale (SCI...) (Max 50 caractères).
+- Civilite: `Monsieur` (string) - Civilité du propriétaire, renseigner "PM" si personne morale (Max 10 caractères).
 - Adresse: `12 Rue des Bleuets, Appartement 1` (string) - Adresse (Max 100 caractères).
 - ComplementAdresse: `Etage 4` (string) - Adresse (Max 100 caractères).
 - CodePostal: `77000` (string) - Code Postal (Max 10 caractères).
@@ -2823,16 +2823,7 @@ Récupère un Utilisateur
 
 ## Proprietaires PUT (object)
 
-- ReferenceExterne: `RDurand` (required, string) - Référence externe du Propriétaire (Max 255 caractères).
-- Nom: `Durand` (string) - Nom de l'utilisateur (Max 50 caractères).
-- Prenom: `Robert` (string) - Prénom utilisateur (Max 50 caractères).
-- Civilite: `Monsieur` (string) - Civilité du locataire (Max 10 caractères).
-- Adresse: `12 Rue des Bleuets, Appartement 1` (string) - Adresse (Max 100 caractères).
-- CodePostal: `77000` (string) - Code Postal (Max 10 caractères).
-- Ville: `MELUN` (string) - Ville (Max 100 caractères).
-- Email: `351557010202731` (string) - Email (Max 255 caractères).
-- Telephone: `351557010202731` (string) - Numéro de téléphone (Max 20 caractères).
-- Pays: `FRANCE` (string) - Pays (Max 50 caractères).
+- Include Proprietaires
 
 ## Proprietaires Invimmo PUT (object)
 
