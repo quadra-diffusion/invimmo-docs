@@ -1606,7 +1606,7 @@ Insère une liste de patrimoines dans la base de données d’Invimmo
 
 ### Modifier une liste de patrimoine [PUT]
 
-Modifie une liste de patrimoines dans la base de données d’Invimmo
+Modifie une liste de patrimoines dans la base de données d’Invimmo, si une structure existe déja celle-ci remplacera l'existante
 
 + Request (application/json)
 
@@ -1618,7 +1618,6 @@ Modifie une liste de patrimoines dans la base de données d’Invimmo
 
 + Response 200 (application/json)
     Dans le cas ou les modifications de patrimoine se passent bien.
-    Le statut sera "Structure existante." si la structure du patrimoine existe déja et n'est pas crée
     + Attributes (array[Patrimoine Invimmo PUT], fixed-type)
     
 + Response 400 (application/json)
