@@ -712,12 +712,128 @@ Récupère un Excompteur
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-## Excompteurs [/patrimoines/{RefPatrimoineInterneOuExterne}/Baux/{RefBailInterneOuExterne}/excompteurs?TYPE_REFERENCE={type_reference}]
+## Excompteurs du bail [/patrimoines/{RefPatrimoineInterneOuExterne}/Baux/{RefBailInterneOuExterne}/excompteurs?TYPE_REFERENCE={type_reference}]
 
 + Parameters
     + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
     + RefPatrimoineInterneOuExterne: `001.001.001A` (string) - Référence interne ou externe du patrimoine. 
     + RefBailInterneOuExterne: `001.001.001A` (string) - Référence interne ou externe du bail. 
+    
+
+### Ajouter une liste de excompteurs du bail [POST]
+
+Insère une liste de compteurs externes dans la base de données d’Invimmo
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+    + Attributes (array[ExcompteursBail POST],fixed-type)
+
+
++ Response 201 (application/json)
+    Dans le cas ou les insertions de excompteurs se passent bien.
+    + Attributes (array[Excompteurs Invimmo POST], fixed-type)
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un compteur.
+    + Body
+
++ Response 409 (application/json)
+    (Conflict) La demande n'a pas pu être terminée.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
+### Modifier une liste de excompteurs du bail [PUT]
+
+Modifie une liste de compteurs externes dans la base de données d’Invimmo
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+    + Attributes (array[ExcompteursBail PUT],fixed-type)
+
++ Response 200 (application/json)
+    Dans le cas ou les modifications de excompteurs se passent bien.
+    + Attributes (array[Excompteurs Invimmo PUT], fixed-type)
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un compteur.
+    + Body
+
++ Response 409 (application/json)
+    (Conflict) La demande n'a pas pu être terminée.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
+### Supprime une liste de excompteurs du bail [DELETE]
+
+Supprime une liste de compteurs externes dans la base de données d’Invimmo
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+    + Attributes (array[Excompteurs DELETE],fixed-type)
+
++ Response 200 (application/json)
+    Dans le cas ou les suppressions de excompteurs se passent bien.
+    + Attributes (array[Excompteurs Invimmo DELETE], fixed-type)
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un compteur.
+    + Body
+
++ Response 409 (application/json)
+    (Conflict) La demande n'a pas pu être terminée.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
+## Excompteurs [/excompteurs?TYPE_REFERENCE={type_reference}&FORCE_PARAMETRAGE={force_parametrage}]
+
++ Parameters
+    + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
+    + force_parametrage: `Oui` (optional,string) - Indique si la création de paramétrage doit se faire automatiquement
     
 
 ### Ajouter une liste de excompteurs [POST]
@@ -2554,6 +2670,7 @@ Récupère un Utilisateur
 ## Baux PUT (object)
 
 - Include Baux
+- Locataires (array[LocataireBail POST],fixed-type) - Locataires, attention la liste fournie remplacera en totalité la liste déja fournie
 
 ## Baux Invimmo PUT (object)
 
@@ -2916,19 +3033,35 @@ Récupère un Utilisateur
 ## Excompteurs POST (object)
 
 - Include Excompteurs
+- ReferenceExterneBail: `16548` (required, string) - Reference externe du bail
+- ReferenceExternePatrimoine: `16548` (required, string) - Reference externe du patrimoine
+
+## ExcompteursBail POST (object)
+
+- Include Excompteurs
 
 ## Excompteurs Invimmo POST (object)
 
 - ReferenceInvimmo: `16548` (required, number) - Référence unique Invimmo
+- ReferenceInvimmoBail: `16548` (required, number) - Référence unique Invimmo bail
+- ReferenceInvimmoPatrimoine: `16548` (required, number) - Référence unique Invimmo patrimoine
 - Include Excompteurs POST
 
 ## Excompteurs PUT (object)
+
+- Include Excompteurs
+- ReferenceExterneBail: `16548` (required, string) - Reference externe du bail
+- ReferenceExternePatrimoine: `16548` (required, string) - Reference externe du patrimoine
+
+## ExcompteursBail PUT (object)
 
 - Include Excompteurs
 
 ## Excompteurs Invimmo PUT (object)
 
 - ReferenceInvimmo: `1526` (required, number) - Référence unique Invimmo.
+- ReferenceInvimmoBail: `16548` (required, number) - Référence unique Invimmo bail
+- ReferenceInvimmoPatrimoine: `16548` (required, number) - Référence unique Invimmo patrimoine
 - Include Excompteurs PUT
 
 ## Excompteurs DELETE (object)
