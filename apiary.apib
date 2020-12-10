@@ -2023,6 +2023,40 @@ Réactive une liste de groupes patrimoines dans la base de données d’Invimmo
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
+## Planifications [/planifications/planifications-liste]
+
+### Récupérer une liste de Planifications filtrée [GET]
+
+Récupére une liste de Planifications filtrée
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+    
+    + Attributes (array[PlanificationFiltreeParam],fixed-type)
+
++ Response 200 (application/json)
+    La récupération s'est bien passée
+    + Attributes (array[PlanificationFiltree],fixed-type)
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
 ## Planifications [/planifications/{id}]
 
 + Parameters
@@ -2608,6 +2642,53 @@ Récupère un Utilisateur
 - ReferenceInvimmoUtilisateur: `TEST` (required, string) - Référence unique Invimmo utilisateur
 - ReferenceInterneLogement: `16548` (required, number) - Référence unique Invimmo logement
 - ReferenceInvimmoBail: `16548` (required, number) - Référence unique Invimmo Bail
+
+## ChargeClientele (object)
+
+- Code: `FLO` (required, string) - Code utilisateur
+
+## EtatTache (object)
+
+- Etat: `1` (required, number) - Etat de la tâche, 2 pour En attente, 3 pour A programmer, 4 pour Planifié, 5 pour Pré-planifié
+
+## TypeTache (object)
+
+- Num: `1` (optional, number) - Numéro type edl (préciser la valeur -42 pour avoir les tâches administratives)
+- LibelleTypeEdl: `Etat des lieux sortant` (optional, string) - Nom de la tâche
+
+## PlanificationFiltreeParam (object)
+
+- DatePlanificationDebut: `2020-12-08` (required, string) - Date de début de la recherche
+- DatePlanificationFin: `2020-12-09` (required, string) - Date de fin de la recherche
+- TypesTache (array[TypeTache]) Types de tâches
+- EtatsTache (array[EtatTache]) Etats des tâches
+- ChargeClientele(array[ChargeClientele]) Agents
+- Agence: `Lille` (required, string) - Agence
+- CodePatrimoine: `codePatrimoine` (required, string) - Code patrimoine
+- Locataire: `Antoine dupond` (required, string) - Locataire
+
+## PlanificationFiltree (object)
+
+- referenceExterneBail: `bailTest` (optional, string) - Reference externe du bail
+- codeLogement: `Logement test` (optional, string) - Code du logement
+- typeEdl: `Etat des lieux sortant` (required, string) - Nom de la tâche
+- nomUtilisateur: `DUPOND` (required, string) - Nom de l'agent
+- prenomUtilisateur: `JEAN` (required, string) - Prénom de l'agent
+- referenceExterneLocataire: `DURAND001` (optional, string) - Reference du locataire
+- nomLocataire: `DUPOND` (required, string) - Nom du locataire
+- prenomLocataire: `JEAN` (required, string) - Prénom du locataire
+- referenceInterneBail: `1` (optional, number) - Reference invimmo du bail
+- referenceInterneLogement: `1` (optional, number) - Reference invimmo du logement
+- referenceInterneTypeEdl: `1` (required, number) - Reference invimmo de la tâche
+- codeUtilisateur: `FLO` (optional, string) - Code de l'agent
+- dateDebutPlanification: `2020-12-09T18:00:00.0000000+01:00` (optional, string) - Date de début de la tâche
+- dateFinPlanification: `2020-12-09T19:00:00.0000000+01:00` (optional, string) - Date de fin de la tâche
+- referenceExternePlanification: `PlanifDUPOND001` (optional, string) - Reference externe de la tâche
+- agencePlanification: `Lille` (optional, string) - Agence de la tâche
+- adresse: `10 rue des ormes` (optional, string) - Adresse du logement
+- codePostal: `59000` (optional, string) - Code postal du logement
+- ville: `Lille` (optional, string) - Ville du logement
+
 
 ## Planification GET (object)
 
