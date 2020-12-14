@@ -2658,28 +2658,28 @@ Récupère un Utilisateur
 
 ## PlanificationFiltreeParam (object)
 
-- DatePlanificationDebut: `2020-12-08` (required, string) - Date de début de la recherche
-- DatePlanificationFin: `2020-12-09` (required, string) - Date de fin de la recherche
+- DatePlanificationDebut: `2020-12-08` (optional, string) - Date de début de la recherche
+- DatePlanificationFin: `2020-12-09` (optional, string) - Date de fin de la recherche
 - TypesTache (array[TypeTache]) Types de tâches
-- EtatsTache (array[EtatTache]) Etats des tâches
+- EtatsTache (required,array[EtatTache]) Etats des tâches
 - ChargeClientele(array[ChargeClientele]) Agents
-- Agence: `Lille` (required, string) - Agence
-- CodePatrimoine: `codePatrimoine` (required, string) - Code patrimoine
-- Locataire: `Antoine dupond` (required, string) - Locataire
+- Agence: `Lille` (optional, string) - Agence
+- CodePatrimoine: `codePatrimoine` (optional, string) - Code patrimoine
+- Locataire: `Antoine dupond` (optional, string) - Locataire
 
 ## PlanificationFiltree (object)
 
 - referenceExterneBail: `bailTest` (optional, string) - Reference externe du bail
 - codeLogement: `Logement test` (optional, string) - Code du logement
 - typeEdl: `Etat des lieux sortant` (required, string) - Nom de la tâche
-- nomUtilisateur: `DUPOND` (required, string) - Nom de l'agent
-- prenomUtilisateur: `JEAN` (required, string) - Prénom de l'agent
+- nomUtilisateur: `DUPOND` (optional, string) - Nom de l'agent
+- prenomUtilisateur: `JEAN` (optional, string) - Prénom de l'agent
 - referenceExterneLocataire: `DURAND001` (optional, string) - Reference du locataire
-- nomLocataire: `DUPOND` (required, string) - Nom du locataire
-- prenomLocataire: `JEAN` (required, string) - Prénom du locataire
+- nomLocataire: `DUPOND` (optional, string) - Nom du locataire
+- prenomLocataire: `JEAN` (optional, string) - Prénom du locataire
 - referenceInterneBail: `1` (optional, number) - Reference invimmo du bail
 - referenceInterneLogement: `1` (optional, number) - Reference invimmo du logement
-- referenceInterneTypeEdl: `1` (required, number) - Reference invimmo de la tâche
+- referenceInterneTypeEdl: `1` (optional, number) - Reference invimmo de la tâche
 - codeUtilisateur: `FLO` (optional, string) - Code de l'agent
 - dateDebutPlanification: `2020-12-09T18:00:00.0000000+01:00` (optional, string) - Date de début de la tâche
 - dateFinPlanification: `2020-12-09T19:00:00.0000000+01:00` (optional, string) - Date de fin de la tâche
