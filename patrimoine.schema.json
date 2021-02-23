@@ -493,7 +493,15 @@
                 "maxLength": 50,
                 "title": "The type schema",
                 "type": "string"
-            }
+            },
+			"BaremesAssocies": {
+			    "id": "/properties/BaremesAssocies",
+                "items": {
+					"type":"string"
+                },
+                "minItems": 1,
+                "type": "array"
+			}
         },
         "required": [
             "CodePatrimoine",
