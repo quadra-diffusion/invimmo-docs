@@ -2557,6 +2557,7 @@ Récupère un Utilisateur
 ## Patrimoine POST (object)
 - StructurePatrimoine (EdlsStructure POST) - structure du patrimoine
 - RemarquesLogement (array[RemarquePatrimoine], fixed-type) - remarques du patrimoine
+- BaremesAssocies (array[string], fixed-type) - Liste de Codes de barèmes a associer si le groupe est inexistant
 - Include Patrimoine
 
 ## Patrimoine Invimmo POST (object)
@@ -2568,6 +2569,7 @@ Récupère un Utilisateur
 
 - Include Patrimoine
 - StructurePatrimoine (EdlsStructure POST) - structure du patrimoine
+- BaremesAssocies (array[string], fixed-type) - Liste de Codes de barèmes a associer si le groupe est inexistant
 
 ## Patrimoine Invimmo PUT (object)
 
@@ -2634,6 +2636,7 @@ Récupère un Utilisateur
 - Agence: `Paris` (string) - l'agence concernée par la planification (Max 200 caractères).
 - DateHeure: `2000-10-14 10:10:10` (string) - Date et heure de la planification (YYYY-MM-DD HH:MM:SS).
 - TypeEdl: `1` (number) - le type de l'EDL (1, 2..).
+- EdlADistance: `false` (boolean) - Information sur la réalisation de l'edl à distance
 
 ## Planification References (object)
 
@@ -2881,9 +2884,9 @@ Récupère un Utilisateur
 ## GroupePatrimoine  (object)
 
 - ReferenceExterne: `80125` (required, string) - Référence externe du groupe patrimoine (Max 255 caractères).
-- ReferenceExterneBareme: `grp1` (string) - Référence externe du baréme (Max 255 caractères).
 - Libelle: `groupe 1` (string) - Libelle du groupe patrimoine  (Max 200 caractères).
 - LogementsActifs (boolean) - Information pour indiquer si le groupe a des logements actifs
+- BaremesAssocies (array[Baremes],fixed-type) - Barèmes a associer au groupe
 
 ## GroupePatrimoine GET (object)
 
@@ -3189,6 +3192,7 @@ Récupère un Utilisateur
 
 - ReferenceExterne: `PLOMB1` (required, string) - Référence externe du Barème (Max 255 caractères).
 - Libelle: `Plomberie` (required, string) - Libellé du barème (Max 200 caractères).
+- Code: `PLOMB` (string) - Code du barème (Max 255 caractères).
 
 ## Baremes Invimmo GET (object)
 
