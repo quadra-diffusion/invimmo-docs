@@ -441,10 +441,11 @@ Récupère un barème
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-## Baux [/baux?TYPE_REFERENCE={type_reference}]
+## Baux [/baux?TYPE_REFERENCE={type_reference}&FORCE_MAJ={force_maj}]
 
 + Parameters
     + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
+    + force_maj: `OUI` (optional,string) - Dans le cas d'une modification force une mise à jour de tout les champs a la valeur renseignee. Par default NON.
 
 ### Ajouter une liste de Baux [POST]
 
