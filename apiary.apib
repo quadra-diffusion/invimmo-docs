@@ -973,8 +973,40 @@ Récupération de la liste des identifiants des états des lieux de la date
     (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
     + Body
 
-+ Response 403 (application/json)
-    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un état des lieux.
++ Response 404 (application/json)
+    (Not Found) : Le point de terminaison n’existe pas.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+   
+ 
+## Etats des lieux [/edls/{dateDebut}/{dateFin}/avecDocumentsSynchronises]
+
+Liste d’états des lieux pour la plages de dates donnée
+
++ Parameters
+    + dateDebut: `2017-05-26` (required, string) - date Debut YYYY-MM-DD.
+    + dateFin: `2017-05-27` (required, string) - date Fin format YYYY-MM-DD incluse.
+
+### Récupère la liste des états des lieux [GET]
+
+Récupération de la liste des identifiants des états des lieux dans une page de dates donnée
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+
++ Response 200 (application/json)
+    Dans le cas ou la récupération des etats des lieux se passent bien.
+    + Attributes
+    
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
     + Body
 
 + Response 404 (application/json)
