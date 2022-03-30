@@ -2204,6 +2204,43 @@ Modifie une liste de Planifications dans la base de données d’Invimmo
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
+
+### Supprimer une liste de planifications [DELETE]
+
+Supprime une liste de Planifications dans la base de données d’Invimmo
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+    + Attributes (array[Planification DELETE],fixed-type)
+
++ Response 200 (application/json)
+    Dans le cas ou les suppressions de Planifications se passent bien.
+    + Body
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit de supprimer une planification.
+    + Body
+
++ Response 409 (application/json)
+    (Conflict) La demande n'a pas pu être terminée.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
 ## Propriétaires [/proprietaires/{id}?TYPE_REFERENCE={type_reference}]
 
 + Parameters
@@ -2747,6 +2784,11 @@ Récupère un Utilisateur
 ## Planification Invimmo PUT (object)
 
 - Include Planification References
+
+## Planification DELETE (object)
+
+- ReferenceExternePlanification: `001.001.001A` (string) - Référence externe de la planification (Max 255 caractères).
+- ReferenceInternePlanification: `1` (number) - Référence interne de la planification (Max 255 caractères).
 
 ## Baux (object)
 
