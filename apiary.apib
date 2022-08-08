@@ -2672,7 +2672,14 @@ Récupère un Utilisateur
 ## EdlsStructure POST (object)
 
 - Cles (array[ClefStructure POST],fixed-type)
+- Etages (array[EtageStructure POST],fixed-type)
 - Pieces (array[PieceStructure POST],fixed-type)
+
+## EtageStructure POST (object)
+- Type: `Rez-de-chaussée` (required,string) Type d'étage
+- InfoComplementaire: `Principal` (string) Information complémentaire
+- Pieces (array[PieceStructure POST],fixed-type)
+
 
 ## ClefStructure POST (object)
 
@@ -2706,6 +2713,7 @@ Récupère un Utilisateur
 - Agence: `Paris` (string) - l'agence concernée par la planification (Max 200 caractères).
 - DateHeure: `2000-10-14 10:10:10` (string) - Date et heure de la planification (YYYY-MM-DD HH:MM:SS).
 - TypeEdl: `1` (number) - le type de l'EDL (1, 2..).
+- Commentaire: `` (string) - Commentaire de la planification (Max 2000 caractères).
 - EdlADistance: `false` (boolean) - Information sur la réalisation de l'edl à distance
 
 ## Planification References (object)
@@ -3354,6 +3362,7 @@ Récupère un Utilisateur
 
 - Assurance (Assurances GET)
 - Pieces (array[Pieces GET], fixed-type)
+- Etages (array[Etages GET], fixed-type)
 - Locataires (array[Locataires EDL GET],fixed-type)
 - Compteurs (array[Compteurs EDL GET],fixed-type)
 - Travaux (Travaux GET)
@@ -3406,6 +3415,15 @@ Récupère un Utilisateur
 - Nom: `SALON` (required, string) - Nom de la pièce (Max 200 caractères).
 - Etat: `HS` (string) - Etat de la pièce (type état) (Max 100 caractères).
 - Ordre: `10` (number) - longueur de la pièce (number(3)).
+
+## Etages GET (object)
+
+- Pieces (array[Pieces GET],fixed-type)
+
+- ReferenceInvimmo: `465` (required, number) - Référence interne.
+- ReferenceExterne: `CUI123` (required, string) - Référence externe
+- Type: `Rez-de-chaussée` (required, string) - Type.
+- InfoComplementaire: `principal` (string) - Information complementaire
 
 
 ## Surface GET (object)
