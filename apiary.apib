@@ -632,12 +632,13 @@ Récupère un bail
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-## Baux [/baux/{id}/dernierEdl?TYPE_REFERENCE={type_reference}&MATCH_PARTIEL={match_partiel}]
+## Baux [/baux/{id}/{document}?TYPE_REFERENCE={type_reference}&MATCH_PARTIEL={match_partiel}]
 
 + Parameters
     + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
     + id: `1` (required, string) - Référence interne ou externe.
     + match_partiel: `NON` (optional, string) - Recherche le bail sur uniquement le début de la référence externe. Par defaut NON.
+    + document: `dernierEdl` (required, string) - Nom du document (dernierEdl ou dernieresReparations).
 
 ### Récupérer le dernier document d'état des lieux d'un bail [GET]
 
