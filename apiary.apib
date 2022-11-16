@@ -632,6 +632,48 @@ Récupère un bail
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
+## Baux [/baux/{id}/dernierEdl?TYPE_REFERENCE={type_reference}&MATCH_PARTIEL={match_partiel}]
+
++ Parameters
+    + type_reference: `interne` (optional,string) - Type de référence (externe ou interne). Par default externe.
+    + id: `1` (required, string) - Référence interne ou externe.
+    + match_partiel: `NON` (optional, string) - Recherche le bail sur uniquement le début de la référence externe. Par defaut NON.
+
+### Récupérer le dernier document d'état des lieux d'un bail [GET]
+
+Récupére le dernier document d'état des lieux d'un bail
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+
++ Response 200 (application/octet-stream)
+    Le document pdf
+    + Body
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant.
+    + Body
+    
++ Response 404 (application/json)
+    (Not found) Aucun document n'a été trouvé.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
 ## Document bail [/baux/{id}/{typeAttachement}/{nomFichier}?TYPE_REFERENCE={TypeReference}]
 
 Ajoute le document du bail dont la référence a été passée en paramètre
