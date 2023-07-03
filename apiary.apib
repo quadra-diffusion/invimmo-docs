@@ -675,13 +675,12 @@ Récupére le dernier document d'état des lieux d'un bail
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-## Document bail [/baux/{id}/{typeAttachement}/{nomFichier}?TYPE_REFERENCE={TypeReference}]
+## Document bail [/baux/{id}/PdfsASigner/{nomFichier}?TYPE_REFERENCE={TypeReference}]
 
 Ajoute le document du bail dont la référence a été passée en paramètre
 
 + Parameters
     + id: `1` (required, string) - Référence interne ou externe du bail auquel il faut ajouter le document à retourner.
-    + typeAttachement: `PdfBaux` (required, string) - Type d'attachement.
     + nomFichier: `BAI_PAT545_BAIL854.pdf` (required, string) - Nom du fichier.
     + TypeReference: `INTERNE` (optional, string) - valeur possibles : INTERNE ou EXTERNE, EXTERNE par défaut si non spécifié.
 
