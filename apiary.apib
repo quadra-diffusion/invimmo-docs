@@ -2791,10 +2791,12 @@ Récupère un Utilisateur
 - Cles (array[ClefStructure POST],fixed-type)
 - Etages (array[EtageStructure POST],fixed-type)
 - Pieces (array[PieceStructure POST],fixed-type)
+- ReferenceExterne: `axb12` (string) Référence externe
 
 ## EtageStructure POST (object)
 - Type: `Rez-de-chaussée` (required,string) Type d'étage
 - InfoComplementaire: `Principal` (string) Information complémentaire
+- ReferenceExterne: `axb12` (string) Référence externe
 - Pieces (array[PieceStructure POST],fixed-type)
 
 
@@ -2809,11 +2811,13 @@ Récupère un Utilisateur
 - Surface (SurfaceStructure POST,fixed-type)
 - Type (required,string) Nom du type de pièce
 - Etat (string) Etat de la pièce
+- ReferenceExterne: `axb12` (string) Référence externe
 - InfoComplementaire (string) Information complémentaire sur la pièce
 
 ## EquipementStructure POST (object)
 - Type: `prise` (required,string) - Nom du type d'équipement
 - Etat (string) - Etat de l'équipement
+- ReferenceExterne: `axb12` (string) Référence externe
 - InfoComplementaire (string) - Information complémentaire sur l'équipement
 
 ## SurfaceStructure POST (object)
