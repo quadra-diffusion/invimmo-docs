@@ -2839,7 +2839,10 @@ Désactive une liste de types pieces dans la base de données d’Invimmo
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-## Recupération des TypePieces [/TypePieces/liste]
+## Recupération des TypePieces [/TypePieces/liste?ACTIF={actif}]
+
++ Parameters
+    + actif: `true` (boolean) - Actif.
 
 ### Récupérer des types pieces [GET]
 
@@ -2982,7 +2985,10 @@ Désactive une liste de types equipements dans la base de données d’Invimmo
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-## Recupération des TypeEquipements [/TypeEquipements/liste]
+## Recupération des TypeEquipements [/TypeEquipements/liste?ACTIF={actif}]
+
++ Parameters
+    + actif: `true` (boolean) - Actif.
 
 ### Récupérer des types equipements [GET]
 
@@ -3125,7 +3131,10 @@ Désactive une liste de types ugs dans la base de données d’Invimmo
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-## Recupération des TypeUgs [/TypeUgs/liste]
+## Recupération des TypeUgs [/TypeUgs/liste?ACTIF={actif}]
+
++ Parameters
+    + actif: `true` (boolean) - Actif.
 
 ### Récupérer des types ugs [GET]
 
@@ -3268,7 +3277,10 @@ Désactive une liste de types etages dans la base de données d’Invimmo
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
-## Recupération des TypeEtages [/TypeEtages/liste]
+## Recupération des TypeEtages [/TypeEtages/liste?ACTIF={actif}]
+
++ Parameters
+    + actif: `true` (boolean) - Actif.
 
 ### Récupérer des types etages [GET]
 
@@ -4149,6 +4161,7 @@ Récupère des types etages
 
 - ReferenceInvimmo: `465` (required, number) - Référence interne.
 - ReferenceExterne: `CUI123` (required, string) - Référence externe
+- Code: `RDC` (optional, string) - Code (Max 50 caractères).
 - Type: `Rez-de-chaussée` (required, string) - Type.
 - InfoComplementaire: `principal` (string) - Information complementaire
 
@@ -4313,7 +4326,8 @@ Récupère des types etages
 ## TypeEtages (object)
 
 - Num: `1` (required, number) - Numero du type.
-- Libelle: `Prise` (required, string) - Libelle (Max 100 caractères).
+- Libelle: `Rez-de-chaussée` (required, string) - Libelle (Max 100 caractères).
+- Code: `RDC` (optional, string) - Code (Max 50 caractères).
 - Ordre: `0` (required, number) - Ordre du type.
 - Actif: `true` (boolean) - Actif.
 - ListeTypeEtageTypePiece (array[TypePieces GET],fixed-type)
