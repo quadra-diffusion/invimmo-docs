@@ -3451,9 +3451,14 @@ Récupère des types etages
 - ReferenceExterneUtilisateur: `003.003.003A` (string) - Référence externe de l'utilisateur (Max 255 caractères).
 - Agence: `Paris` (string) - l'agence concernée par la planification (Max 200 caractères).
 - DateHeure: `2000-10-14 10:10:10` (string) - Date et heure de la planification (YYYY-MM-DD HH:MM:SS).
+- DateHeureFin: `2000-10-14 10:10:10` (string) - Date et heure de fin de la planification (YYYY-MM-DD HH:MM:SS).
 - TypeEdl: `1` (number) - le type de l'EDL (1, 2..).
 - Commentaire: `` (string) - Commentaire de la planification (Max 2000 caractères).
 - EdlADistance: `false` (boolean) - Information sur la réalisation de l'edl à distance
+- DateHeureDebutPeriodeLimite: `2000-10-14 10:10:10` (optional, string) - Date de début de la période limite de réalisation
+- DateHeureLimite: `2000-10-14 10:10:10` (optional, string) - Date de fin de la période limite de réalisation
+- Recurrence: `5` (optional, number) - Récurrence, nombre de fois ou la tache se déroule par mois ou année selon l'unité
+- UniteRecurrence: `month` (optional, string) - Unité de la récurrence, month ou year
 
 ## Planification References (object)
 
@@ -3486,6 +3491,9 @@ Récupère des types etages
 - Agence: `Lille` (optional, string) - Agence
 - CodePatrimoine: `codePatrimoine` (optional, string) - Code patrimoine
 - Locataire: `Antoine dupond` (optional, string) - Locataire
+- DateHeureDebutPeriodeLimite: `2000-10-14 10:10:10` (optional, string) - Date de début de la période limite de réalisation
+- DateHeureLimite: `2000-10-14 10:10:10` (optional, string) - Date de fin de la période limite de réalisation
+- QueControles: `false` (boolean) - Indique une recherche sur uniquement des controles
 
 ## PlanificationFiltree (object)
 
