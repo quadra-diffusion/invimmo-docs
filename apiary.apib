@@ -3313,6 +3313,42 @@ Récupère des types etages
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
+## Recupération des Types de tâche [/TypeEdls/liste?ACTIF={actif}]
+
++ Parameters
+    + actif: `true` (boolean) - Actif.
+
+### Récupérer des types de tâche [GET]
+
+Récupère des types de tâche
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+
++ Response 200 (application/json)
+    La récupération s'est bien passée
+    + Attributes (array[TypeEdls GET],fixed-type)
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
 # Data Structures
 
 ## Authentification POST (object)
@@ -4330,6 +4366,22 @@ Récupère des types etages
 ## TypeEquipements DELETE (object)
 
 - Num: `1` (required, number) - Numero du type.
+
+
+## TypeEdls (object)
+
+- Num: `1` (required, number) - Numero du type.
+- Libelle: `Edl entrant` (required, string) - Libelle.
+- Code: `EDLE` (optional, string) - Code.
+- LibelleEdition: `Edl entrant` (required, string) - Label affiche dans l'edition.
+- Actif: `true` (boolean) - Actif.
+- ValeurJuridique: `true` (boolean) - Utilise la signature a valeur probante.
+- Synchro: `true` (boolean) - Type de tache synchronise sur la tablette.
+- EstLogement: `true` (boolean) - Concerne des logements.
+
+## TypeEdls GET (object)
+
+- Include TypeEdls
 
 ## TypeEtages (object)
 
