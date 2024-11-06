@@ -3349,6 +3349,152 @@ Récupère des types de tâche
     (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
     + Body
 
+## Prestataires [/Prestataires]
+
+### Ajouter une liste de Prestataires [POST]
+
+Insère une liste de Prestataires dans la base de données d’Invimmo.
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+    + Attributes (array[Prestataires POST],fixed-type)
+
++ Response 201 (application/json)
+    Dans le cas ou les insertions se passent bien.
+    + Attributes (array[Prestataires POST], fixed-type)
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
+    + Body
+
++ Response 409 (application/json)
+    (Conflict) La demande n'a pas pu être terminée.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
+### Modifier une liste de Prestataires [PUT]
+
+Modifie une liste de Prestataires dans la base de données d’Invimmo
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+    + Attributes (array[Prestataires PUT],fixed-type)
+
++ Response 200 (application/json)
+    Dans le cas ou les modifications se passent bien.
+    + Attributes (array[Prestataires PUT], fixed-type)
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
+    + Body
+
++ Response 409 (application/json)
+    (Conflict) La demande n'a pas pu être terminée.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
+### Désactiver une liste de Prestataires [DELETE]
+
+Désactive une liste de Prestataires dans la base de données d’Invimmo
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+    + Attributes (array[Prestataires DELETE],fixed-type)
+
++ Response 200 (application/json)
+    Dans le cas ou les désactivations se passent bien.
+    + Attributes (array[Prestataires DELETE], fixed-type)
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant, parce qu’il n’a pas le droit d’insérer un patrimoine.
+    + Body
+
++ Response 409 (application/json)
+    (Conflict) La demande n'a pas pu être terminée.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
+## Recupération des Prestataires [/Prestataires/liste?ACTIF={actif}]
+
++ Parameters
+    + actif: `true` (boolean) - Actif.
+
+### Récupérer des Prestataires [GET]
+
+Récupère des types Prestataires
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token d'authentification (exemple `0a86a11f-d06e-46b7-a133-5240cb27d1e5`)
+
+
++ Response 200 (application/json)
+    La récupération s'est bien passée
+    + Attributes (array[Prestataires GET],fixed-type)
+    
++ Response 400 (application/json)
+    (Bad Request) Tous les cas où un paramètre n'est pas valide, ou un paramètre requis est manquant. Ceci inclut le cas où un ID de ressource est spécifiée de manière incorrecte dans un chemin.
+    + Body
+
++ Response 401 (application/json)
+    (Unauthorized) Aucun jeton OAuth n’est fourni. Ou bien le token a expiré.
+    + Body
+
++ Response 403 (application/json)
+    (Forbidden) Les informations ne peuvent pas être inséré par l'utilisateur agissant.
+    + Body
+
++ Response 500 (application/json)
+    (Internal server error) Le serveur HTTP a rencontré une condition inattendue qui l'a empêché de traiter la requête. Cette erreur peut par exemple être le résultat d'une mauvaise configuration du serveur, ou d'une ressource épuisée ou refusée au serveur sur la machine hôte.
+    + Body
+
 # Data Structures
 
 ## Authentification POST (object)
@@ -4366,6 +4512,33 @@ Récupère des types de tâche
 ## TypeEquipements DELETE (object)
 
 - Num: `1` (required, number) - Numero du type.
+
+## Prestataires (object)
+
+- Num: `1` (required, number) - Numero du Prestataire.
+- Code: `SERG` (required, string) - Code (Max 500 caractères).
+- Libelle: `SERG` (required, string) - Libelle (Max 500 caractères).
+- Email: `SERG` (required, string) - Email (Max 500 caractères).
+- Adresse: `SERG` (required, string) - Adresse (Max 500 caractères).
+- Cp: `SERG` (required, string) - Cp (Max 500 caractères).
+- Ville: `SERG` (required, string) - Ville (Max 500 caractères).
+- Actif: `true` (boolean) - Actif.
+
+## Prestataires GET (object)
+
+- Include Prestataires
+
+## Prestataires POST (object)
+
+- Include Prestataires
+
+## Prestataires PUT (object)
+
+- Include Prestataires
+
+## Prestataires DELETE (object)
+
+- Num: `1` (required, number) - Numero du Prestaire.
 
 
 ## TypeEdls (object)
