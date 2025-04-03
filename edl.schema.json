@@ -1103,7 +1103,16 @@
         "examples": [
           "Centre ville de MELIN"
         ]
-      }
+      },
+            "reparationSignee": {
+              "$id": "#/items/properties/reparationSignee",
+              "type": [ "boolean", "null" ],
+              "title": "Indique si le document de reparation a ete signee",
+              "default": false,
+              "examples": [
+                true
+              ]
+            }
     },
     "required": [
       "referenceExterne",
